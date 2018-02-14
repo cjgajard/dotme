@@ -37,18 +37,19 @@ function gcod() {
     git checkout -b development
   fi
 }
-alias ginit="git init; touch README.md; touch .gitignore; git add --all; git commit -m 'Initial commit'"
+alias g2day="git log --since='6am'"
+alias gaax="git add --all; git reset --"
 alias gap="git add --patch"
 alias gcm="git commit -m"
 alias gcob="git checkout -b"
 alias gcoc="git checkout carlos"
 alias gcof="git checkout -- "
 alias gcom="git checkout master"
-alias gaax="git add --all; git reset --"
-alias g2day="git log --since='6am'"
-alias gpanic="TODAY=`date +%Y%m%d`; git checkout -b panic/\$TODAY; git add --all; git commit -m \"[skip ci] panic\"; git push origin panic/\$TODAY"
+alias gdc="git diff --cached"
+alias ginit="git init; touch README.md; touch .gitignore; git add --all; git commit -m 'Initial commit'"
 alias glrb="git pull --rebase"
 alias glp="git pull --rebase && git push"
+alias gpanic="TODAY=`date +%Y%m%d`; git checkout -b panic/\$TODAY; git add --all; git commit -m \"[skip ci] panic\"; git push origin panic/\$TODAY"
 
 # rails
 # alias r="rails"
