@@ -32,7 +32,6 @@ HISTFILE=~/.zsh_history
 # vim
 stty -ixon
 
-# node
 function __nvm() {
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -47,6 +46,12 @@ function __android() {
 function __venv() {
   local env=${1:-.env}
   [[ -f $env/bin/activate ]] && . $env/bin/activate
+}
+
+function __go() {
+    export GOROOT=$HOME/.go/1.10/go
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOROOT/bin
 }
 
 # default
