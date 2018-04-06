@@ -55,6 +55,7 @@ function __go() {
 }
 
 # default
-__nvm
 # __android
+# __go
 __venv
+__nvm
