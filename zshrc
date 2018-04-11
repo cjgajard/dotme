@@ -19,13 +19,15 @@ plugins=(autojump debian git grepr history-substring-search pip)
 
 source $ZSH/oh-my-zsh.sh
 
-# ----------------------------------------------------------
-
 # keep history file between sessions
 DIRSTACKSIZE=15
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.zsh_history
+
+# ----------------------------------------------------------
+
+export PATH="$PATH:$HOME/.local/bin"
 
 [[ -f $ZSH_CUSTOM/aliases.sh ]] && . $ZSH_CUSTOM/aliases.sh
 
