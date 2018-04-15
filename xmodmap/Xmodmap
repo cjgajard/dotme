@@ -1,0 +1,8 @@
+!original are 108=Alt_R 135=Menu 105=Control_R
+remove control = Menu
+remove mod1 = Control_R
+keycode 108 = Control_R NoSymbol Control_R
+keycode 135 = Alt_R ISO_Next_Group Alt_R ISO_Next_Group
+keycode 105 = Menu NoSymbol Menu
+add control = Control_R
+add mod1 = Menu
