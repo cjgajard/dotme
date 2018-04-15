@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+usage() {
+  echo "Usage: $0 [-Ar] [-s session-name]" 1>&2; exit 1
+}
+
+attach=true
+runcmd=false
+SESSION=carlos
+
+while getopts ":Ars:" o; do
+  case "${o}" in
+    A)
+      attach=false
+      ;;
+    s)
+      SESSION=${OPTARG}
+      ;;
+    r)
+      runcmd=true
+      ;;
+    *)
+      usage
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+# check if run command or clear screen
+if [ "${runcmd}" = true ]; then aftercmd='C-m'; else aftercmd='C-l'; fi
+
+# create detached session
+if (tmux list-sessions | awk '{print $1}' | grep -q "${SESSION}:"); then
+   echo "A session named \"$SESSION\" already exists"; exit 1; fi
+tmux -2 new-session -d -s $SESSION
+
+# an editor and a command line
+WINDOW=editor
+tmux rename-window $WINDOW
+tmux split-window -h
+tmux select-pane -t 0
+tmux send-keys 'env $EDITOR' C-m
+tmux select-pane -t 1
+
+# open session
+if [ "${attach}" = true ]; then
+  # tmux select-window -t $SESSION:1
+  tmux -2 attach-session -t $SESSION
+fi
