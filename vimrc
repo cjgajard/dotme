@@ -1,6 +1,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'digitaltoad/vim-pug'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'crusoexia/vim-dracula'
 call plug#end()
 
