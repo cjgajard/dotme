@@ -10,7 +10,7 @@ alias pms0="python manage.py runserver 0.0.0.0:8000"
 alias pm="python manage.py"
 alias pm2="python manage.py migrate"
 alias pm3="python manage.py makemigrations"
-alias grepd="grepr --django --ev --em"
+alias grepd="grepr --django --es --em"
 
 function pylib() {
   local library="${1:-django}"
@@ -37,7 +37,7 @@ function gcod() {
     git checkout -b development
   fi
 }
-alias g2day="git log --since='6am'"
+alias g2day="git log --since='4am'"
 alias gaax="git add --all; git reset --"
 alias gap="git add --patch"
 alias gcm="git commit -m"
@@ -69,6 +69,5 @@ alias gpanic="TODAY=`date +%Y%m%d`; git checkout -b panic/\$TODAY; git add --all
 alias zrc="$EDITOR ~/.zshrc"
 alias prettyjson='python -m json.tool'
 alias nwrs="sudo service network-manager restart"
-export aliasfile="$HOME/.oh-my-zsh/custom/aliases.sh"
+export aliasfile="${ZSH_CUSTOM}/aliases.sh"
 alias tree="tree -a -I '.git|node_modules|.env|__pycache__'"
-alias grepr="grep -r --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=dist --exclude-dir=.env"
