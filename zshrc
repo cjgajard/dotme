@@ -15,7 +15,7 @@ DISABLE_AUTO_TITLE="true"
 export HISTCONTROL=erasedups
 export EDITOR='vim'
 
-plugins=(autojump debian git grepr history-substring-search pip)
+plugins=(autojump debian git grepr history-substring-search pip zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
