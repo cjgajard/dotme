@@ -4,15 +4,17 @@ Plug 'digitaltoad/vim-pug'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'crusoexia/vim-dracula'
+Plug 'TroyFletcher/vim-colors-synthwave'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 set t_Co=256
 colorscheme dracula
 
 set number relativenumber
-set expandtab tabstop=4 shiftwidth=4
+set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 set splitright splitbelow
-set listchars=tab:•·,trail:~
+set listchars=tab:•·,trail:~,space:·
 set list
 set hlsearch
 autocmd VimEnter * :NoMatchParen
