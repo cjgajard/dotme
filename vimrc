@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'w0rp/ale'
 Plug 'digitaltoad/vim-pug'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -21,6 +22,8 @@ autocmd VimEnter * :NoMatchParen
 
 let g:ctrlp_user_command = 'git ls-files -co --exclude-standard'
 
-hi StatusLineNC ctermfg=231 ctermbg=232 cterm=NONE
-hi StatusLine ctermfg=231 ctermbg=236 cterm=NONE
-hi SpecialKey ctermfg=240 ctermbg=NONE cterm=NONE
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_echo_msg_format='(%linter%) %code%: %s'
