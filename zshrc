@@ -28,11 +28,12 @@ HISTFILE=~/.zsh_history
 # ----------------------------------------------------------
 
 export PATH="$PATH:$HOME/.local/bin"
+export ORIGIN="github.com"
+export ORIGIN_USER="cjgajard"
 
 [[ -f $ZSH_CUSTOM/aliases.sh ]] && . $ZSH_CUSTOM/aliases.sh
 
-# vim
-stty -ixon
+stty -ixon # vim
 
 function __nvm() {
   export NVM_DIR="$HOME/.nvm"

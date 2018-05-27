@@ -1,8 +1,14 @@
 # navigation
 alias cdp="cd ~/Projects"
-alias cds="cd ~/Servisenior"
 # alias cdg="cd ~/.go"
-# alias cdgcj="cd ~/go/src/github.com/cjgajard"
+if [[ $ORIGIN ]]; then
+  alias cdo="cd $HOME/$ORIGIN"
+
+  if [[ $ORIGIN_USER ]]; then
+    alias cdou="cd $HOME/$ORIGIN/$ORIGIN_USER"
+    alias cdgu="cd ~/go/src/$ORIGIN/$ORIGIN_USER"
+  fi
+fi
 
 # django
 alias pms="python manage.py runserver"
