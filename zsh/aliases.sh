@@ -1,4 +1,4 @@
-# navigation
+#: <<'NAVIGATION'
 alias cdp="cd ~/Projects"
 # alias cdg="cd ~/.go"
 if [[ $ORIGIN ]]; then
@@ -10,7 +10,7 @@ if [[ $ORIGIN ]]; then
   fi
 fi
 
-# django
+: <<'DJANGO'
 alias pms="python manage.py runserver"
 alias pms0="python manage.py runserver 0.0.0.0:8000"
 alias pm="python manage.py"
@@ -23,7 +23,9 @@ function pylib() {
   local filename=$(python -c "import $library; print($library.__file__)")
   [[ -n $filename ]] && dirname $filename
 }
+DJANGO
 
+#: <<'GIT'
 # git plugin override
 alias gaa="tput setaf 1; echo \"Don't do that mate\"; tput sgr0"
 unalias gapa
@@ -31,7 +33,7 @@ unalias gcb
 unalias gcd
 unalias gcm
 unalias glp
-# git
+
 function __git_dev_branch() {
   git branch -a --no-color | sed 's/^..//' | awk -F/  '{print $NF}' | grep -E '(dev|develop|development)$' | tail -n 1
 }
@@ -57,23 +59,26 @@ alias glrb="git pull --rebase"
 alias glp="git pull --rebase && git push"
 alias gpanic="TODAY=`date +%Y%m%d`; git checkout -b panic/\$TODAY; git add --all; git commit -m \"[skip ci] panic\"; git push origin panic/\$TODAY"
 
-# rails
-# alias r="rails"
-# alias rk="rake"
-# alias rkrr="rake db:drop db:create db:migrate db:seed"
-# alias rkin="rake db:create db:migrate db:seed"
-# alias rs0="rails server -b 0.0.0.0"
-# alias rps="ps -aux | grep rails"
-# alias rkrg="rake routes | grep "
+: <<'RAILS'
+alias r="rails"
+alias rk="rake"
+alias rkrr="rake db:drop db:create db:migrate db:seed"
+alias rkin="rake db:create db:migrate db:seed"
+alias rs0="rails server -b 0.0.0.0"
+alias rps="ps -aux | grep rails"
+alias rkrg="rake routes | grep "
+RAILS
 
-# react-native
-# alias rn="react-native"
-# alias rnra="react-native run-android"
-# alias rnri="react-native run-ios"
+: <<'REACTNATIVE'
+alias rn="react-native"
+alias rnra="react-native run-android"
+alias rnri="react-native run-ios"
+REACTNATIVE
 
-# misc
-alias zrc="$EDITOR ~/.zshrc"
+#: <<'JAVASCRIPT'
+alias grepj="grepr --js"
+alias findj="findm --js"
+
+#: <<'MISC'
 alias prettyjson='python -m json.tool'
-alias nwrs="sudo service network-manager restart"
-export aliasfile="${ZSH_CUSTOM}/aliases.sh"
 alias tree="tree -a -I '.git|node_modules|.env|__pycache__'"
