@@ -15,7 +15,7 @@ DISABLE_AUTO_TITLE="true"
 export HISTCONTROL=erasedups
 export EDITOR='vim'
 
-plugins=(autojump debian git grepr history-substring-search pip zsh-syntax-highlighting)
+plugins=(autojump findm git grepr history-substring-search pip zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -28,7 +28,7 @@ HISTFILE=~/.zsh_history
 # ----------------------------------------------------------
 
 export PATH="$PATH:$HOME/.local/bin"
-export ORIGIN="github.com"
+export ORIGIN="gitlab.com"
 export ORIGIN_USER="cjgajard"
 
 [[ -f $ZSH_CUSTOM/aliases.sh ]] && . $ZSH_CUSTOM/aliases.sh
