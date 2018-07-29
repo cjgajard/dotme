@@ -1,16 +1,18 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'digitaltoad/vim-pug'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'crusoexia/vim-dracula'
+"Plug 'mxw/vim-jsx'
 Plug 'TroyFletcher/vim-colors-synthwave'
-Plug 'flazz/vim-colorschemes'
+"Plug 'crusoexia/vim-dracula'
+"Plug 'cocopon/iceberg.vim'
+"Plug 'kergoth/vim-hilinks'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
-set t_Co=256
+set term=screen-256color
 colorscheme synthwave
 
 set number relativenumber
@@ -19,8 +21,10 @@ set splitright splitbelow
 set listchars=tab:•·,trail:~,space:·
 set list
 set hlsearch
+set colorcolumn=78
+set wildmenu
 autocmd VimEnter * :NoMatchParen
-nnoremap <c-z> <nop>
+nnoremap <C-z> <nop>
 
 let g:ctrlp_user_command = 'git ls-files -co --exclude-standard'
 
@@ -28,7 +32,16 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-let g:ale_echo_msg_format='(%linter%) %code%: %s'
+let g:ale_echo_msg_format = '(%linter%) %code%: %s'
+nnoremap <C-j> :ALENext<CR>
+
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let NERDTreeIgnore = ['\~$', '.git', 'node_modules', '.cache']
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 hi StatusLineNC cterm=NONE ctermfg=236 ctermbg=60
 hi StatusLine cterm=NONE ctermfg=231 ctermbg=61
+
+hi ExtraWhitespace ctermfg=red cterm=reverse
+match ExtraWhitespace /\s\+$/

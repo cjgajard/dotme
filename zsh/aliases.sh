@@ -1,6 +1,5 @@
 #: <<'NAVIGATION'
 alias cdp="cd ~/Projects"
-# alias cdg="cd ~/.go"
 if [[ $ORIGIN ]]; then
   alias cdo="cd $HOME/$ORIGIN"
 
@@ -33,6 +32,8 @@ unalias gcb
 unalias gcd
 unalias gcm
 unalias glp
+unalias gcan!
+unalias grhh
 
 function __git_dev_branch() {
   git branch -a --no-color | sed 's/^..//' | awk -F/  '{print $NF}' | grep -E '(dev|develop|development)$' | tail -n 1
@@ -50,7 +51,6 @@ alias gaax="git add --all; git reset --"
 alias gap="git add --patch"
 alias gcm="git commit -m"
 alias gcob="git checkout -b"
-alias gcoc="git checkout carlos"
 alias gcof="git checkout -- "
 alias gcom="git checkout master"
 alias gdc="git diff --cached"

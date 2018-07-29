@@ -33,12 +33,15 @@ export ORIGIN_USER="cjgajard"
 
 [[ -f $ZSH_CUSTOM/aliases.sh ]] && . $ZSH_CUSTOM/aliases.sh
 
-stty -ixon # vim
+function __vim() {
+    stty -ixon # vim
+}
 
 function __nvm() {
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+  [[ -d node_modules/.bin ]] && export PATH=$PATH:./node_modules/.bin
 }
 
 function __android() {
@@ -52,13 +55,17 @@ function __venv() {
 }
 
 function __go() {
-    export GOROOT=$HOME/.go/1.10/go
-    export GOPATH=$HOME/go
-    export PATH=$PATH:$GOROOT/bin
+  export GOROOT=/usr/lib/go-1.10
+  export GOPATH=$HOME/go
+  export PATH=$PATH:$GOROOT/bin
+}
+
+function __rust() {
+  export PATH="$PATH:$HOME/.cargo/bin"
 }
 
 # default
-# __android
-# __go
-__venv
+__vim
 __nvm
+__venv
+__go
