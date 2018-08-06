@@ -38,7 +38,7 @@ WINDOW=editor
 tmux rename-window $WINDOW
 tmux split-window -h
 tmux select-pane -t 0
-tmux send-keys 'env $EDITOR' C-m
+tmux send-keys 'editor' C-m
 tmux select-pane -t 1
 
 # open session
