@@ -1,10 +1,11 @@
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
+"Plug 'FredKSchott/CoVim'
 Plug 'digitaltoad/vim-pug'
 Plug 'pangloss/vim-javascript'
 "Plug 'mxw/vim-jsx'
-Plug 'TroyFletcher/vim-colors-synthwave'
+"Plug 'TroyFletcher/vim-colors-synthwave'
 "Plug 'crusoexia/vim-dracula'
 "Plug 'cocopon/iceberg.vim'
 "Plug 'kergoth/vim-hilinks'
@@ -13,7 +14,7 @@ Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 set term=screen-256color
-colorscheme synthwave
+colorscheme patagonia
 
 set number relativenumber
 set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
@@ -38,10 +39,4 @@ nnoremap <C-j> :ALENext<CR>
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let NERDTreeIgnore = ['\~$', '.git', 'node_modules', '.cache']
-nnoremap <C-n> :NERDTreeToggle<CR>
-
-hi StatusLineNC cterm=NONE ctermfg=236 ctermbg=60
-hi StatusLine cterm=NONE ctermfg=231 ctermbg=61
-
-hi ExtraWhitespace ctermfg=red cterm=reverse
-match ExtraWhitespace /\s\+$/
+nnoremap <C-n>t :NERDTreeToggle<CR>
