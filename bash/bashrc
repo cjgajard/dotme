@@ -1,0 +1,15 @@
+# SETUP
+# ------
+export CARLSH="$HOME/gitlab.com/cjgajard/configfiles"
+
+library=(grepr mfind)
+plugin=(colorauto ls nvm)
+
+PS1='\[\e[00;36m\]\A \[\e[01;34m\]\W\[\e[00m\]\$ '
+source $CARLSH/bash/loader.sh
+
+# BASH SETTING
+# ------------
+shopt -s histappend
+HISTCONTROL=ignoreboth
+HISTSIZE=1000
