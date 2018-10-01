@@ -2,8 +2,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 "Plug 'FredKSchott/CoVim'
-Plug 'digitaltoad/vim-pug'
-Plug 'pangloss/vim-javascript'
+"Plug 'digitaltoad/vim-pug'
+"Plug 'pangloss/vim-javascript'
 "Plug 'mxw/vim-jsx'
 "Plug 'TroyFletcher/vim-colors-synthwave'
 "Plug 'crusoexia/vim-dracula'
@@ -24,6 +24,7 @@ set list
 set hlsearch
 set colorcolumn=78
 set wildmenu
+set formatoptions-=o
 autocmd VimEnter * :NoMatchParen
 nnoremap <C-z> <nop>
 
