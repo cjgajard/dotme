@@ -20,7 +20,7 @@ colorscheme patagonia
 set number relativenumber
 set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 set splitright splitbelow
-set listchars=tab:•·,trail:~,space:·
+set listchars=tab:·\ ,trail:~,space:·
 set list
 set hlsearch
 set colorcolumn=78
