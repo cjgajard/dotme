@@ -24,7 +24,7 @@ set listchars=tab:·\ ,trail:~,space:·
 set list
 set hlsearch
 set colorcolumn=78
-set wildmenu
+set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p]
 set formatoptions-=o
 autocmd VimEnter * :NoMatchParen
 nnoremap <C-z> <nop>
