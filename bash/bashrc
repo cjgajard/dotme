@@ -2,8 +2,8 @@
 # ------
 export CARLSH="$HOME/gitlab.com/cjgajard/configfiles"
 
-library=(mfind)
-plugin=(autojump colorauto ls nvm)
+library=(mfind python)
+plugin=(autojump colorauto ls nvm django)
 
 PS1='\[\e[01;34m\]\W\[\e[00m\]\$ '
 source $CARLSH/bash/loader.sh
