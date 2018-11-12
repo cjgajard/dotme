@@ -3,7 +3,7 @@
 export CARLSH="$HOME/gitlab.com/cjgajard/configfiles"
 
 library=(mfind python)
-plugin=(autojump colorauto ls nvm django)
+plugin=(autojump colorauto ls nvm django rbenv rails)
 
 PS1='\[\e[01;34m\]\W\[\e[00m\]\$ '
 source $CARLSH/bash/loader.sh
