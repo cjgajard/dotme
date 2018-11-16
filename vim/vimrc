@@ -5,6 +5,7 @@ Plug 'w0rp/ale'
 "Plug 'digitaltoad/vim-pug'
 "Plug 'pangloss/vim-javascript'
 "Plug 'mxw/vim-jsx'
+Plug 'kchmck/vim-coffee-script'
 "Plug 'kergoth/vim-hilinks'
 "Plug 'TroyFletcher/vim-colors-synthwave'
 "Plug 'crusoexia/vim-dracula'
@@ -24,7 +25,7 @@ set listchars=tab:·\ ,trail:~,space:·
 set list
 set hlsearch
 set colorcolumn=78
-set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p]
+set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 set formatoptions-=o
 autocmd VimEnter * :NoMatchParen
 nnoremap <C-z> <nop>
@@ -36,9 +37,12 @@ let g:ale_lint_on_enter = 0
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_echo_msg_format = '(%linter%) %code%: %s'
-nnoremap <C-j> :ALENext<CR>
+nnoremap <leader>al :ALELint<CR>
+nnoremap <leader>aj :ALENext<CR>
+nnoremap <leader>ak :ALEPrevious<CR>
 
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
-let NERDTreeIgnore = ['\~$', '.git', 'node_modules', '.cache']
+let NERDTreeIgnore = ['\~$', '.git$', 'node_modules', '.cache', '.sublime-',
+    \'.keep$']
 nnoremap <C-n>t :NERDTreeToggle<CR>

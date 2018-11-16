@@ -2,7 +2,7 @@
 # ------
 export CARLSH="$HOME/gitlab.com/cjgajard/configfiles"
 
-library=(mfind python)
+library=(mfind python ruby)
 plugin=(autojump colorauto ls nvm django rbenv rails)
 
 PS1='\[\e[01;34m\]\W\[\e[00m\]\$ '
