@@ -1,6 +1,6 @@
 # SETUP
 # ------
-export CARLSH="$HOME/gitlab.com/cjgajard/configfiles"
+export CARLSH="$HOME/github.com/cjgajard/configfiles"
 
 library=(mfind python ruby)
 plugin=(autojump colorauto ls nvm django rbenv rails)

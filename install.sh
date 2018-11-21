@@ -16,6 +16,9 @@ configfolder_install() {
 
 configfolder_vim() {
     configfolder_install $CONFIGFOLDER/vim/vimrc $HOME/.vimrc
+    mkdir -p $HOME/.vim/after
+    configfolder_install $CONFIGFOLDER/vim/ftplugin $HOME/.vim/after/ftplugin
+    sudo update-alternatives --config editor
 }
 
 configfolder_bash() {
@@ -31,9 +34,18 @@ configfolder_tmux() {
     configfolder_install $CONFIGFOLDER/tmux/tmux.conf $HOME/.tmux.conf
 }
 
+configfolder_ask() {
+    read -p "$1 [y|N]" -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        return 1
+    fi
+    return 0
+}
+
 if [ $0 == "$BASH_SOURCE" ]; then
-    configfolder_vim
-    configfolder_bash
-    configfolder_zsh
-    configfolder_tmux
+    configfolder_ask "Install vim?" && configfolder_vim
+    configfolder_ask "Install bash?" && configfolder_bash
+    configfolder_ask "Install zsh?" && configfolder_zsh
+    configfolder_ask "Install tmux?" && configfolder_tmux
 fi
