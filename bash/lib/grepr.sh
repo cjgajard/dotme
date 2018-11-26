@@ -17,6 +17,10 @@ grepr() {
                 params+="--exclude-dir=migrations"
                 params+="--exclude-dir=static"
                 ;;
+            --rails)
+                params+="--exclude-dir=log"
+                params+="--exclude-dir=tmp"
+                ;;
             --js)
                 params+="--exclude-dir=node_modules"
                 params+="--exclude=package-lock.json"
