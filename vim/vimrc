@@ -20,10 +20,9 @@ set term=screen-256color
 colorscheme patagonia
 
 set number relativenumber
-set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=8 softtabstop=2 shiftwidth=2 expandtab
 set splitright splitbelow
-set listchars=tab:·\ ,trail:~,space:·
-set list
+set list listchars=tab:·\ ,trail:~,space:·
 set hlsearch
 set colorcolumn=78
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
