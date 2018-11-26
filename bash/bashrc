@@ -3,8 +3,8 @@
 bashrc_sourcefile=$(readlink -f ${BASH_SOURCE})
 export CARLSH="${bashrc_sourcefile%/*/*}"
 
-library=(mfind python ruby)
-plugin=(autojump colorauto ls nvm django rbenv rails)
+library=(mfind ruby)
+plugin=(autojump colorauto ls nvm rbenv rails)
 
 PS1='\[\e[01;34m\]\W\[\e[00m\]\$ '
 source $CARLSH/bash/loader.sh
@@ -18,3 +18,4 @@ HISTSIZE=1000
 # USER
 # ----
 export PATH="$PATH:$HOME/.local/bin"
+export ALW='--color=always'
