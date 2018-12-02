@@ -1,6 +1,7 @@
 # SETUP
 # ------
-export CARLSH="$HOME/github.com/cjgajard/configfiles"
+bashrc_sourcefile=$(readlink -f ${BASH_SOURCE})
+export CARLSH="${bashrc_sourcefile%/*/*}"
 
 library=(mfind python ruby)
 plugin=(autojump colorauto ls nvm django rbenv rails)
