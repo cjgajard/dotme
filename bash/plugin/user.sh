@@ -4,9 +4,10 @@ alias rnra="react-native run-android"
 alias rnri="react-native run-ios"
 REACTNATIVE
 
-#: <<'JAVASCRIPT'
+: <<'JAVASCRIPT'
 alias grepj="grepr --js"
 alias findj="findm --js"
+JAVASCRIPT
 
 #: <<'MISC'
 alias prettyjson='python3 -m json.tool'
