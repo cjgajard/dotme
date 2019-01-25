@@ -47,4 +47,4 @@ let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let NERDTreeIgnore = ['\~$', '.git$', 'node_modules', '.cache', '.sublime-',
     \'.keep$']
-nnoremap <C-n>t :NERDTreeToggle<CR>
+nnoremap <C-t>t :NERDTreeToggle<CR>
