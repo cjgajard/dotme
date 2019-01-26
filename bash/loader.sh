@@ -27,6 +27,10 @@ __smart_bash_plugins() {
     echo 'nvm'
     echo 'js'
   fi
+
+  if [[ -f 'AndroidManifest.xml' ]]; then
+    echo 'android-tools'
+  fi
 }
 
 smart_plugins=()

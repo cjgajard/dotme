@@ -1,10 +1,8 @@
 call plug#begin('~/.vim/plugged')
+"Plug 'FredKSchott/CoVim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
-"Plug 'FredKSchott/CoVim'
-"Plug 'digitaltoad/vim-pug'
-"Plug 'pangloss/vim-javascript'
-"Plug 'mxw/vim-jsx'
+
 "Plug 'kchmck/vim-coffee-script'
 "Plug 'rhysd/vim-crystal'
 "Plug 'kergoth/vim-hilinks'
@@ -12,6 +10,10 @@ Plug 'w0rp/ale'
 "Plug 'crusoexia/vim-dracula'
 "Plug 'cocopon/iceberg.vim'
 Plug 'cjgajard/patagonia-vim'
+"Plug 'TroyFletcher/vim-colors-synthwave'
+"Plug 'crusoexia/vim-dracula'
+"Plug 'kergoth/vim-hilinks'
+
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
@@ -27,11 +29,14 @@ set hlsearch
 set colorcolumn=78
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 set formatoptions-=o
+set backupcopy=yes
 autocmd VimEnter * :NoMatchParen
 nnoremap <C-z> <nop>
 
+"ctrlpvim/ctrlp.vim
 let g:ctrlp_user_command = 'git ls-files -co --exclude-standard'
 
+"w0rp/ale
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_set_loclist = 0
@@ -42,8 +47,11 @@ nnoremap <leader>aj :ALENext<CR>
 nnoremap <leader>ak :ALEPrevious<CR>
 nnoremap <leader>ad :ALEDetail<CR>
 
+"scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
+
+"scrooloose/nerdtree
 let NERDTreeIgnore = ['\~$', '.git$', 'node_modules', '.cache', '.sublime-',
     \'.keep$']
 nnoremap <C-n>t :NERDTreeToggle<CR>
