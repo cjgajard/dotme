@@ -30,6 +30,7 @@ set colorcolumn=78
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 set formatoptions-=o
 set backupcopy=yes
+set laststatus=2
 autocmd VimEnter * :NoMatchParen
 nnoremap <C-z> <nop>
 
