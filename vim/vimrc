@@ -2,18 +2,15 @@ call plug#begin('~/.vim/plugged')
 "Plug 'FredKSchott/CoVim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
-
+Plug 'tpope/vim-surround'
 "Plug 'kchmck/vim-coffee-script'
-"Plug 'rhysd/vim-crystal'
+"Plug 'pangloss/vim-javascript'
+"Plug 'mxw/vim-jsx'
+Plug 'rhysd/vim-crystal'
 "Plug 'kergoth/vim-hilinks'
-"Plug 'TroyFletcher/vim-colors-synthwave'
-"Plug 'crusoexia/vim-dracula'
-"Plug 'cocopon/iceberg.vim'
 Plug 'cjgajard/patagonia-vim'
-"Plug 'TroyFletcher/vim-colors-synthwave'
 "Plug 'crusoexia/vim-dracula'
-"Plug 'kergoth/vim-hilinks'
-
+"Plug 'TroyFletcher/vim-colors-synthwave'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
@@ -55,4 +52,4 @@ let g:NERDDefaultAlign = 'left'
 "scrooloose/nerdtree
 let NERDTreeIgnore = ['\~$', '.git$', 'node_modules', '.cache', '.sublime-',
     \'.keep$']
-nnoremap <C-n>t :NERDTreeToggle<CR>
+nnoremap <C-t>t :NERDTreeToggle<CR>

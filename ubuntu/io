@@ -1,0 +1,65 @@
+// Common programmer alphabet layout
+
+default partial
+xkb_symbols "basic" {
+
+  // 0123456789~`
+  // :@#=\%^|$!{}
+  key <TLDE> { [ grave, asciitilde ] };
+  key <AE01> { [ colon, 0 ] };
+  key <AE02> { [ at, 1 ] };
+  key <AE03> { [ numbersign, 2 ] };
+  key <AE04> { [ equal, 3 ] };
+  key <AE05> { [ backslash, 4 ] };
+  key <AE06> { [ percent, 5 ] };
+  key <AE07> { [ asciicircum, 6 ] };
+  key <AE08> { [ bar, 7 ] };
+  key <AE09> { [ dolar, 8 ] };
+  key <AE10> { [ exclam, 9 ] };
+  key <AE11> { [ braceleft, asciitilde ] };
+  key <AE12> { [ braceright, grave ] };
+
+  // JULPZQFDCX[]
+  // julpzqfdcx()
+  key <AD01> { [ j, J, ] };
+  key <AD02> { [ u, U, ] };
+  key <AD03> { [ l, L, ] };
+  key <AD04> { [ p, P, ] };
+  key <AD05> { [ z, Z, ] };
+  key <AD06> { [ q, Q, ] };
+  key <AD07> { [ f, F, ] };
+  key <AD08> { [ d, D, ] };
+  key <AD09> { [ c, C, ] };
+  key <AD10> { [ x, X, ] };
+  key <AD11> { [ parenleft, bracketleft ] };
+  key <AD12> { [ parenright, bracketright ] };
+
+  // EIAOGHNSRT'?
+  // eiaoghnsrt"/
+  key <AC01> { [ e, e ] };
+  key <AC02> { [ i, i ] };
+  key <AC03> { [ a, a ] };
+  key <AC04> { [ o, o ] };
+  key <AC05> { [ g, G ] };
+  key <AC06> { [ h, H ] };
+  key <AC07> { [ n, N ] };
+  key <AC08> { [ s, S ] };
+  key <AC09> { [ r, R ] };
+  key <AC10> { [ t, T ] };
+  key <AC11> { [ quotedbl, apostrophe ] };
+  key <AC12> { [ slash, question ] };
+
+  // +-BMVWYK<>
+  // ;_bmvwyk,.
+  key <BKSL> { [ backslash, bar, dead_grave, dead_breve ] };
+  key <AB01> { [ semicolon, plus ] };
+  key <AB02> { [ underscore, minus ] };
+  key <AB03> { [ b, B ] };
+  key <AB04> { [ m, M ] };
+  key <AB05> { [ v, V ] };
+  key <AB06> { [ w, W ] };
+  key <AB07> { [ y, Y ] };
+  key <AB08> { [ k, K, k ] };
+  key <AB09> { [ comma, less ] };
+  key <AB10> { [ period, greater ] };
+};
