@@ -14,7 +14,13 @@ configfolder_install() {
     ln -s $1 $2
 }
 
+configfolder_vimplug() {
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+}
+
 configfolder_vim() {
+    configfolder_vimplug
     configfolder_install $CONFIGFOLDER/vim/vimrc $HOME/.vimrc
     mkdir -p $HOME/.vim/after
     configfolder_install $CONFIGFOLDER/vim/ftplugin $HOME/.vim/after/ftplugin
