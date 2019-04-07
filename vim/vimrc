@@ -51,5 +51,5 @@ let g:NERDDefaultAlign = 'left'
 
 "scrooloose/nerdtree
 let NERDTreeIgnore = ['\~$', '.git$', 'node_modules', '.cache', '.sublime-',
-    \'.keep$']
+    \'.keep$', '\.sw.$']
 nnoremap <C-t>t :NERDTreeToggle<CR>
