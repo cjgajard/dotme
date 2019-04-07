@@ -1,12 +1,12 @@
 # SETUP
-# ------
+# -----
 bashrc_sourcefile=$(readlink -f ${BASH_SOURCE})
 export CARLSH="${bashrc_sourcefile%/*/*}"
 
 library=(git mfind ruby)
 plugin=(autojump colorauto ls)
-theme="dual"
 smart_plugin=true
+theme="dual"
 source $CARLSH/bash/loader.sh
 
 # BASH SETTING
