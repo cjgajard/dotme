@@ -3,6 +3,7 @@ echo -n 'Insert your email: '; read email
 git config --global user.email $email
 git config --global alias.ap 'add --patch'
 git config --global alias.co 'checkout'
+git config --global alias.cob 'checkout -b'
 git config --global alias.cof 'checkout --'
 git config --global alias.logx 'log --graph --oneline'
 git config --global alias.st 'status'
