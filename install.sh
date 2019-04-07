@@ -24,7 +24,8 @@ configfolder_vim() {
     configfolder_install $CONFIGFOLDER/vim/vimrc $HOME/.vimrc
     mkdir -p $HOME/.vim/after
     configfolder_install $CONFIGFOLDER/vim/ftplugin $HOME/.vim/after/ftplugin
-    sudo update-alternatives --config editor
+    echo '/usr/bin/editor' $(update-alternatives --display editor |
+      grep currently | cut -d' ' -f4-)
 }
 
 configfolder_bash() {
