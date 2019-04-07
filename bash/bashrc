@@ -3,11 +3,10 @@
 bashrc_sourcefile=$(readlink -f ${BASH_SOURCE})
 export CARLSH="${bashrc_sourcefile%/*/*}"
 
-library=(mfind ruby)
+library=(git mfind ruby)
 plugin=(autojump colorauto ls)
+theme="dual"
 smart_plugin=true
-
-PS1='\[\e[01;34m\]\W\[\e[00m\]\$ '
 source $CARLSH/bash/loader.sh
 
 # BASH SETTING
@@ -18,4 +17,4 @@ HISTSIZE=1000
 
 # USER
 # ----
-export ALW='--color=always'
+PATH="$PATH:$HOME/.local/bin"

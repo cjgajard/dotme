@@ -42,3 +42,6 @@ plugin=(${smart_plugins[@]} ${plugin[@]} user)
 for i in ${plugin[@]}; do
   __load_bash_plugin $i
 done
+
+[[ -n $theme ]] && . $CARLSH/bash/theme/$theme.sh
+PS1=$(echo "$THEME_PROMPT")
