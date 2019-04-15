@@ -27,7 +27,6 @@ HISTFILE=~/.zsh_history
 
 # ----------------------------------------------------------
 
-export PATH="$PATH:$HOME/.local/bin"
 export ORIGIN="gitlab.com"
 export ORIGIN_USER="cjgajard"
 

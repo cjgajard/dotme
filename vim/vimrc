@@ -3,14 +3,18 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
+
+Plug 'digitaltoad/vim-pug'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 "Plug 'kchmck/vim-coffee-script'
-"Plug 'pangloss/vim-javascript'
-"Plug 'mxw/vim-jsx'
-Plug 'rhysd/vim-crystal'
 "Plug 'kergoth/vim-hilinks'
+"Plug 'rhysd/vim-crystal'
+
 Plug 'cjgajard/patagonia-vim'
 "Plug 'crusoexia/vim-dracula'
 "Plug 'TroyFletcher/vim-colors-synthwave'
+
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
@@ -28,7 +32,6 @@ set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 set formatoptions-=o
 set backupcopy=yes
 set laststatus=2
-autocmd VimEnter * :NoMatchParen
 nnoremap <C-z> <nop>
 
 "ctrlpvim/ctrlp.vim
