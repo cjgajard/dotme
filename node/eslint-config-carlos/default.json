@@ -1,0 +1,40 @@
+{
+  "extends": [
+    "eslint:recommended"
+  ],
+  "rules": {
+    "array-bracket-spacing": ["warn", "never"],
+    "array-bracket-newline": ["warn", "consistent"],
+    "block-spacing": ["warn", "always"],
+    "comma-dangle": ["warn", "always-multiline"],
+    "comma-spacing": ["warn", {
+      "after": true,
+      "before": false
+    }],
+    "computed-property-spacing": ["warn", "never"],
+    "func-call-spacing": ["warn", "never"],
+    "indent": ["error", 2, {
+      "SwitchCase": 1
+    }],
+    "key-spacing": ["warn", {
+      "afterColon": true,
+      "beforeColon": false,
+      "mode": "strict"
+    }],
+    "keyword-spacing": ["warn", {
+      "after": true,
+      "before": true
+    }],
+    "linebreak-style": ["error", "unix"],
+    "lines-between-class-members": ["warn", "always"],
+    "no-lonely-if": "warn",
+    "object-curly-spacing": ["warn", "always"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "space-before-function-paren": ["warn", {
+      "anonymous": "always",
+      "asyncArrow": "always",
+      "named": "never"
+    }]
+  }
+}
