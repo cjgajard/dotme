@@ -47,6 +47,7 @@ nnoremap <leader>al :ALELint<CR>
 nnoremap <leader>aj :ALENext<CR>
 nnoremap <leader>ak :ALEPrevious<CR>
 nnoremap <leader>ad :ALEDetail<CR>
+nnoremap <leader>af :ALEFix<CR>
 
 "scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1
