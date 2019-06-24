@@ -4,16 +4,20 @@ mfind() {
     local exclude=()
     local look_for_hidden=false
 
+    exclude+=' -not -path "./*node_modules/*"'
+    exclude+=' -not -path "./.git/*"'
+
     for s in $*
     do
         case $s in
             --django)
-                exclude+="-not -path \"./.env/*\""
-                exclude+='-not -path "./node_modules/*"'
-                exclude+='-not -path "./CACHE/*"'
+                exclude+=' -not -path "./.env/*"'
+                exclude+=' -not -path "./CACHE/*"'
                 ;;
             --js)
-                exclude+='-not -path "./node_modules/*"'
+                exclude+=' -not -path "./dist/*"'
+                exclude+=' -not -path "./static/*"'
+                exclude+=' -not -path "./.cache/*"'
                 ;;
             -e)
                 look_for_extension=true
