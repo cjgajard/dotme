@@ -2,6 +2,9 @@
   "extends": [
     "eslint:recommended"
   ],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
   "rules": {
     "array-bracket-spacing": ["warn", "never"],
     "array-bracket-newline": ["warn", "consistent"],
@@ -27,8 +30,18 @@
     }],
     "linebreak-style": ["error", "unix"],
     "lines-between-class-members": ["warn", "always"],
+    "no-else-return": ["error", {
+      "allowElseIf": false
+    }],
     "no-lonely-if": "warn",
+    "no-trailing-spaces": ["error", {
+      "skipBlankLines": false,
+      "ignoreComments": false
+    }],
+    "no-useless-call": "error",
+    "no-useless-return": "error",
     "object-curly-spacing": ["warn", "always"],
+    "padded-blocks": ["warn", "never"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "space-before-function-paren": ["warn", {
