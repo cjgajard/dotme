@@ -7,6 +7,7 @@ Plug 'tpope/vim-surround'
 Plug 'digitaltoad/vim-pug'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue'
 "Plug 'kchmck/vim-coffee-script'
 "Plug 'kergoth/vim-hilinks'
 "Plug 'rhysd/vim-crystal'
@@ -43,6 +44,10 @@ let g:ale_lint_on_enter = 0
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_echo_msg_format = '(%linter%) %code%: %s'
+let g:ale_fixers = {
+\   'vue': ['prettier'],
+\   'javascript': ['prettier'],
+\ }
 nnoremap <leader>al :ALELint<CR>
 nnoremap <leader>aj :ALENext<CR>
 nnoremap <leader>ak :ALEPrevious<CR>
@@ -57,3 +62,6 @@ let g:NERDDefaultAlign = 'left'
 let NERDTreeIgnore = ['\~$', '.git$', 'node_modules', '.cache', '.sublime-',
     \'.keep$', '\.sw.$']
 nnoremap <C-t>t :NERDTreeToggle<CR>
+
+"posva/vim-vue
+let g:vue_disable_pre_processors=1
