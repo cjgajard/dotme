@@ -4,24 +4,20 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 
-Plug 'digitaltoad/vim-pug'
-Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-Plug 'posva/vim-vue'
-"Plug 'kchmck/vim-coffee-script'
-"Plug 'kergoth/vim-hilinks'
-"Plug 'rhysd/vim-crystal'
+Plug 'mxw/vim-jsx'
 
-Plug 'cjgajard/patagonia-vim'
+"Plug 'cjgajard/patagonia-vim'
 "Plug 'crusoexia/vim-dracula'
-"Plug 'TroyFletcher/vim-colors-synthwave'
+Plug 'TroyFletcher/vim-colors-synthwave'
+"Plug 'kergoth/vim-hilinks'
 
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 set term=screen-256color
-colorscheme patagonia
+colorscheme synthwave
 
 set number relativenumber
 set tabstop=8 softtabstop=2 shiftwidth=2 expandtab
@@ -35,18 +31,21 @@ set backupcopy=yes
 set laststatus=2
 nnoremap <C-z> <nop>
 
+"ftplugin
+let c_syntax_for_h = 1
+
 "ctrlpvim/ctrlp.vim
 let g:ctrlp_user_command = 'git ls-files -co --exclude-standard'
 
 "w0rp/ale
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_echo_msg_format = '(%linter%) %code%: %s'
 let g:ale_fixers = {
-\   'vue': ['prettier'],
-\   'javascript': ['prettier'],
+\   'javascript': ['eslint'],
 \ }
 nnoremap <leader>al :ALELint<CR>
 nnoremap <leader>aj :ALENext<CR>
@@ -57,11 +56,9 @@ nnoremap <leader>af :ALEFix<CR>
 "scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
+let g:NERDCustomDelimiters = { 'c': { 'left': '//', 'right': '' } }
 
 "scrooloose/nerdtree
 let NERDTreeIgnore = ['\~$', '.git$', 'node_modules', '.cache', '.sublime-',
-    \'.keep$', '\.sw.$']
+    \'.keep$', '.sw.$', 'dist', '.o$', '.out$']
 nnoremap <C-t>t :NERDTreeToggle<CR>
-
-"posva/vim-vue
-let g:vue_disable_pre_processors=1
