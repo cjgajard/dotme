@@ -19,16 +19,20 @@ call plug#end()
 set term=screen-256color
 colorscheme synthwave
 
-set number relativenumber
-set tabstop=8 softtabstop=2 shiftwidth=2 expandtab
-set splitright splitbelow
-set list listchars=tab:·\ ,trail:~,space:·
-set hlsearch
-set colorcolumn=78
-set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
-set formatoptions-=o
 set backupcopy=yes
+set colorcolumn=+1,+2
+set expandtab shiftwidth=2 softtabstop=2 tabstop=8
+set fillchars=stl:·,stlnc:–,vert:\|,fold:–
+set foldcolumn=1
+set formatoptions-=o
+set hlsearch
 set laststatus=2
+set list listchars=tab:·\ ,trail:~,space:·
+set number relativenumber
+set numberwidth=2
+set splitright splitbelow
+set textwidth=78
+set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 nnoremap <C-z> <nop>
 
 "ftplugin
@@ -59,6 +63,6 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = { 'c': { 'left': '//', 'right': '' } }
 
 "scrooloose/nerdtree
-let NERDTreeIgnore = ['\~$', '.git$', 'node_modules', '.cache', '.sublime-',
-    \'.keep$', '.sw.$', 'dist', '.o$', '.out$']
+let NERDTreeIgnore = ['\~$', '\.git$', 'node_modules', '\.cache', '\.sublime-',
+    \'\.keep$', '\.sw.$', 'dist', '\.o$', '\.out$']
 nnoremap <C-t>t :NERDTreeToggle<CR>
