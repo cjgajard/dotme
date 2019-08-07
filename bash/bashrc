@@ -3,7 +3,7 @@
 bashrc_sourcefile=$(readlink -f ${BASH_SOURCE})
 export CARLSH="${bashrc_sourcefile%/*/*}"
 
-library=(git mfind ruby)
+library=(git mfind)
 plugin=(autojump colorauto ls)
 smart_plugin=true
 theme="dual"
