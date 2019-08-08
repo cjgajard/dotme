@@ -16,6 +16,7 @@ configfolder_vim() {
   configfolder_ask "Install vimplug?" && configfolder_vimplug
   configfolder_install vim/vimrc $HOME/.vimrc
   configfolder_install vim/ftplugin $HOME/.vim/after/ftplugin
+  configfolder_install vim/syntax $HOME/.vim/after/syntax
   configfolder_install vim/ftdetect $HOME/.vim/ftdetect
   configfolder_set_editor
   vim +PlugInstall +qall
