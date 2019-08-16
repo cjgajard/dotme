@@ -14,7 +14,3 @@ source $CARLSH/bash/loader.sh
 shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
-
-# USER
-# ----
-export PATH="$(systemd-path user-binaries):$PATH"

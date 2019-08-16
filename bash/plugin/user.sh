@@ -7,3 +7,4 @@ REACTNATIVE
 #: <<'MISC'
 alias prettyjson='python3 -m json.tool'
 alias tree="tree -a -I '.git|node_modules|.env|__pycache__'"
+#export PATH="$(systemd-path user-binaries):$PATH"
