@@ -24,7 +24,6 @@ __smart_bash_plugins() {
 # [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # load libraries
-. $CARLSH/bash/lib/base.sh
 for i in ${library[@]}; do
   if [ -f $CARLSH/bash/lib/$i.sh ]; then
     . $CARLSH/bash/lib/$i.sh
@@ -44,5 +43,8 @@ for i in ${plugin[@]}; do
 done
 
 # load theme
-[[ -n $theme ]] && . $CARLSH/bash/theme/$theme.sh
-PS1=$THEME_PROMPT
+if [ -n "$theme" ]; then
+  . $CARLSH/bash/lib/theme.sh
+  [[ -f $CARLSH/bash/theme/$theme.sh ]] && . $CARLSH/bash/theme/$theme.sh
+  PS1=$THEME_PROMPT
+fi

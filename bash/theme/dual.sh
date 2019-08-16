@@ -14,3 +14,7 @@ THEME_PROMPT="${a}\\W${r}"
 theme_prompt_addif '$(git_prompt_info)' " $b" $r
 theme_prompt_addif '$(git_prompt_status)' "$b($r$a" "$b)$r"
 THEME_PROMPT="$THEME_PROMPT\\$ "
+
+unset r
+unset a
+unset b
