@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 "Plug 'FredKSchott/CoVim'
+Plug 'cjgajard/toggleset.vim', { 'on': 'MapToggleSet' }
 "Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'kergoth/vim-hilinks'
 Plug 'tpope/vim-surround'
@@ -33,6 +34,10 @@ nnoremap <C-z> <nop>
 
 "ftplugin
 let c_syntax_for_h = 1
+
+"cjgajard/toggleset-vim
+MapToggleSet n number relativenumber
+MapToggleSet l list
 
 "ctrlpvim/ctrlp.vim
 let g:ctrlp_user_command = 'git ls-files -co --exclude-standard'
