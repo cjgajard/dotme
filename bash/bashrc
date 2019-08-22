@@ -1,13 +1,12 @@
 # SETUP
 # -----
-bashrc_sourcefile=$(readlink -f ${BASH_SOURCE})
-export CARLSH="${bashrc_sourcefile%/*/*}"
+export REPO="$HOME/Repository"
 
 library=(git mfind)
 plugin=(autojump colorauto ls)
 smart_plugin=true
 theme="dual"
-source $CARLSH/bash/loader.sh
+source $REPO/cjgajard/configfiles/bash/loader.sh
 
 # BASH
 # ----

@@ -1,6 +1,8 @@
+CONFIGFOLDER="$(cd `dirname ${BASH_SOURCE}`/..; pwd -P)"
+
 __bash_plugin() {
-  if [ -f $CARLSH/bash/plugin/$1.sh ]; then
-    source $CARLSH/bash/plugin/$1.sh
+  if [ -f $CONFIGFOLDER/bash/plugin/$1.sh ]; then
+    source $CONFIGFOLDER/bash/plugin/$1.sh
   fi
 }
 
@@ -25,8 +27,8 @@ __smart_bash_plugins() {
 
 # load libraries
 for i in ${library[@]}; do
-  if [ -f $CARLSH/bash/lib/$i.sh ]; then
-    . $CARLSH/bash/lib/$i.sh
+  if [ -f $CONFIGFOLDER/bash/lib/$i.sh ]; then
+    . $CONFIGFOLDER/bash/lib/$i.sh
   fi
 done
 
@@ -44,7 +46,9 @@ done
 
 # load theme
 if [ -n "$theme" ]; then
-  . $CARLSH/bash/lib/theme.sh
-  [[ -f $CARLSH/bash/theme/$theme.sh ]] && . $CARLSH/bash/theme/$theme.sh
+  . $CONFIGFOLDER/bash/lib/theme.sh
+  if [ -f $CONFIGFOLDER/bash/theme/$theme.sh ]; then
+    . $CONFIGFOLDER/bash/theme/$theme.sh
+  fi
   PS1=$THEME_PROMPT
 fi
