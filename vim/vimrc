@@ -20,18 +20,14 @@ set term=screen-256color
 colorscheme patagonia
 
 set backupcopy=yes
-set colorcolumn=+1,+2
 set expandtab shiftwidth=2 softtabstop=2 tabstop=8
 set fillchars=stl:·,stlnc:–,vert:\|,fold:–
-set foldcolumn=1
-set formatoptions-=o
 set hlsearch
 set laststatus=2
 set list listchars=tab:·\ ,trail:~,space:·
-set number relativenumber
 set numberwidth=2
 set splitright splitbelow
-set textwidth=78
+set textwidth=80 colorcolumn=+1,+2
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 nnoremap <C-z> <nop>
 
