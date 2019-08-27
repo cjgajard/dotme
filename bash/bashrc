@@ -1,3 +1,8 @@
+case $- in
+  *i*) ;;
+  *) return;;
+esac
+
 # SETUP
 # -----
 export REPO="$HOME/Repository"
@@ -13,3 +18,4 @@ source $REPO/cjgajard/configfiles/bash/loader.sh
 shopt -s histappend
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
+HISTFILESIZE=2000
