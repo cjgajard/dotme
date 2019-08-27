@@ -28,6 +28,7 @@ set laststatus=2
 set list listchars=tab:·\ ,trail:~,space:·
 set numberwidth=2
 set splitright splitbelow
+set statusline=%<%f%m%r%=%y%l,%c%V
 set textwidth=80 colorcolumn=+1,+2
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 nnoremap <C-z> <nop>
@@ -38,6 +39,7 @@ let c_syntax_for_h = 1
 "cjgajard/toggleset-vim
 MapToggleSet n number relativenumber
 MapToggleSet l list
+MapToggleSet p paste
 
 "ctrlpvim/ctrlp.vim
 let g:ctrlp_user_command = 'git ls-files -co --exclude-standard'
@@ -66,4 +68,4 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '//', 'right': '' } }
 "scrooloose/nerdtree
 let NERDTreeIgnore = ['\~$', '\.git$', 'node_modules', '\.cache', '\.sublime-',
     \'\.keep$', '\.sw.$', 'dist', '\.o$', '\.out$']
-nnoremap <C-t>t :NERDTreeToggle<CR>
+nnoremap <C-n>t :NERDTreeToggle<CR>
