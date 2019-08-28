@@ -8,10 +8,11 @@ configfolder_git() {
   git config --global alias.co 'checkout'
   git config --global alias.cob 'checkout -b'
   git config --global alias.cof 'checkout --'
+  git config --global alias.ds 'diff --staged'
   git config --global alias.lc '!git log --oneline | head -n1'
   git config --global alias.logx 'log --graph --oneline'
   git config --global alias.st 'status'
-  ln -s $CONFIGFOLDER/git/gitignore ~/.gitignore
+  configfolder_install git/gitignore ~/.gitignore
   git config --global core.excludesfile ~/.gitignore
 }
 
