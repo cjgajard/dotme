@@ -5,7 +5,7 @@ esac
 
 # SETUP
 # -----
-export REPO="$HOME/Repository"
+export REPO="$HOME/Documents"
 
 library=(git mfind)
 plugin=(autojump colorauto ls)
