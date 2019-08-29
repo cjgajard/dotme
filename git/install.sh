@@ -6,7 +6,8 @@ configfolder_git() {
   git config --global core.editor vim
 
   git config --global user.name 'Carlos Gajardo'
-  echo -n 'Insert your email: '; read email
+  echo -n 'Insert your email: '
+  read email
   if [ -n "$email" ]; then
     git config --global user.email $email
   fi
@@ -18,6 +19,7 @@ configfolder_git() {
   git config --global alias.ds 'diff --staged'
   git config --global alias.lc '!git log --oneline | head -n1'
   git config --global alias.logx 'log --graph --oneline'
+  git config --global alias.rh 'reset HEAD'
   git config --global alias.st 'status'
 }
 
