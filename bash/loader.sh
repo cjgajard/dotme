@@ -21,6 +21,10 @@ __smart_bash_plugins() {
     echo 'js'
   fi
 
+  if [[ -f 'yarn.lock' ]]; then
+    echo 'yarn'
+  fi
+
   if [[ -f 'AndroidManifest.xml' ]]; then
     echo 'android-tools'
   fi
