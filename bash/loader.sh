@@ -7,6 +7,10 @@ __bash_plugin() {
 }
 
 __smart_bash_plugins() {
+  if [[ "$PWD" == "$HOME" ]]; then
+    echo 'user'
+  fi
+
   if [[ -f 'Gemfile' ]]; then
     echo 'rails'
     echo 'rbenv'
@@ -33,13 +37,10 @@ for i in ${library[@]}; do
 done
 
 # automatically detect plugins
-smart_plugins=()
 if [ "$smart_plugin" = true ]; then
-  smart_plugins=$(__smart_bash_plugins)
+  plugin+=($(__smart_bash_plugins))
 fi
 
-# load all plugins
-plugin=(${smart_plugins[@]} ${plugin[@]} user)
 for i in ${plugin[@]}; do
   __bash_plugin $i
 done
