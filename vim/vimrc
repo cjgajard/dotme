@@ -1,31 +1,25 @@
-call plug#begin('~/.vim/plugged')
-"Plug 'FredKSchott/CoVim'
-Plug 'cjgajard/toggleset.vim', { 'on': 'MapToggleSet' }
-"Plug 'ctrlpvim/ctrlp.vim'
-"Plug 'kergoth/vim-hilinks'
-Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
-
-Plug 'pangloss/vim-javascript'
-"Plug 'mxw/vim-jsx'
-
-"Plug 'TroyFletcher/vim-colors-synthwave'
-Plug 'cjgajard/patagonia-vim'
-"Plug 'crusoexia/vim-dracula'
-
+call plug#begin(has('win32') ? '~/vimfiles/plugged' : '~/.vim/plugged')
+Plug 'dense-analysis/ale'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 call plug#end()
 
-set term=screen-256color
+if has('win32')
+  set enc=utf-8
+endif
+
+set background=dark
 colorscheme patagonia
 
-set backupcopy=yes
+set backspace=indent,start
+set backupcopy=yes nobackup noundofile
 set expandtab shiftwidth=2 softtabstop=2 tabstop=8
-set fillchars=stl:·,stlnc:–,vert:\|,fold:–
+set fillchars=stl:=,stlnc:-,vert:\|,fold:-
+set formatoptions-=t
 set hlsearch
+set ignorecase
 set laststatus=2
-set list listchars=tab:·\ ,trail:~,space:·
+set list listchars=tab:·\ ,trail:~
+set noincsearch
 set numberwidth=2
 set showcmd
 set splitright splitbelow
@@ -35,19 +29,26 @@ set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 nnoremap <C-z> <nop>
 
 "ftplugin
-let c_syntax_for_h = 1
+let c_syntax_for_h=1
 
-"cjgajard/toggleset-vim
-MapToggleSet n number relativenumber
-MapToggleSet l list
-MapToggleSet p paste
+"netrw
+let g:netrw_sort_sequence = '[\/]$,\.\(h\|c\|hpp\|cpp\)$,*'
+let g:netrw_list_hide = '\.git[\/]$,\.exe\*$,\.dll$,\.o$,\.obj$,\.pdb$,\..*\.sw[a-p]$,\.bak$,\~$'
 
-"ctrlpvim/ctrlp.vim
-let g:ctrlp_user_command = 'git ls-files -co --exclude-standard'
+"terminal
+nnoremap <Leader>tj :terminal<CR>
+nnoremap <Leader>tl :vertical terminal<CR>
+nnoremap <Leader>th :vertical terminal<CR><C-w>H
 
-"w0rp/ale
+"vimrc
+augroup vimrc_reload
+  au!
+  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
+  \ | if has('gui_running') && !empty($MYGVIMRC) | so $MYGVIMRC | endif
+augroup END
+
+"dense-analysis/ale
 let g:ale_echo_msg_format = '(%linter%) %code%: %s'
-let g:ale_fixers = { 'javascript': ['eslint'] }
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_text_changed = 'never'
@@ -64,9 +65,5 @@ nmap <Leader>ap <Plug>(ale_previous_wrap)
 "scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
-let g:NERDCustomDelimiters = { 'c': { 'left': '//', 'right': '' } }
-
-"scrooloose/nerdtree
-let NERDTreeIgnore = ['\~$', '\.git$', 'node_modules', '\.cache', '\.sublime-',
-    \'\.keep$', '\.sw.$', 'dist', '\.o$', '\.out$']
-nnoremap <C-n>t :NERDTreeToggle<CR>
+let g:NERDCustomDelimiters = {
+  \'c': {'left': '//', 'right': ''}}
