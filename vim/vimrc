@@ -1,14 +1,12 @@
 call plug#begin(has('win32') ? '~/vimfiles/plugged' : '~/.vim/plugged')
 Plug 'dense-analysis/ale'
+Plug 'cjgajard/patagonia-vim'
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
 if has('win32')
   set enc=utf-8
 endif
-
-set background=dark
-colorscheme patagonia
 
 set backspace=indent,start
 set backupcopy=yes nobackup noundofile
@@ -27,6 +25,9 @@ set statusline=%<%f%m%r%=%y%l,%c%V
 set textwidth=80 colorcolumn=+1,+2
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 nnoremap <C-z> <nop>
+
+set background=dark
+colorscheme patagonia
 
 "ftplugin
 let c_syntax_for_h=1
