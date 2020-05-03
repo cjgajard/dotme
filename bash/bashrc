@@ -11,7 +11,7 @@ library=(git mfind)
 plugin=(autojump colorauto ls)
 smart_plugin=true
 theme="dual"
-. $REPO/cjgajard/configfolder/bash/loader.sh
+. $REPO/cjgajard/configfiles/bash/loader.sh
 
 # BASH
 # ----
