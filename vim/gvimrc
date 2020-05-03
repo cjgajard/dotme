@@ -1,2 +1,4 @@
+set background=dark
+colorscheme patagonia
 set guifont=Consolas:h10
 set guioptions=eg

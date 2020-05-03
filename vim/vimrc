@@ -1,16 +1,21 @@
+"vim-plug
 call plug#begin(has('win32') ? '~/vimfiles/plugged' : '~/.vim/plugged')
 Plug 'dense-analysis/ale'
-Plug 'cjgajard/patagonia-vim'
 Plug 'scrooloose/nerdcommenter'
 call plug#end()
 
+"preload
 if has('win32')
   set enc=utf-8
 endif
 
+"set runtimepath+=path/to/configfiles/vim
+
+"options
 set backspace=indent,start
 set backupcopy=yes nobackup noundofile
 set expandtab shiftwidth=2 softtabstop=2 tabstop=8
+set cursorline cursorlineopt=number
 set fillchars=stl:=,stlnc:-,vert:\|,fold:-
 set formatoptions-=t
 set hlsearch
@@ -26,8 +31,9 @@ set textwidth=80 colorcolumn=+1,+2
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 nnoremap <C-z> <nop>
 
+"colorscheme
 set background=dark
-colorscheme patagonia
+colorscheme default
 
 "ftplugin
 let c_syntax_for_h=1
