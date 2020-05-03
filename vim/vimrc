@@ -27,6 +27,7 @@ set hlsearch
 set laststatus=2
 set list listchars=tab:·\ ,trail:~,space:·
 set numberwidth=2
+set showcmd
 set splitright splitbelow
 set statusline=%<%f%m%r%=%y%l,%c%V
 set textwidth=80 colorcolumn=+1,+2
