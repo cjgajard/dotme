@@ -7,10 +7,6 @@ __bash_plugin() {
 }
 
 __smart_bash_plugins() {
-  if [[ "$PWD" == "$HOME" ]]; then
-    echo 'user'
-  fi
-
   if [[ -f 'Gemfile' ]]; then
     echo 'rails'
     echo 'rbenv'
@@ -27,6 +23,10 @@ __smart_bash_plugins() {
 
   if [[ -f 'AndroidManifest.xml' ]]; then
     echo 'android-tools'
+  fi
+
+  if [[ -f 'manage.py' ]]; then
+    echo 'django'
   fi
 }
 
