@@ -1,6 +1,6 @@
 r="\[\e[00m\]"
-a="\[\e[00;36m\]"
-b="\[\e[00;33m\]"
+a="\[\e[00;34m\]"
+b="\[\e[00;36m\]"
 
 # Format for git_prompt_status()
 THEME_GIT_PROMPT_UNMERGED="w"
