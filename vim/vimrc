@@ -1,15 +1,13 @@
 "vim-plug
 call plug#begin(has('win32') ? '~/vimfiles/plugged' : '~/.vim/plugged')
 Plug 'dense-analysis/ale'
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 "preload
-if has('win32')
-  set enc=utf-8
-endif
-
-"set runtimepath+=path/to/configfiles/vim
+if has('win32') | set enc=utf-8 | endif
 
 "options
 set backspace=indent,start
@@ -74,3 +72,6 @@ let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = {
   \'c': {'left': '//', 'right': ''}}
+
+"extra
+"set runtimepath+=path/to/configfiles/vim
