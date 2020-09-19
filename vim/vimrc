@@ -29,6 +29,7 @@ set textwidth=80 colorcolumn=+1,+2
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 nnoremap <C-z> <nop>
 nnoremap Ñ :
+nnoremap <Leader>/ :let @/=''<CR>
 
 "colorscheme
 set background=dark
