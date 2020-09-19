@@ -7,9 +7,9 @@ esac
 # -----
 export REPO="$HOME"
 
-library=(git mfind)
-plugin=(autojump colorauto ls)
-smart_plugin=true
+library=(git)
+plugin=()
+smart_plugin=false
 theme="dual"
 . $REPO/cjgajard/configfiles/bash/loader.sh
 

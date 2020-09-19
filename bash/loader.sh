@@ -1,8 +1,8 @@
 CONFIGFOLDER="$(cd `dirname ${BASH_SOURCE}`/..; pwd -P)"
 
 __bash_plugin() {
-  if [ -f $CONFIGFOLDER/bash/plugin/$1.sh ]; then
-    source $CONFIGFOLDER/bash/plugin/$1.sh
+  if [ -f "$CONFIGFOLDER/bash/${2:-plugin}/$1.sh" ]; then
+    source "$CONFIGFOLDER/bash/${2:-plugin}/$1.sh"
   fi
 }
 
