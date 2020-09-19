@@ -15,6 +15,7 @@ mfind() {
                 exclude+=' -not -path "./CACHE/*"'
                 ;;
             --js)
+                exclude+=' -not -path "./node_modules/*"'
                 exclude+=' -not -path "./dist/*"'
                 exclude+=' -not -path "./static/*"'
                 exclude+=' -not -path "./.cache/*"'
