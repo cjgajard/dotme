@@ -1,13 +1,18 @@
-syn match cType '\<\h\w*_t\>'
+syn match cType /\<[a-z_][0-9a-z_]*_t\>/
+syn match cOperator /!/
 
-syn match cValue '\<\(\u\a*\|\u[A-Z_]*\)\>'
+syn match cValue /\<\(\u\a*\|\u[A-Z_]*\)\>/
 hi def link cValue Constant
 
-syn clear cStructure
-syn keyword cStructure typedef
-syn match cType "\(struct\|enum\|union\)\s\+\h\w*"
+syn match cTypeName /\<\h\w*\>/ contained
+syn cluster cParenGroup add=cTypeName
+syn cluster cPreProcGroup add=cTypeName
+hi def link cTypeName cType
 
-syn match cFunctionDef "\<_*\l\w*\>\ze\s("
+syn clear cStructure
+syn keyword cStructure struct union enum nextgroup=cTypeName skipwhite
+
+syn match cFunctionDef /\<\h\w*\>\ze (/
 hi def link cFunctionDef Function
 
 syn match cThis /\<this\>/
