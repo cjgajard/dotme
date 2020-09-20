@@ -13,18 +13,18 @@ if exists("syntax_on")
 endif
 let g:colors_name="redmin"
 
-hi Normal       ctermfg=15   ctermbg=none cterm=none
-hi ColorColumn  ctermfg=15   ctermbg=8    cterm=none
-hi Error        ctermfg=15   ctermbg=1    cterm=none
-hi Search       ctermfg=15   ctermbg=none cterm=reverse
-hi Comment      ctermfg=8    ctermbg=none cterm=none
-hi StatusLine   ctermfg=none ctermbg=none cterm=reverse
-hi StatusLineNC ctermfg=none ctermbg=none cterm=none
+hi Normal       ctermfg=white    ctermbg=none     cterm=none
+hi ColorColumn  ctermfg=white    ctermbg=darkgray cterm=none
+hi Search       ctermfg=white    ctermbg=none     cterm=reverse
+hi Comment      ctermfg=darkgray ctermbg=none     cterm=none
+hi StatusLine   ctermfg=none     ctermbg=none     cterm=reverse
+hi StatusLineNC ctermfg=none     ctermbg=none     cterm=none
 
-hi Visual       ctermfg=15   ctermbg=9    cterm=none
-hi Statement    ctermfg=9    ctermbg=none cterm=none
-hi Type         ctermfg=7    ctermbg=none cterm=none
-hi Constant     ctermfg=1    ctermbg=none cterm=none
+hi Visual       ctermfg=white    ctermbg=red     cterm=none
+hi Error        ctermfg=white    ctermbg=darkred cterm=none
+hi Statement    ctermfg=red      ctermbg=none    cterm=none
+hi Type         ctermfg=gray     ctermbg=none    cterm=none
+hi Constant     ctermfg=darkred  ctermbg=none    cterm=none
 
 hi! link SpecialKey   Comment
 hi! link Identifier   Constant
