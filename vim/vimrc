@@ -13,7 +13,7 @@ set backspace=indent,start
 set backupcopy=yes nobackup noundofile
 set expandtab shiftwidth=2 softtabstop=2 tabstop=8
 set cursorline cursorlineopt=number
-set fillchars=stl:=,stlnc:-,vert:\|,fold:-
+set fillchars=stlnc:-,vert:\|,fold:-
 set formatoptions&vim
 set hlsearch
 set ignorecase
@@ -24,31 +24,35 @@ set numberwidth=2
 set showcmd
 set splitright splitbelow
 set statusline=%<%f%m%r%=%y%l,%c%V
-set textwidth=80 colorcolumn=+1,+2
+set textwidth=80 colorcolumn=+1
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 nnoremap <C-z> <nop>
 nnoremap <Leader>/ :let @/=''<CR>
 nnoremap Ñ :
 let c_syntax_for_h=1
 
+augroup vimrc_reload
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
+    \ | if has('gui_running') && !empty($MYGVIMRC) | so $MYGVIMRC | endif
+augroup END
+
+augroup fo_clean
+    au!
+    au FileType * set fo-=o
+augroup END
+
 "terminal
 nnoremap <Leader>tj :terminal<CR>
 nnoremap <Leader>tl :vertical terminal<CR>
 nnoremap <Leader>th :vertical terminal<CR><C-w>H
-
-"vimrc
-augroup vimrc_reload
-  au!
-  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
-  \ | if has('gui_running') && !empty($MYGVIMRC) | so $MYGVIMRC | endif
-augroup END
 
 "netrw
 let g:netrw_sort_sequence = '[\/]$,\.\(h\|c\|hpp\|cpp\)$,*'
 let g:netrw_list_hide = '\.git[\/]$,\.exe\*$,\.dll$,\.o$,\.obj$,\.pdb$,\.sw[a-p]$,\.bak$,\~$'
 
 "dense-analysis/ale
-let g:ale_echo_msg_format = '(%linter%) %code%: %s'
+let g:ale_echo_msg_format = '(%linter%) %s'
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_text_changed = 'never'
@@ -61,12 +65,13 @@ nmap <Leader>ak <Plug>(ale_previous)
 nmap <Leader>al <Plug>(ale_lint)
 nmap <Leader>an <Plug>(ale_next_wrap)
 nmap <Leader>ap <Plug>(ale_previous_wrap)
+hi default link ALEWarningSign WarningMsg
 
 "scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = {
-  \'c': {'left': '//', 'right': ''}}
+    \ 'c': {'left': '//', 'right': ''}}
 
 "environment
 set background=dark
