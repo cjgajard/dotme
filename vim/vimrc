@@ -3,7 +3,6 @@ call plug#begin(has('win32') ? '~/vimfiles/plugged' : '~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
-Plug 'preservim/nerdtree'
 call plug#end()
 
 "preload
@@ -15,7 +14,7 @@ set backupcopy=yes nobackup noundofile
 set expandtab shiftwidth=2 softtabstop=2 tabstop=8
 set cursorline cursorlineopt=number
 set fillchars=stl:=,stlnc:-,vert:\|,fold:-
-set formatoptions-=t
+set formatoptions&vim
 set hlsearch
 set ignorecase
 set laststatus=2
@@ -28,19 +27,9 @@ set statusline=%<%f%m%r%=%y%l,%c%V
 set textwidth=80 colorcolumn=+1,+2
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 nnoremap <C-z> <nop>
-nnoremap Ñ :
 nnoremap <Leader>/ :let @/=''<CR>
-
-"colorscheme
-set background=dark
-colorscheme default
-
-"ftplugin
+nnoremap Ñ :
 let c_syntax_for_h=1
-
-"netrw
-let g:netrw_sort_sequence = '[\/]$,\.\(h\|c\|hpp\|cpp\)$,*'
-let g:netrw_list_hide = '\.git[\/]$,\.exe\*$,\.dll$,\.o$,\.obj$,\.pdb$,\..*\.sw[a-p]$,\.bak$,\~$'
 
 "terminal
 nnoremap <Leader>tj :terminal<CR>
@@ -53,6 +42,10 @@ augroup vimrc_reload
   au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
   \ | if has('gui_running') && !empty($MYGVIMRC) | so $MYGVIMRC | endif
 augroup END
+
+"netrw
+let g:netrw_sort_sequence = '[\/]$,\.\(h\|c\|hpp\|cpp\)$,*'
+let g:netrw_list_hide = '\.git[\/]$,\.exe\*$,\.dll$,\.o$,\.obj$,\.pdb$,\.sw[a-p]$,\.bak$,\~$'
 
 "dense-analysis/ale
 let g:ale_echo_msg_format = '(%linter%) %code%: %s'
@@ -75,5 +68,6 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = {
   \'c': {'left': '//', 'right': ''}}
 
-"extra
-"set runtimepath+=path/to/configfiles/vim
+"environment
+set background=dark
+colorscheme default

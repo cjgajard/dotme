@@ -19,7 +19,8 @@ configfolder_vim() {
   configfolder_install vim/vimrc $HOME/.vimrc
   configfolder_set_editor
   configfolder_ask "Append runtime at ~/.vimrc?" && \
-    echo "set rtp+=$CONFIGFOLDER/vim" >>$HOME/.vimrc
+    sed -i "/^\"environment$/a set runtimepath+=$CONFIGFOLDER/vim" \
+    $(readlink -f $HOME/.vimrc)
   configfolder_ask "Install vim plugins?" && vim +PlugInstall +qall
 }
 
