@@ -11,8 +11,10 @@ if has('win32')
     let &makeprg='nmake /nologo'
     set errorformat+=%-G%.%#
     set wildignore+=*.dll,*.exe,*.ilk,*.obj,*.pdb
+    let g:netrw_list_hide .= ',\.exe\*\?$,\.dll$,\.obj$,\.pdb$'
 else
     set wildignore+=*.o,*.out
+    let g:netrw_list_hide .= ',\.o$,\.out\*\?$'
     let g:ale_linters = get(g:, 'ale_linters', {})
     let g:ale_linters.c = ['cc']
 endif

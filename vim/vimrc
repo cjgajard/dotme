@@ -21,14 +21,14 @@ set list listchars=tab:·\ ,trail:~
 set noincsearch
 set numberwidth=2
 set showcmd
-set splitright splitbelow
+set splitbelow splitright
 set statusline=%<%f%m%r%=%y%l,%c%V
 set textwidth=80 colorcolumn=+1
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 nnoremap <C-z> <nop>
 nnoremap <Leader>/ :let @/=''<CR>
 nnoremap Ñ :
-let c_syntax_for_h=1
+let c_syntax_for_h = 1
 
 augroup vimrc_reload
     au!
@@ -47,8 +47,8 @@ nnoremap <Leader>tl :vertical terminal<CR>
 nnoremap <Leader>th :vertical terminal<CR><C-w>H
 
 "netrw
-let g:netrw_sort_sequence = '[\/]$,\.\(h\|c\|hpp\|cpp\)$,*'
-let g:netrw_list_hide = '\.git[\/]$,\.exe\*$,\.dll$,\.o$,\.obj$,\.pdb$,\.sw[a-p]$,\.bak$,\~$'
+let g:netrw_list_hide = '\.git[\/]$,\.sw[a-p]$,\.bak$,\~$'
+let g:netrw_sort_sequence = '[\/]$,\.\(h\|c\)$,*'
 
 "dense-analysis/ale
 let g:ale_echo_msg_format = '(%linter%) %s'
