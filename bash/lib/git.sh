@@ -2,7 +2,7 @@ git_prompt_info() {
   local ref
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
     ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
-  echo "$THEME_GIT_PROMPT_PREFIX${ref:11}$THEME_GIT_PROMPT_SUFFIX"
+  echo -e "$THEME_GIT_INFO_PREFIX${ref:11}$THEME_GIT_INFO_SUFFIX"
 }
 
 git_prompt_status() {
@@ -54,6 +54,6 @@ git_prompt_status() {
     STATUS="$THEME_GIT_PROMPT_DIVERGED$STATUS"
   fi
   if [[ -n $STATUS ]]; then
-    echo "$THEME_GIT_STATUS_PREFIX$STATUS$THEME_GIT_STATUS_SUFFIX"
+    echo -e "$THEME_GIT_PROMPT_PREFIX$STATUS$THEME_GIT_PROMPT_SUFFIX"
   fi
 }

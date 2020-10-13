@@ -1,6 +1,6 @@
-r="\[\e[00m\]"
-a="\[\e[00;94m\]"
-b="\[\e[00;96m\]"
+r="\033[00m"
+a="\033[00;94m"
+b="\033[00;96m"
 
 # Format for git_prompt_status()
 THEME_GIT_PROMPT_UNMERGED="w"
@@ -10,11 +10,13 @@ THEME_GIT_PROMPT_MODIFIED="m"
 THEME_GIT_PROMPT_ADDED="a"
 THEME_GIT_PROMPT_UNTRACKED="u"
 
-THEME_PROMPT="${a}\\W${r}"
-theme_prompt_addif '$(git_prompt_info)' " $b" $r
-theme_prompt_addif '$(git_prompt_status)' "$b($r$a" "$b)$r"
-THEME_PROMPT="$THEME_PROMPT\\$ "
+THEME_GIT_PROMPT_PREFIX="$b($a"
+THEME_GIT_PROMPT_SUFFIX="$b)"
 
+THEME_GIT_INFO_PREFIX=" $b"
+THEME_GIT_INFO_SUFFIX=""
+
+PS1="$a\W\$(git_prompt_info)\$(git_prompt_status)$r\$ "
 unset r
 unset a
 unset b

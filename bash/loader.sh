@@ -51,9 +51,7 @@ done
 
 # load theme
 if [ -n "$theme" ]; then
-  . $CONFIGFOLDER/bash/lib/theme.sh
-  if [ -f $CONFIGFOLDER/bash/theme/$theme.sh ]; then
-    . $CONFIGFOLDER/bash/theme/$theme.sh
+  if [ -f "$CONFIGFOLDER/bash/theme/$theme.sh" ]; then
+    . "$CONFIGFOLDER/bash/theme/$theme.sh"
   fi
-  PS1=$THEME_PROMPT
 fi
