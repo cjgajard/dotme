@@ -1,12 +1,24 @@
 CONFIGFOLDER="$(cd `dirname ${BASH_SOURCE}`/..; pwd -P)"
 
-__bash_plugin() {
-  if [ -f "$CONFIGFOLDER/bash/${2:-plugin}/$1.sh" ]; then
-    source "$CONFIGFOLDER/bash/${2:-plugin}/$1.sh"
+__source() {
+  if [ -f $1 ]; then
+    . $1
   fi
 }
 
-__smart_bash_plugins() {
+configfolder_lib() {
+  for i in "$@"; do
+    __source "$CONFIGFOLDER/bash/lib/$i.sh"
+  done
+}
+
+configfolder_plugin() {
+  for i in "$@"; do
+    __source "$CONFIGFOLDER/bash/plugin/$i.sh"
+  done
+}
+
+configfolder_smart_plugins() {
   if [[ -f 'Gemfile' ]]; then
     echo 'rails'
     echo 'rbenv'
@@ -34,24 +46,17 @@ __smart_bash_plugins() {
 # [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # load libraries
-for i in ${library[@]}; do
-  if [ -f $CONFIGFOLDER/bash/lib/$i.sh ]; then
-    . $CONFIGFOLDER/bash/lib/$i.sh
-  fi
-done
+configfolder_lib ${library[@]}
 
 # automatically detect plugins
 if [ "$smart_plugin" = true ]; then
-  plugin+=($(__smart_bash_plugins))
+  plugin+=($(configfolder_smart_plugins))
 fi
 
-for i in ${plugin[@]}; do
-  __bash_plugin $i
-done
+# load plugins
+configfolder_plugin ${plugin[@]}
 
 # load theme
 if [ -n "$theme" ]; then
-  if [ -f "$CONFIGFOLDER/bash/theme/$theme.sh" ]; then
-    . "$CONFIGFOLDER/bash/theme/$theme.sh"
-  fi
+  __source "$CONFIGFOLDER/bash/theme/$theme.sh"
 fi
