@@ -13,13 +13,18 @@ configfolder_git() {
   fi
 
   git config --global alias.ap 'add --patch'
+  git config --global alias.ba 'branch -a'
   git config --global alias.co 'checkout'
   git config --global alias.cob 'checkout -b'
   git config --global alias.cof 'checkout --'
   git config --global alias.ds 'diff --staged'
   git config --global alias.lc '!git log --oneline | head -n1'
   git config --global alias.logx 'log --graph --oneline'
+  git config --global alias.rba 'rebase --abort'
+  git config --global alias.rbc 'rebase --continue'
+  git config --global alias.rbi 'rebase --interactive'
   git config --global alias.rh 'reset HEAD'
+  git config --global alias.rs 'restore --staged'
   git config --global alias.st 'status'
 }
 
