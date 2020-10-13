@@ -27,6 +27,7 @@ hi Type         ctermfg=10   ctermbg=none cterm=none
 
 hi! link SpecialKey   Comment
 hi! link SignColumn   Comment
+hi! link Folded       Comment
 hi! link Identifier   Constant
 hi! link Label        Constant
 hi! link Special      Constant
@@ -37,9 +38,13 @@ hi! link WarningMsg   Error
 hi! link PreProc      Identifier
 hi! link Todo         Special
 hi! link StorageClass Statement
+hi! link Title        Statement
 hi! link VertSplit    StatuslineNC
 hi! link MatchParen   Type
 hi! link String       Type
+
+hi! link htmlEndTag Comment
+hi! link htmlArg htmlTag
 
 let &cpo = s:cpo_save
 let &t_Co = s:t_Co_save

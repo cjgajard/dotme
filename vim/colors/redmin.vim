@@ -35,6 +35,7 @@ hi! link WarningMsg   Error
 hi! link Todo         Special
 hi! link StorageClass Statement
 hi! link Special      Statement
+hi! link Title        Statement
 hi! link VertSplit    StatuslineNC
 hi! link Label        Type
 hi! link PreProc      Type

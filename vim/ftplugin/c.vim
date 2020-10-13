@@ -1,5 +1,5 @@
 setlocal cinoptions=:0,l1,t0,(s,U1,m1
-setlocal noexpandtab shiftwidth=8 softtabstop& tabstop=8
+setlocal noexpandtab shiftwidth=8 softtabstop=8 tabstop=8
 
 if exists('ftplugin_c_loaded') | finish | endif
 let g:ftplugin_c_loaded = 1
