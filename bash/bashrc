@@ -5,13 +5,11 @@ esac
 
 # SETUP
 # -----
-export REPO="$HOME"
-
 library=(git)
 plugin=()
 smart_plugin=false
 theme="dual"
-. $REPO/cjgajard/configfiles/bash/loader.sh
+. $HOME/cjgajard/configfiles/bash/loader.sh
 
 # BASH
 # ----
