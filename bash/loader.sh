@@ -1,20 +1,14 @@
 CONFIGFOLDER="$(cd `dirname ${BASH_SOURCE}`/..; pwd -P)"
 
-__source() {
-  if [ -f $1 ]; then
-    . $1
-  fi
-}
-
 configfolder_lib() {
   for i in "$@"; do
-    __source "$CONFIGFOLDER/bash/lib/$i.sh"
+    . "$CONFIGFOLDER/bash/lib/$i.sh"
   done
 }
 
 configfolder_plugin() {
   for i in "$@"; do
-    __source "$CONFIGFOLDER/bash/plugin/$i.sh"
+    . "$CONFIGFOLDER/bash/plugin/$i.sh"
   done
 }
 
@@ -58,5 +52,5 @@ configfolder_plugin ${plugin[@]}
 
 # load theme
 if [ -n "$theme" ]; then
-  __source "$CONFIGFOLDER/bash/theme/$theme.sh"
+  . "$CONFIGFOLDER/bash/theme/$theme.sh"
 fi
