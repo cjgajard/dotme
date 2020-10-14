@@ -54,3 +54,6 @@ configfolder_plugin ${plugin[@]}
 if [ -n "$theme" ]; then
   . "$CONFIGFOLDER/bash/theme/$theme.sh"
 fi
+
+# load completions
+. "$CONFIGFOLDER/bash/completion.sh"
