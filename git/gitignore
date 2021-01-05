@@ -1,3 +1,4 @@
 .*.sw[a-p]
 .sw[a-p]
 .byebug_history
+.eslintcache
