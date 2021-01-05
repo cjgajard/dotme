@@ -6,7 +6,7 @@ esac
 # SETUP
 # -----
 library=(git)
-plugin=()
+plugin=(user)
 smart_plugin=false
 theme="monal"
 . $HOME/cjgajard/configfiles/bash/loader.sh
