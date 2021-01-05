@@ -8,7 +8,7 @@ esac
 library=(git)
 plugin=()
 smart_plugin=false
-theme="dual"
+theme="monal"
 . $HOME/cjgajard/configfiles/bash/loader.sh
 
 # BASH
