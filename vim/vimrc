@@ -3,6 +3,7 @@ call plug#begin(has('win32') ? '~/vimfiles/plugged' : '~/.vim/plugged')
 Plug 'dense-analysis/ale'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 "preload
@@ -66,11 +67,16 @@ nmap <Leader>an <Plug>(ale_next_wrap)
 nmap <Leader>ap <Plug>(ale_previous_wrap)
 hi default link ALEWarningSign WarningMsg
 
-"scrooloose/nerdcommenter
+"preservim/nerdcommenter
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = {
     \ 'c': {'left': '//', 'right': ''}}
+
+"preservim/nerdtree
+let NERDTreeIgnore = ['\.cache$', '\.git$', '\.keep$', '\.o$', '\.out$',
+\ '\.sublime-', '\.swp$', '\~$', 'dist', 'node_modules']
+nnoremap <C-n>t :NERDTreeToggle<CR>
 
 "environment
 set background=dark
