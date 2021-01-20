@@ -1,4 +1,4 @@
-CONFIGFOLDER="$(cd `dirname ${BASH_SOURCE}`/..; pwd -P)"
+export CONFIGFOLDER="$(cd `dirname ${BASH_SOURCE}`/..; pwd -P)"
 
 configfolder_lib() {
   for i in "$@"; do
