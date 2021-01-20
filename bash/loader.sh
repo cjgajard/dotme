@@ -19,8 +19,7 @@ configfolder_smart_plugins() {
   fi
 
   if [[ -f 'package.json' ]]; then
-    echo 'nvm'
-    echo 'js'
+    echo 'node'
   fi
 
   if [[ -f 'yarn.lock' ]]; then
