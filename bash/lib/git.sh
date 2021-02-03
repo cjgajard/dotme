@@ -61,7 +61,7 @@ git_prompt_status() {
 
 git_select_branch() {
   select b in $(git branch | grep -v \*); do
-    git checkout $b
+    echo $b
     break
   done
 }
