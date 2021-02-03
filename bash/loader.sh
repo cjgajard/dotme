@@ -33,6 +33,10 @@ configfolder_smart_plugins() {
   if [[ -f 'manage.py' ]]; then
     echo 'django'
   fi
+
+  if [[ -f 'go.mod' ]]; then
+    echo 'go'
+  fi
 }
 
 # ?
