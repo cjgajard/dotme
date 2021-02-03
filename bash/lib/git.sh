@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 git_prompt_info() {
   local ref
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
@@ -56,4 +57,11 @@ git_prompt_status() {
   if [[ -n $STATUS ]]; then
     echo -e "$THEME_GIT_PROMPT_PREFIX$STATUS$THEME_GIT_PROMPT_SUFFIX"
   fi
+}
+
+git_select_branch() {
+  select b in $(git branch | grep -v \*); do
+    git checkout $b
+    break
+  done
 }
