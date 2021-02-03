@@ -13,12 +13,5 @@ endfunction
 command! -nargs=* Fzy :call FzyDo("find . -type f", <q-args>)
 command! -nargs=* Gzy :call FzyDo("git ls-files", <q-args>)
 
-nnoremap <Leader>fe :Fzy e<CR>
-nnoremap <Leader>fv :Fzy vsp<CR>
-nnoremap <Leader>fs :Fzy sp<CR>
-nnoremap <Leader>ft :Fzy tabe<CR>
-
-nnoremap <Leader>ge :Gzy e<CR>
-nnoremap <Leader>gv :Gzy vsp<CR>
-nnoremap <Leader>gs :Gzy sp<CR>
-nnoremap <Leader>gt :Gzy tabe<CR>
+exec 'nnoremap <C-p> :Fzy '
+exec 'nnoremap <C-g> :Gzy '
