@@ -27,7 +27,7 @@ set statusline=%<%f%m%r%=%y%l,%c%V
 set textwidth=80 colorcolumn=+1
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 nnoremap <C-z> <nop>
-nnoremap <Leader>/ :let @/=''<CR>
+nnoremap <Leader>q :let @/=''<CR>
 nnoremap Ñ :
 let c_syntax_for_h = 1
 
