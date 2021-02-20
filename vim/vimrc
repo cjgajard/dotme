@@ -23,12 +23,15 @@ set noincsearch
 set numberwidth=2
 set showcmd
 set splitbelow splitright
-set statusline=%<%f%m%r%=%y%l,%c%V
+set statusline=%<%f:%l\ %m%r%q%w%=%a%y[%n]
 set textwidth=80 colorcolumn=+1
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
+
 nnoremap <C-z> <nop>
-nnoremap <Leader>q :let @/=''<CR>
+nnoremap Q <nop>
 nnoremap Ñ :
+nnoremap <Leader>q :let @/=''<CR>
+
 let c_syntax_for_h = 1
 
 augroup vimrc_reload
