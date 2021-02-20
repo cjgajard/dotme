@@ -3,3 +3,4 @@
 .byebug_history
 .eslintcache
 tags
+tmp/

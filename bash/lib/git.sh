@@ -65,3 +65,24 @@ git_select_branch() {
     break
   done
 }
+
+git_dev_branch() {
+  git branch -a --no-color | sed 's/^..//' | awk -F/  '{print $NF}' | \
+    grep -E '(dev|develop|development)$' | tail -n 1
+}
+
+git_init() {
+  git init
+  touch README.md
+  touch .gitignore
+  git add README.md .gitignore
+  git commit -m 'Initial commit'
+}
+
+git_panic() {
+  TODAY=`date +%Y%m%d`
+  git checkout -b "panic/$TODAY"
+  git add --all
+  git commit -m "[skip ci] panic"
+  git push origin "panic/$TODAY"
+}

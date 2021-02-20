@@ -4,13 +4,7 @@ configfolder_git() {
   configfolder_install git/gitignore ~/.gitignore
   git config --global core.excludesfile ~/.gitignore
   git config --global core.editor vim
-
   git config --global user.name 'Carlos Gajardo'
-  echo -n 'Insert your email: '
-  read email
-  if [ -n "$email" ]; then
-    git config --global user.email $email
-  fi
 
   git config --global alias.ap 'add --patch'
   git config --global alias.ba 'branch -a'
@@ -27,8 +21,10 @@ configfolder_git() {
   git config --global alias.rbi 'rebase --interactive'
   git config --global alias.rh 'reset HEAD'
   git config --global alias.rs 'restore'
+  git config --global alias.rsp 'restore --patch'
   git config --global alias.rss 'restore --staged'
   git config --global alias.st 'status'
+  git config --global alias.today 'log --since=4am'
 }
 
 if [ $0 == "$BASH_SOURCE" ]; then
