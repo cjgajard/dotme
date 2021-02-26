@@ -5,7 +5,7 @@ esac
 
 # SETUP
 # -----
-library=(git)
+library=(git ps)
 plugin=(nvim user)
 smart_plugin=true
 theme="monal"
