@@ -1,8 +1,9 @@
 . `dirname ${BASH_SOURCE}`/../bash/lib/configfolder.sh
 
 configfolder_vimplug() {
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  dst=$HOME/.vim/autoload/plug.vim
+  mkdir -p `dirname $dst`
+  wget -O "$dst" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 configfolder_set_editor() {
