@@ -29,4 +29,5 @@ configfolder_git() {
 
 if [ $0 == "$BASH_SOURCE" ]; then
   configfolder_ask "Install git?" && configfolder_git
+  exit 0
 fi

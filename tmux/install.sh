@@ -6,4 +6,5 @@ configfolder_tmux() {
 
 if [ $0 == "$BASH_SOURCE" ]; then
   configfolder_ask "Install tmux?" && configfolder_tmux
+  exit 0
 fi

@@ -27,4 +27,5 @@ configfolder_vim() {
 
 if [ $0 == "$BASH_SOURCE" ]; then
   configfolder_ask "Install vim?" && configfolder_vim
+  exit 0
 fi

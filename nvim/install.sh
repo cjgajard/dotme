@@ -25,4 +25,5 @@ configfolder_nvim() {
 if [ $0 == "$BASH_SOURCE" ]; then
   configfolder_ask "Install nvim binary from source?" && configfolder_nvim_src
   configfolder_ask "Install nvim?" && configfolder_nvim
+  exit 0
 fi

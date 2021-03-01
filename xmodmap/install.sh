@@ -25,4 +25,5 @@ configfolder_xmodmap() {
 
 if [ $0 == "$BASH_SOURCE" ]; then
   configfolder_ask "Install xmodmap config?" && configfolder_xmodmap
+  exit 0
 fi

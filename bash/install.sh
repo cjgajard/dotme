@@ -6,4 +6,5 @@ configfolder_bash() {
 
 if [ $0 == "$BASH_SOURCE" ]; then
   configfolder_ask "Install bash?" && configfolder_bash
+  exit 0
 fi
