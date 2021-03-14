@@ -23,14 +23,18 @@ set noincsearch
 set numberwidth=2
 set showcmd
 set splitbelow splitright
-set statusline=%<%f:%l\ %m%r%q%w%=%a%y[%n]
+set statusline=%<%f:%l:%c\ %m%r%q%w%=%a%y[%n]
 set textwidth=80 colorcolumn=+1
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 
-nnoremap <C-z> <nop>
 nnoremap Q <nop>
 nnoremap Ñ :
 nnoremap <Leader>q :let @/=''<CR>
+
+let g:copyprg = 'xclip -i -sel c'
+let g:pasteprg = 'xclip -o -sel c'
+nnoremap <Leader>xc :call system(g:copyprg, @")<CR>
+nnoremap <Leader>xv :exec 'normal i'.substitute(system(g:pasteprg), '[\r\n]*$', '', '')<CR>
 
 let c_syntax_for_h = 1
 
