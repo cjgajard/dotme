@@ -14,7 +14,7 @@ set backspace=indent,start
 set backupcopy=yes nobackup noundofile
 set expandtab shiftwidth=2 softtabstop=2 tabstop=8
 set cursorline cursorlineopt=number
-set fillchars=stlnc:-,vert:\|,fold:-
+set fillchars=stl:=,stlnc:-,vert:\|,fold:-
 set hlsearch
 set ignorecase
 set laststatus=2
@@ -72,6 +72,7 @@ nmap <Leader>ak <Plug>(ale_previous)
 nmap <Leader>al <Plug>(ale_lint)
 nmap <Leader>an <Plug>(ale_next_wrap)
 nmap <Leader>ap <Plug>(ale_previous_wrap)
+nnoremap <Leader>ai :ALEInfo<CR>
 hi default link ALEWarningSign WarningMsg
 
 "preservim/nerdcommenter
