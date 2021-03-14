@@ -4,7 +4,12 @@ setlocal noexpandtab shiftwidth=8 softtabstop=8 tabstop=8
 if exists('ftplugin_c_loaded') | finish | endif
 let g:ftplugin_c_loaded = 1
 
-let g:ale_c_cc_options = '-std=c18 -Wall -Wextra -Wpedantic -DDEBUG'
+if filereadable('Makefile')
+    let g:ale_c_parse_makefile = 1
+    let g:ale_c_cc_options = '-DDEBUG'
+else
+    let g:ale_c_cc_options = '-std=c90 -Wall -Wextra -Wpedantic -DDEBUG'
+endif
 
 if has('win32')
     compiler msvc
@@ -12,9 +17,13 @@ if has('win32')
     set errorformat+=%-G%.%#
     set wildignore+=*.dll,*.exe,*.ilk,*.obj,*.pdb
     let g:netrw_list_hide .= ',\.exe\*\?$,\.dll$,\.obj$,\.pdb$'
+    if exists('NERDTreeIgnore')
+       let NERDTreeIgnore += ['\.exe$', '\.dll$', '\.obj$', '\.pdb$']
+    endif
 else
     set wildignore+=*.o,*.out
     let g:netrw_list_hide .= ',\.o$,\.out\*\?$'
-    let g:ale_linters = get(g:, 'ale_linters', {})
-    let g:ale_linters.c = ['cc']
+    if exists('NERDTreeIgnore')
+       let NERDTreeIgnore += ['\.o$', '\.out$']
+    endif
 endif
