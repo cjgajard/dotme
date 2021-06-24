@@ -1,9 +1,11 @@
 "vim-plug
 call plug#begin(has('win32') ? '~/vimfiles/plugged' : '~/.vim/plugged')
 Plug 'dense-analysis/ale'
+Plug 'fatih/vim-go'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'preservim/nerdcommenter'
-Plug 'preservim/nerdtree'
 call plug#end()
 
 "preload
@@ -16,16 +18,17 @@ set expandtab shiftwidth=2 softtabstop=2 tabstop=8
 set cursorline cursorlineopt=number
 set fillchars=stl:=,stlnc:-,vert:\|,fold:-
 set hlsearch
-set ignorecase
 set laststatus=2
 set list listchars=tab:·\ ,trail:~
 set noincsearch
 set numberwidth=2
 set showcmd
 set splitbelow splitright
-set statusline=%<%f:%l:%c\ %m%r%q%w%=%a%y[%n]
+set statusline=[%<%f:%l:%c]%m%r%q%w%=%a%y[%n]
 set textwidth=80 colorcolumn=+1
 set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
+
+let c_syntax_for_h = 1
 
 nnoremap Q <nop>
 nnoremap Ñ :
@@ -36,17 +39,15 @@ let g:pasteprg = 'xclip -o -sel c'
 nnoremap <Leader>xc :call system(g:copyprg, @")<CR>
 nnoremap <Leader>xv :exec 'normal i'.substitute(system(g:pasteprg), '[\r\n]*$', '', '')<CR>
 
-let c_syntax_for_h = 1
-
 augroup vimrc_reload
-    au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
+  au!
+  au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
     \ | if has('gui_running') && !empty($MYGVIMRC) | so $MYGVIMRC | endif
 augroup END
 
 augroup fo_clean
-    au!
-    au FileType * set fo-=o
+  au!
+  au FileType * set fo-=o
 augroup END
 
 "terminal
@@ -55,11 +56,18 @@ nnoremap <Leader>tl :vertical terminal<CR>
 nnoremap <Leader>th :vertical terminal<CR><C-w>H
 
 "netrw
-let g:netrw_list_hide = '\.git[\/]$,\.sw[a-p]$,\.bak$,\~$'
-let g:netrw_sort_sequence = '[\/]$,\.\(h\|c\)$,*'
+let g:netrw_list_hide = '^\.\.\?[\/]$,'.netrw_gitignore#Hide()
+let g:netrw_hide = 1
+"let g:netrw_sort_sequence = '[\/]$,\.\(h\|c\)$,*'
+let g:netrw_sort_sequence = '[\/]$,*'
+nnoremap <Leader>ee :Explore .<CR>
+nnoremap <Leader>er :Rexplore<CR>
+nnoremap <Leader>ev :Vexplore .<CR>
 
 "dense-analysis/ale
 let g:ale_echo_msg_format = '(%linter%/%code%) %s'
+let g:ale_set_ballons = 0
+"let g:ale_hover_to_preview = 1
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_text_changed = 'never'
@@ -72,19 +80,10 @@ nmap <Leader>ak <Plug>(ale_previous)
 nmap <Leader>al <Plug>(ale_lint)
 nmap <Leader>an <Plug>(ale_next_wrap)
 nmap <Leader>ap <Plug>(ale_previous_wrap)
+nmap <Leader>ag <Plug>(ale_go_to_definition)
+nmap <Leader>aG <Plug>(ale_go_to_type_definition)
+nmap <Leader>aG <Plug>(ale_lint_on_insert_leave)
 nnoremap <Leader>ai :ALEInfo<CR>
-hi default link ALEWarningSign WarningMsg
-
-"preservim/nerdcommenter
-let g:NERDSpaceDelims = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDCustomDelimiters = {
-    \ 'c': {'left': '//', 'right': ''}}
-
-"preservim/nerdtree
-let NERDTreeIgnore = ['\.cache$', '\.git$', '\.keep$', '\.o$', '\.out$',
-\ '\.sublime-', '\.swp$', '\~$', 'dist', 'node_modules']
-nnoremap <C-n>t :NERDTreeToggle<CR>
 
 "environment
 set background=dark
