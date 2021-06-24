@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Encoding=UTF-8
+Name=Pico-8
+Comment=PICO-8 fantasy console
+Path=/usr/local/share/pico-8
+Exec=pico8 %F
+Icon=/usr/local/share/pico-8/lexaloffle-pico8.png
+Terminal=false
+Categories=Programming;Game;
