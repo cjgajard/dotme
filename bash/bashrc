@@ -6,7 +6,7 @@ esac
 # SETUP
 # -----
 library=(git ps)
-plugin=(nvim user)
+plugin=(ls user ripley)
 smart_plugin=true
 theme="monal"
 . $HOME/cjgajard/configfiles/bash/loader.sh

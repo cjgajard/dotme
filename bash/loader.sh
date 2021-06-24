@@ -18,6 +18,10 @@ configfolder_smart_plugins() {
     echo 'rbenv'
   fi
 
+  if [[ -f '.nvmrc' ]]; then
+    echo 'nvm'
+  fi
+
   if [[ -f 'package.json' ]]; then
     echo 'node'
   fi
