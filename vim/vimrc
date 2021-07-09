@@ -93,5 +93,7 @@ nnoremap <Leader>gi :GoImports<CR>
 nnoremap <Leader>gt :GoAddTags<CR>
 
 "environment
+filetype off
 set background=dark
 colorscheme default
+filetype plugin indent on
