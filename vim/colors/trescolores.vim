@@ -50,6 +50,10 @@ hi! link VertSplit    StatuslineNC
 hi! link htmlEndTag Comment
 hi! link htmlArg htmlTag
 
+hi! link diffRemoved Comment
+hi! link diffChanged Statement
+hi! link diffAdded   Type
+
 let &cpo = s:cpo_save
 let &t_Co = s:t_Co_save
 if exists('*linksave#restore')
