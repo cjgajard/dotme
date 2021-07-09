@@ -85,6 +85,13 @@ nmap <Leader>aG <Plug>(ale_go_to_type_definition)
 nmap <Leader>aG <Plug>(ale_lint_on_insert_leave)
 nnoremap <Leader>ai :ALEInfo<CR>
 
+"fatih/vim-go
+let g:go_addtags_transform = 'camelcase'
+let g:go_imports_autosave = 0
+let g:go_template_autocreate = 0
+nnoremap <Leader>gi :GoImports<CR>
+nnoremap <Leader>gt :GoAddTags<CR>
+
 "environment
 set background=dark
 colorscheme default
