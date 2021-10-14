@@ -17,22 +17,27 @@ set backupcopy=yes nobackup noundofile
 set expandtab shiftwidth=2 softtabstop=2 tabstop=8
 set cursorline cursorlineopt=number
 set fillchars=stl:=,stlnc:-,vert:\|,fold:-
-set hlsearch
+set hlsearch noincsearch
 set laststatus=2
 set list listchars=tab:·\ ,trail:~
-set noincsearch
-set numberwidth=2
+set nonumber norelativenumber numberwidth=2
 set showcmd
 set splitbelow splitright
 set statusline=[%<%f:%l:%c]%m%r%q%w%=%a%y[%n]
 set textwidth=80 colorcolumn=+1
-set wildmenu wildignorecase wildignore=.git/,.*.sw[a-p],.keep
+set wildmenu wildmode=full
+set wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 
 let c_syntax_for_h = 1
 
 nnoremap Q <nop>
+nnoremap q: <nop>
 nnoremap Ñ :
-nnoremap <Leader>q :let @/=''<CR>
+"nnoremap ; :
+"nnoremap : ;
+nnoremap <Leader>q :let @/=''\|noh<CR>
+nnoremap <Leader>m :silent make\|redraw!\|cc<CR>
+nnoremap <Leader>p :set paste! paste?<CR>
 
 let g:copyprg = 'xclip -i -sel c'
 let g:pasteprg = 'xclip -o -sel c'
@@ -49,6 +54,11 @@ augroup fo_clean
   au!
   au FileType * set fo-=o
 augroup END
+
+nnoremap <Leader>ec :e %<.c<CR>
+nnoremap <Leader>eh :e %<.h<CR>
+nnoremap <Leader>et :e %:r_test.%:e<CR>
+nnoremap <Leader>eg :exec 'e '.substitute(expand('%:r'),'_test','','').'.'.expand('%:e')<CR>
 
 "terminal
 nnoremap <Leader>tj :terminal<CR>
@@ -83,12 +93,18 @@ nmap <Leader>ap <Plug>(ale_previous_wrap)
 nmap <Leader>ag <Plug>(ale_go_to_definition)
 nmap <Leader>aG <Plug>(ale_go_to_type_definition)
 nmap <Leader>aG <Plug>(ale_lint_on_insert_leave)
+nnoremap <Leader>ae :ALEEnableBuffer<CR>
+nnoremap <Leader>aE :ALEDisableBuffer<CR>
 nnoremap <Leader>ai :ALEInfo<CR>
+nnoremap <Leader>ah :ALEHover<CR>
 
 "fatih/vim-go
 let g:go_addtags_transform = 'camelcase'
+let g:go_echo_go_info = 0
+let g:go_fmt_fail_silently = 1
 let g:go_imports_autosave = 0
 let g:go_template_autocreate = 0
+set completeopt=menu
 nnoremap <Leader>gi :GoImports<CR>
 nnoremap <Leader>gt :GoAddTags<CR>
 

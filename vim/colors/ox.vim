@@ -13,13 +13,13 @@ if exists("syntax_on")
 endif
 let g:colors_name="ox"
 
-hi Normal       ctermfg=15   ctermbg=none cterm=none
-hi Comment      ctermfg=8    ctermbg=none cterm=none
-hi Error        ctermfg=15   ctermbg=8    cterm=none
-hi Search       ctermfg=15   ctermbg=0    cterm=reverse
-hi Visual       ctermfg=15   ctermbg=4    cterm=none
-hi StatusLine   ctermfg=36 ctermbg=234 cterm=bold
-hi StatusLineNC   ctermfg=36 ctermbg=234 cterm=none
+hi Normal       ctermfg=15 ctermbg=0    cterm=none
+hi Comment      ctermfg=8  ctermbg=none cterm=none
+hi Error        ctermfg=15 ctermbg=8    cterm=none
+hi Search       ctermfg=15 ctermbg=0    cterm=reverse
+hi Visual       ctermfg=15 ctermbg=4    cterm=none
+hi StatusLine   ctermfg=36 ctermbg=234  cterm=bold
+hi StatusLineNC ctermfg=36 ctermbg=234  cterm=none
 
 hi TabLineSel ctermfg=231 ctermbg=none cterm=bold
 hi TabLine    ctermfg=15  ctermbg=234  cterm=none
