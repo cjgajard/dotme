@@ -4,6 +4,6 @@
 .nvmrc
 .sw[a-p]
 TAGS
+certs/
 tags
 tmp/
-certs/
