@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 export CONFIGFOLDER="$(cd `dirname ${BASH_SOURCE}`/..; pwd -P)"
 
 configfolder_lib() {
@@ -24,6 +25,10 @@ configfolder_smart_plugins() {
 
   if [[ -f 'package.json' ]]; then
     echo 'node'
+  fi
+
+  if [[ -f 'tsconfig.json' ]]; then
+    echo 'typescript'
   fi
 
   if [[ -f 'yarn.lock' ]]; then
