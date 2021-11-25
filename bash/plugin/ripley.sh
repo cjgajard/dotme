@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-CHE_TEAM=(cami carlitos charlie cristian cristobal eddwin jeffrey laura pedro)
+export PATH="$HOME/ripley/checkout-tools/bin:$PATH"
 
-bashocracia() {
-  local size=${#CHE_TEAM[@]}
-  echo ${CHE_TEAM[RANDOM % size]}
-}
+# if type -p srcenv; then
+#   srcenv ~/ripley/checkout-tools/.env
+#   srcenv
+# fi
