@@ -6,6 +6,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'cjgajard/patagonia-vim'
 call plug#end()
 
 "preload
@@ -18,18 +19,18 @@ set expandtab shiftwidth=2 softtabstop=2 tabstop=8
 set cursorline cursorlineopt=number
 set fillchars=stl:=,stlnc:-,vert:\|,fold:-
 set hlsearch noincsearch
-set laststatus=2
 set list listchars=tab:·\ ,trail:~
 set nonumber norelativenumber numberwidth=2
 set showcmd
 set splitbelow splitright
-set statusline=[%<%f:%l:%c]%m%r%q%w%=%a%y[%n]
+set laststatus=2 statusline=[%<%f:%l:%c%V]%m%r%q%w%=%a%y[%n]
 set textwidth=80 colorcolumn=+1
 set wildmenu wildmode=full
 set wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 
 let c_syntax_for_h = 1
 
+"remap-builtins
 nnoremap Q <nop>
 nnoremap q: <nop>
 nnoremap Ñ :
@@ -39,11 +40,34 @@ nnoremap <Leader>q :let @/=''\|noh<CR>
 nnoremap <Leader>m :silent make\|redraw!\|cc<CR>
 nnoremap <Leader>p :set paste! paste?<CR>
 
+"related-buffer
+nnoremap <Leader>ec :e %<.c<CR>
+nnoremap <Leader>eC :e %<.h<CR>
+nnoremap <Leader>eh :e %<.h<CR>
+nnoremap <Leader>eH :e %<.c<CR>
+nnoremap <Leader>et :e %:r_test.%:e<CR>
+nnoremap <Leader>eT :exec 'e '.substitute(expand('%:r'),'_test','','').'.'.expand('%:e')<CR>
+
+"clipboard
 let g:copyprg = 'xclip -i -sel c'
 let g:pasteprg = 'xclip -o -sel c'
 nnoremap <Leader>xc :call system(g:copyprg, @")<CR>
 nnoremap <Leader>xv :exec 'normal i'.substitute(system(g:pasteprg), '[\r\n]*$', '', '')<CR>
 
+"daynight
+function! IsNight()
+  let l:latitude='33.27S'
+  let l:longitude='70.4W'
+  call system('command -v sunwait')
+  if v:shell_error == 0
+    call system('sunwait poll civil '.l:latitude.' '.l:longitude)
+    return v:shell_error == 3
+  endif
+  let l:hour = str2nr(system('date +%H'))
+  return l:hour < 7 || l:hour > 19
+endfunction
+
+"autocommands
 augroup vimrc_reload
   au!
   au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
@@ -54,11 +78,6 @@ augroup fo_clean
   au!
   au FileType * set fo-=o
 augroup END
-
-nnoremap <Leader>ec :e %<.c<CR>
-nnoremap <Leader>eh :e %<.h<CR>
-nnoremap <Leader>et :e %:r_test.%:e<CR>
-nnoremap <Leader>eg :exec 'e '.substitute(expand('%:r'),'_test','','').'.'.expand('%:e')<CR>
 
 "terminal
 nnoremap <Leader>tj :terminal<CR>
@@ -77,7 +96,6 @@ nnoremap <Leader>ev :Vexplore .<CR>
 "dense-analysis/ale
 let g:ale_echo_msg_format = '(%linter%/%code%) %s'
 let g:ale_set_ballons = 0
-"let g:ale_hover_to_preview = 1
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_text_changed = 'never'
@@ -111,5 +129,5 @@ nnoremap <Leader>gt :GoAddTags<CR>
 "environment
 filetype off
 set background=dark
-colorscheme default
+if IsNight() | colorscheme trescolores | else | colorscheme patagonia | endif
 filetype plugin indent on
