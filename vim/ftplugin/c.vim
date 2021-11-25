@@ -4,6 +4,8 @@ setlocal noexpandtab shiftwidth=8 softtabstop=8 tabstop=8
 if exists('ftplugin_c_loaded') | finish | endif
 let g:ftplugin_c_loaded = 1
 
+nnoremap <F5> :call system("find . -name '*.c' \| xargs ctags")<CR>
+
 if filereadable('Makefile')
     let g:ale_c_parse_makefile = 1
     let g:ale_c_cc_options = '-DDEBUG'
