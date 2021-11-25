@@ -13,17 +13,18 @@ if exists("syntax_on")
 endif
 let g:colors_name="trescolores"
 
-hi Normal       ctermfg=15   ctermbg=none cterm=none
-hi Comment      ctermfg=8    ctermbg=none cterm=none
-hi Error        ctermfg=15   ctermbg=8    cterm=none
-hi Search       ctermfg=none ctermbg=none cterm=reverse
-hi Visual       ctermfg=15   ctermbg=4    cterm=none
-hi StatusLine   ctermfg=15   ctermbg=none cterm=none
-hi StatusLineNC ctermfg=8    ctermbg=none cterm=none
+hi Normal       ctermfg=White     ctermbg=none     cterm=none
+hi Comment      ctermfg=DarkGray  ctermbg=none     cterm=none
+hi Error        ctermfg=White     ctermbg=DarkGray cterm=none
+hi MatchParen   ctermfg=DarkGreen ctermbg=none     cterm=bold
+hi Search       ctermfg=none      ctermbg=none     cterm=reverse
+hi StatusLine   ctermfg=White     ctermbg=none     cterm=none
+hi StatusLineNC ctermfg=DarkGray  ctermbg=none     cterm=none
+hi Visual       ctermfg=White     ctermbg=DarkRed  cterm=none
 
-hi Constant     ctermfg=12 ctermbg=none cterm=none
-hi Statement    ctermfg=14 ctermbg=none cterm=none
-hi Type         ctermfg=11 ctermbg=none cterm=none
+hi Constant  ctermfg=Blue   ctermbg=none cterm=none
+hi Statement ctermfg=Yellow ctermbg=none cterm=none
+hi Type      ctermfg=Green  ctermbg=none cterm=none
 
 hi! link Delimiter    Normal
 hi! link LineNr       Comment
@@ -43,7 +44,6 @@ hi! link WarningMsg   Error
 hi! link PreProc      Identifier
 hi! link StorageClass Statement
 hi! link Title        Statement
-hi! link MatchParen   Statement
 hi! link Special      Type
 hi! link String       Type
 hi! link Todo         Special
