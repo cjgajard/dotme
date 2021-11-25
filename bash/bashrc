@@ -5,8 +5,8 @@ esac
 
 # SETUP
 # -----
-library=(git ps)
-plugin=(ls user ripley)
+library=(user ps git)
+plugin=(user ls)
 smart_plugin=true
 theme="monal"
 . $HOME/cjgajard/configfiles/bash/loader.sh

@@ -16,6 +16,7 @@ configfolder_git() {
   git config --global alias.lc '!git log --oneline | head -n1'
   git config --global alias.logx 'log --graph --oneline'
   git config --global alias.m 'merge --no-ff'
+  git config --global alias.mff 'merge --ff-only'
   git config --global alias.psf 'push --force-with-lease'
   git config --global alias.plrb 'pull --rebase'
   git config --global alias.rba 'rebase --abort'

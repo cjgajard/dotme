@@ -41,6 +41,10 @@ configfolder_smart_plugins() {
   if [[ -f 'go.mod' ]]; then
     echo 'go'
   fi
+
+  if [[ `pwd` =~ "$HOME/ripley" ]]; then
+    echo 'ripley'
+  fi
 }
 
 # ?
