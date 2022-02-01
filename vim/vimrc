@@ -45,10 +45,14 @@ nnoremap <Leader>et :e %:r_test.%:e<CR>
 nnoremap <Leader>eT :exec 'e '.substitute(expand('%:r'),'_test','','').'.'.expand('%:e')<CR>
 
 "clipboard
-let g:copyprg = 'xclip -i -sel c'
-let g:pasteprg = 'xclip -o -sel c'
+let g:copyprg = 'DISPLAY=:0 xclip -i -sel c'
+let g:pasteprg = 'DISPLAY=:0 xclip -o -sel c'
+let g:pastepprg = 'DISPLAY=:0 xclip -o -sel primary'
 nnoremap <Leader>xc :call system(g:copyprg, @")<CR>
-nnoremap <Leader>xv :exec 'normal i'.substitute(system(g:pasteprg), '[\r\n]*$', '', '')<CR>
+nnoremap <Leader>xv "=substitute(system(g:pasteprg), '[\r\n]*$', '', '')<CR>p
+inoremap <C-x>v <C-R>=system(g:pasteprg)<CR>
+nnoremap <Leader>xx "=system(g:pastepprg)<CR>p
+inoremap <C-x>x <C-R>=system(g:pastepprg)<CR>
 
 "daynight
 function! IsNight()
