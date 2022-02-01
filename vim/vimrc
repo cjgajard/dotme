@@ -131,4 +131,5 @@ nnoremap <Leader>gt :GoAddTags<CR>
 filetype off
 set background=dark
 if IsNight() | colorscheme trescolores | else | colorscheme patagonia | endif
+if $TERM == 'linux' | colorscheme trescolores8 | endif
 filetype plugin indent on
