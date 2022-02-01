@@ -1,5 +1,5 @@
 "vim-plug
-call plug#begin(has('win32') ? '~/vimfiles/plugged' : '~/.vim/plugged')
+call plug#begin(has('win32') ? '~/vimfiles/download' : '~/.vim/download')
 Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go'
 Plug 'leafgarland/typescript-vim'
