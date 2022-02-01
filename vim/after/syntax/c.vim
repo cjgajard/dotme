@@ -1,7 +1,7 @@
 syn match cType /\<[a-z_][0-9a-z_]*_t\>/
 syn match cOperator /!/
 
-syn match cValue /\<\(\u\a*\|\u[A-Z_]*\)\>/
+syn match cValue /\<\(\l\+_\)\?\(\u\a*\|\u[A-Z_]*\)\>/
 hi def link cValue Constant
 
 syn match cTypeName /\<\h\w*\>/ contained
@@ -16,4 +16,4 @@ syn match cFunctionDef /\<\h\w*\>\ze (/
 hi def link cFunctionDef Function
 
 syn match cThis /\<this\>/
-hi def link cThis Special
+hi def link cThis Statement

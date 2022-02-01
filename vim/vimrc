@@ -41,10 +41,6 @@ nnoremap <Leader>m :silent make\|redraw!\|cc<CR>
 nnoremap <Leader>p :set paste! paste?<CR>
 
 "related-buffer
-nnoremap <Leader>ec :e %<.c<CR>
-nnoremap <Leader>eC :e %<.h<CR>
-nnoremap <Leader>eh :e %<.h<CR>
-nnoremap <Leader>eH :e %<.c<CR>
 nnoremap <Leader>et :e %:r_test.%:e<CR>
 nnoremap <Leader>eT :exec 'e '.substitute(expand('%:r'),'_test','','').'.'.expand('%:e')<CR>
 
