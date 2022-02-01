@@ -22,6 +22,7 @@ configfolder_git() {
   git config --global alias.rba 'rebase --abort'
   git config --global alias.rbc 'rebase --continue'
   git config --global alias.rbi 'rebase --interactive'
+  git config --global alias.rbs 'rebase --skip'
   git config --global alias.rh 'reset HEAD'
   git config --global alias.rs 'restore'
   git config --global alias.rsp 'restore --patch'
