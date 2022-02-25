@@ -2,6 +2,7 @@
 
 configfolder_bash() {
   configfolder_install bash/bashrc $HOME/.bashrc
+  configfolder_install bash/profile $HOME/.profile
 }
 
 if [ $0 == "$BASH_SOURCE" ]; then
