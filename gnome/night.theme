@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+PROFILE_ID=${PROFILE_ID:-$1}
+
+if command -v dconf >/dev/null && [[ -n "$PROFILE_ID" ]]; then
+    DIR=/org/gnome/terminal/legacy/profiles:/:${PROFILE_ID}
+    dconf write $DIR/audible-bell "false"
+    dconf write $DIR/background-color "'rgb(32,20,16)'"
+    dconf write $DIR/background-transparency-percent "8"
+    dconf write $DIR/bold-color-same-as-fg "true"
+    dconf write $DIR/bold-is-bright "true"
+    dconf write $DIR/cursor-background-color "'rgb(255,229,0)'"
+    dconf write $DIR/cursor-blink-mode "'off'"
+    dconf write $DIR/cursor-colors-set "true"
+    dconf write $DIR/cursor-foreground-color "'rgb(0,0,0)'"
+    dconf write $DIR/cursor-shape "'block'"
+    dconf write $DIR/font "'Unifont Medium 12'"
+    dconf write $DIR/foreground-color "'rgb(255,192,128)'"
+    dconf write $DIR/highlight-colors-set "false"
+    dconf write $DIR/palette "['rgb(128,32,0)', 'rgb(255,64,0)', 'rgb(255,128,0)', 'rgb(255,192,0)', 'rgb(255,64,64)', 'rgb(255,64,128)', 'rgb(255,128,64)', 'rgb(255,192,128)', 'rgb(192,128,64)', 'rgb(255,128,64)', 'rgb(255,192,64)', 'rgb(255,240,64)', 'rgb(255,128,128)', 'rgb(255,128,192)', 'rgb(255,192,128)', 'rgb(255,255,192)']"
+    dconf write $DIR/use-system-font "false"
+    dconf write $DIR/use-theme-colors "false"
+    dconf write $DIR/use-theme-transparency "false"
+    dconf write $DIR/use-transparent-background "true"
+    dconf write $DIR/visible-name "'Night'"
+fi

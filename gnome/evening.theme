@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# default	#FFFFFF		#380C2A
+# cursor	#FFFFFF		#FF00AE
+# black		#000000		#9C5987
+# red		#C6263E		#F1909F
+# green		#E6891C		#DBB180
+# yellow	#C3D12D		#D1D69A
+# blue		#AA4DFF		#CC94FF
+# magenta	#EE48EE		#F6A2F6
+# cyan		#59D583		#A9D4B8
+# white		#BE9DB4		#F7DAEE
+
+PROFILE_ID=${PROFILE_ID:-$1}
+
+if command -v dconf >/dev/null && [[ -n "$PROFILE_ID" ]]; then
+    DIR=/org/gnome/terminal/legacy/profiles:/:${PROFILE_ID}
+    dconf write $DIR/audible-bell "false"
+    dconf write $DIR/background-color "'rgb(56,12,42)'"
+    dconf write $DIR/background-transparency-percent "8"
+    dconf write $DIR/bold-color-same-as-fg "true"
+    dconf write $DIR/bold-is-bright "false"
+    dconf write $DIR/cursor-background-color "'rgb(255,0,174)'"
+    dconf write $DIR/cursor-blink-mode "'off'"
+    dconf write $DIR/cursor-colors-set "true"
+    dconf write $DIR/cursor-foreground-color "'rgb(255,255,255)'"
+    dconf write $DIR/cursor-shape "'block'"
+    dconf write $DIR/font "'Unifont Medium 12'"
+    dconf write $DIR/foreground-color "'rgb(255,255,255)'"
+    dconf write $DIR/highlight-colors-set "false"
+    dconf write $DIR/palette "['rgb(0,0,0)', 'rgb(198,38,62)', 'rgb(230,137,28)',
+      'rgb(195,209,45)', 'rgb(170,77,255)', 'rgb(238,72,238)', 'rgb(89,213,131)',
+      'rgb(190,157,180)', 'rgb(156,89,135)', 'rgb(241,144,159)', 'rgb(219,177,128)',
+      'rgb(209,214,154)', 'rgb(204,148,255)', 'rgb(246,162,246)',
+      'rgb(169,212,184)', 'rgb(247,218,238)']"
+    dconf write $DIR/use-system-font "false"
+    dconf write $DIR/use-theme-colors "false"
+    dconf write $DIR/use-theme-transparency "true"
+    dconf write $DIR/use-transparent-background "false"
+    dconf write $DIR/visible-name "'Evening'"
+fi
