@@ -37,3 +37,10 @@ env2json() {
 minijson() {
   python3 -c "import json,sys;print(json.dumps(json.load(sys.stdin), separators=(',', ':')))"
 }
+
+chprofile() {
+  if [[ -z $1 ]]; then
+    echo missing argument \$1 >&2
+  fi
+  xdotool key --clearmodifiers Shift+F10 r $1
+}
