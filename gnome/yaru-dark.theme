@@ -17,10 +17,16 @@ if command -v dconf >/dev/null && [[ -n "$PROFILE_ID" ]]; then
     dconf write $DIR/font "'Unifont Medium 12'"
     dconf write $DIR/foreground-color "'rgb(255,255,255)'"
     dconf write $DIR/highlight-colors-set "false"
-    dconf write $DIR/palette "['rgb(0,0,0)', 'rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(255,255,0)', 'rgb(0,0,255)', 'rgb(255,0,255)', 'rgb(0,255,255)', 'rgb(204,204,204)', 'rgb(127,127,127)', 'rgb(255,127,127)', 'rgb(127,255,127)', 'rgb(255,255,128)', 'rgb(127,127,255)', 'rgb(255,128,255)', 'rgb(128,255,255)', 'rgb(255,255,255)']"
+    dconf write $DIR/palette "['rgb(0,0,0)', 'rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(255,255,0)', 'rgb(0,0,255)', 'rgb(255,0,255)', 'rgb(0,255,255)', 'rgb(204,204,204)', 'rgb(127,127,127)', 'rgb(255,127,127)', 'rgb(127,255,127)', 'rgb(255,255,128)', 'rgb(127,127,255)', 'rgb(255,157,255)', 'rgb(181,255,255)', 'rgb(255,255,255)']"
     dconf write $DIR/use-system-font "false"
     dconf write $DIR/use-theme-colors "false"
     dconf write $DIR/use-theme-transparency "false"
     dconf write $DIR/use-transparent-background "true"
     dconf write $DIR/visible-name "'Yaru-dark'"
 fi
+
+: <<-VTRGB
+29,255,0,255,0,255,0,204,127,255,127,255,127,255,181,255
+32,0,255,255,0,0,255,204,127,127,255,255,127,157,255,255
+57,0,0,0,255,255,255,204,127,127,127,128,255,255,255,255
+VTRGB

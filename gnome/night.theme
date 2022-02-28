@@ -24,3 +24,9 @@ if command -v dconf >/dev/null && [[ -n "$PROFILE_ID" ]]; then
     dconf write $DIR/use-transparent-background "true"
     dconf write $DIR/visible-name "'Night'"
 fi
+
+: <<-VTRGB
+32,255,255,255,255,255,255,255,192,255,255,255,255,255,255,255
+20,64,128,192,64,64,128,192,128,128,192,240,128,128,192,255
+16,0,0,0,64,128,64,128,64,64,64,64,128,192,128,192
+VTRGB
