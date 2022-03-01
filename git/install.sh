@@ -12,6 +12,7 @@ configfolder_git() {
   git config --global alias.ds  'diff --staged'
   git config --global alias.g   'grep --line-number'
   git config --global alias.lo  'log --graph --oneline'
+  git config --global alias.lol 'log --graph --oneline --all'
   git config --global alias.m   'merge --no-ff'
   git config --global alias.mff 'merge --ff-only'
   git config --global alias.psf 'push --force-with-lease'

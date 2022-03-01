@@ -16,6 +16,7 @@ if has('win32') | set enc=utf-8 | endif
 set backspace=indent,start
 set backupcopy=yes nobackup noundofile
 set expandtab shiftwidth=2 softtabstop=2 tabstop=8
+set colorcolumn=+1 textwidth=80
 set cursorline cursorlineopt=number
 set fillchars=stl:=,stlnc:-,vert:\|,fold:-
 set hlsearch noincsearch
@@ -24,7 +25,7 @@ set nonumber norelativenumber numberwidth=2
 set showcmd
 set splitbelow splitright
 set laststatus=2 statusline=[%<%f:%l:%c%V]%m%r%q%w%=%a%y[%n]
-set textwidth=80 colorcolumn=+1
+set timeoutlen=200
 set wildmenu wildmode=full
 set wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 
@@ -36,9 +37,11 @@ nnoremap q: <nop>
 nnoremap Ñ :
 "nnoremap ; :
 "nnoremap : ;
+
 nnoremap <Leader>q :let @/=''\|noh<CR>
 nnoremap <Leader>m :silent make\|redraw!\|cc<CR>
 nnoremap <Leader>p :set paste! paste?<CR>
+vnoremap s :sort<CR>
 
 "related-buffer
 nnoremap <Leader>et :e %:r_test.%:e<CR>
@@ -112,8 +115,8 @@ nmap <Leader>ap <Plug>(ale_previous_wrap)
 nmap <Leader>ag <Plug>(ale_go_to_definition)
 nmap <Leader>aG <Plug>(ale_go_to_type_definition)
 nmap <Leader>aG <Plug>(ale_lint_on_insert_leave)
-nnoremap <Leader>ae :ALEEnableBuffer<CR>
-nnoremap <Leader>aE :ALEDisableBuffer<CR>
+nnoremap <Leader>ae :ALEEnable<CR>
+nnoremap <Leader>aE :ALEDisable<CR>
 nnoremap <Leader>ai :ALEInfo<CR>
 nnoremap <Leader>ah :ALEHover<CR>
 
