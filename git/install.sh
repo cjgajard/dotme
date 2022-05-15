@@ -7,7 +7,8 @@ configfolder_git() {
   git config --global user.name 'Carlos Gajardo'
 
   git config --global alias.ap  'add --patch'
-  git config --global alias.c   'commit'
+  git config --global alias.b   'branch'
+  git config --global alias.c   'commit -v'
   git config --global alias.co  'checkout'
   git config --global alias.ds  'diff --staged'
   git config --global alias.g   'grep --line-number'

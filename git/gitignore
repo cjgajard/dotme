@@ -3,6 +3,9 @@
 .eslintcache
 .nvmrc
 .sw[a-p]
+.env-dev
+.env-qa
+.env-prod
 TAGS
 certs/
 tags
