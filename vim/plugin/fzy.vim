@@ -1,17 +1,15 @@
-function! FzyDo(choice_cmd, vim_cmd)
+function! Fzy()
+  call system('git rev-parse')
+  let l:find_cmd = v:shell_error == 0 ? 'git ls-files' : 'find . -type f'
   try
-    let output = system(a:choice_cmd . " | fzy ")
+    let output = system(l:find_cmd . " | fzy ")
   catch /Vim:Interrupt/
     " Swallow errors from ^C, allow redraw! below
   endtry
   redraw!
   if v:shell_error == 0 && !empty(output)
-    exec ':' . (empty(a:vim_cmd) ? 'e' : a:vim_cmd) . ' '. output
+    exec ':e '. output
   endif
 endfunction
 
-command! -nargs=* Fzy :call FzyDo("find . -type f", <q-args>)
-command! -nargs=* Gzy :call FzyDo("git ls-files", <q-args>)
-
-exec 'nnoremap <C-p> :Fzy '
-exec 'nnoremap <C-g> :Gzy '
+command! Find :call Fzy()
