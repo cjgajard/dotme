@@ -14,4 +14,4 @@ theme="monal"
 # BASH
 # ----
 shopt -s histappend
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups

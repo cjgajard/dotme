@@ -25,7 +25,7 @@ set nonumber norelativenumber numberwidth=2
 set showcmd
 set splitbelow splitright
 set laststatus=2 statusline=[%<%f:%l:%c%V]%m%r%q%w%=%a%y[%n]
-set timeoutlen=200
+set timeoutlen=500
 set wildmenu wildmode=full
 set wildignorecase wildignore=.git/,.*.sw[a-p],.keep
 
@@ -93,6 +93,7 @@ let g:netrw_hide = 1
 "let g:netrw_sort_sequence = '[\/]$,\.\(h\|c\)$,*'
 let g:netrw_sort_sequence = '[\/]$,*'
 nnoremap <Leader>ee :Explore .<CR>
+nnoremap <Leader>ef :Explore %:h<CR>
 nnoremap <Leader>er :Rexplore<CR>
 nnoremap <Leader>ev :Vexplore .<CR>
 

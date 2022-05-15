@@ -23,14 +23,12 @@ hi ColorColumn ctermfg=8        ctermbg=none     cterm=reverse
 hi StatusLine   ctermfg=White ctermbg=none cterm=bold
 hi StatusLineNC ctermfg=White ctermbg=none cterm=none
 
-if &t_Co >= 16
-    hi Constant  ctermfg=Blue    ctermbg=none
-else
-    "default blue of linux terminal is difficult to read over black
-    hi Constant  ctermfg=Magenta ctermbg=none
-endif
-hi Type      ctermfg=Green    ctermbg=none
-hi Statement ctermfg=Yellow  ctermbg=none
+hi Constant  ctermfg=DarkMagenta    ctermbg=none
+hi Type      ctermfg=DarkCyan   ctermbg=none
+hi Statement ctermfg=DarkYellow  ctermbg=none
+
+"" default blue of linux terminal is difficult to read over black
+"if &t_Co < 16 | hi Constant  ctermfg=Magenta ctermbg=none | endif
 
 hi! link Delimiter    Normal
 hi! link LineNr       Comment
@@ -43,9 +41,9 @@ hi! link TabLineFill  StatusLineNC
 hi! link TabLineSel   StatusLine
 hi! link VertSplit    StatuslineNC
 
-hi! link SpecialKey   Comment
-hi! link SignColumn   Comment
 hi! link Folded       Comment
+hi! link SignColumn   Comment
+hi! link SpecialKey   Comment
 hi! link Identifier   Constant
 hi! link Label        Constant
 hi! link SpellBad     Error
@@ -54,6 +52,7 @@ hi! link WarningMsg   Error
 hi! link PreProc      Identifier
 hi! link StorageClass Statement
 hi! link Title        Statement
+hi! link Directory    Type
 hi! link Special      Type
 hi! link String       Type
 hi! link Todo         Special

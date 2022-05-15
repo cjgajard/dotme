@@ -1,4 +1,5 @@
 sudo apt update
+sudo apt upgrade
 
 #
 # SSH
@@ -24,7 +25,7 @@ mkdir -p ~/.local/bin
 wget -qO get-docker.sh https://get.docker.com
 sudo sh get-docker.sh
 rm get-docker.sh
-#sudo groupadd docker
+sudo groupadd docker
 sudo usermod -aG docker $USER
 
 #
