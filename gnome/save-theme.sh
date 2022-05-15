@@ -30,7 +30,13 @@ done
 
 cat <<-END
 fi
+END
 
+if ! command -v ruby; then
+    exit
+fi
+
+cat <<-END
 : <<-VTRGB
 END
 

@@ -5,7 +5,7 @@ PROFILE_ID=${PROFILE_ID:-$1}
 if command -v dconf >/dev/null && [[ -n "$PROFILE_ID" ]]; then
     DIR=/org/gnome/terminal/legacy/profiles:/:${PROFILE_ID}
     dconf write $DIR/audible-bell "false"
-    dconf write $DIR/background-color "'rgb(29,32,57)'"
+    dconf write $DIR/background-color "'rgb(0,27,51)'"
     dconf write $DIR/background-transparency-percent "8"
     dconf write $DIR/bold-color-same-as-fg "true"
     dconf write $DIR/bold-is-bright "false"
@@ -16,16 +16,10 @@ if command -v dconf >/dev/null && [[ -n "$PROFILE_ID" ]]; then
     dconf write $DIR/cursor-shape "'block'"
     dconf write $DIR/foreground-color "'rgb(255,255,255)'"
     dconf write $DIR/highlight-colors-set "false"
-    dconf write $DIR/palette "['rgb(0,0,0)', 'rgb(255,0,0)', 'rgb(0,255,0)', 'rgb(154,126,8)', 'rgb(0,0,255)', 'rgb(255,0,255)', 'rgb(0,255,255)', 'rgb(204,204,204)', 'rgb(127,127,127)', 'rgb(255,127,127)', 'rgb(127,255,127)', 'rgb(255,255,128)', 'rgb(127,127,255)', 'rgb(255,157,255)', 'rgb(181,255,255)', 'rgb(255,255,255)']"
+    dconf write $DIR/palette "['rgb(0,0,0)', 'rgb(255,0,128)', 'rgb(24,222,16)', 'rgb(226,241,35)', 'rgb(0,131,228)', 'rgb(252,153,2)', 'rgb(18,218,170)', 'rgb(204,204,204)', 'rgb(127,127,127)', 'rgb(255,130,193)', 'rgb(132,241,128)', 'rgb(239,248,134)', 'rgb(121,190,241)', 'rgb(255,204,127)', 'rgb(122,240,212)', 'rgb(255,255,255)']"
     dconf write $DIR/use-system-font "true"
     dconf write $DIR/use-theme-colors "false"
     dconf write $DIR/use-theme-transparency "false"
-    dconf write $DIR/use-transparent-background "true"
-    dconf write $DIR/visible-name "'Yaru-dark'"
+    dconf write $DIR/use-transparent-background "false"
+    dconf write $DIR/visible-name "'Cobalt'"
 fi
-
-: <<-VTRGB
-29,255,0,255,0,255,0,204,127,255,127,255,127,255,181,255
-32,0,255,255,0,0,255,204,127,127,255,255,127,157,255,255
-57,0,0,0,255,255,255,204,127,127,127,128,255,255,255,255
-VTRGB
