@@ -63,7 +63,7 @@ function! IsNight()
   let l:longitude='70.4W'
   call system('command -v sunwait')
   if v:shell_error == 0
-    call system('sunwait poll civil '.l:latitude.' '.l:longitude)
+    call system('sunwait poll civil '.l:longitude.' '.l:latitude)
     return v:shell_error == 3
   endif
   let l:hour = str2nr(system('date +%H'))
@@ -133,5 +133,6 @@ nnoremap <Leader>gt :GoAddTags<CR>
 
 "environment
 filetype off
+"let &background = IsNight() ? 'dark' : 'light'
 colorscheme trescolores
 filetype plugin indent on
