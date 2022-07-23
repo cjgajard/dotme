@@ -4,6 +4,8 @@ configfolder_git() {
   configfolder_install git/gitignore ~/.gitignore
   git config --global core.excludesfile ~/.gitignore
   git config --global core.editor vim
+  git config --global --add --bool push.autoSetupRemote true
+  git config --global init.defaultBranch master
   git config --global user.name 'Carlos Gajardo'
 
   git config --global alias.ap  'add --patch'
@@ -12,8 +14,9 @@ configfolder_git() {
   git config --global alias.co  'checkout'
   git config --global alias.ds  'diff --staged'
   git config --global alias.g   'grep --line-number'
-  git config --global alias.lo  'log --graph --oneline'
-  git config --global alias.lol 'log --graph --oneline --all'
+  git config --global alias.h   'help'
+  git config --global alias.lo  'log --graph --oneline --abbrev=8'
+  git config --global alias.lol 'log --graph --oneline --abbrev=8 --all'
   git config --global alias.m   'merge --no-ff'
   git config --global alias.mff 'merge --ff-only'
   git config --global alias.psf 'push --force-with-lease'
@@ -26,6 +29,7 @@ configfolder_git() {
   git config --global alias.rs  'restore'
   git config --global alias.rsp 'restore --patch'
   git config --global alias.rss 'restore --staged'
+  git config --global alias.ss  'status --short'
   git config --global alias.st  'status'
   git config --global alias.today 'log --since=4am'
 }
