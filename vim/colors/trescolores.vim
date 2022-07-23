@@ -4,28 +4,46 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-set background=dark
 hi clear
 if exists("syntax_on")
     syntax reset
 endif
 let g:colors_name="trescolores"
 
-hi Normal      ctermfg=White    ctermbg=none
-hi Comment     ctermfg=7        ctermbg=none
-hi Error       ctermfg=White    ctermbg=DarkRed
-hi MatchParen  ctermfg=Green    ctermbg=none     cterm=bold
-hi Search      ctermfg=none     ctermbg=none     cterm=reverse
-hi Visual      ctermfg=White    ctermbg=DarkBlue cterm=none
-hi ColorColumn ctermfg=8        ctermbg=none     cterm=reverse
+if &background == 'dark'
+    hi Normal      ctermfg=White    ctermbg=none
+    "hi ColorColumn ctermfg=8        ctermbg=none     cterm=reverse
+    hi ColorColumn ctermfg=8        ctermbg=none     cterm=none
+    hi Comment     ctermfg=7        ctermbg=none
+    hi Error       ctermfg=White    ctermbg=DarkRed
+    hi MatchParen  ctermfg=Green    ctermbg=none     cterm=bold
+    hi Search      ctermfg=none     ctermbg=none     cterm=reverse
+    hi Visual      ctermfg=White    ctermbg=DarkBlue cterm=none
+    hi PmenuSel    ctermfg=0        ctermbg=Cyan     cterm=none
 
-"StatusLine and StatusLineNC cannot be transparent for 'fillchars' to work.
-hi StatusLine   ctermfg=White ctermbg=none cterm=bold
-hi StatusLineNC ctermfg=White ctermbg=none cterm=none
+    hi StatusLine   ctermfg=White ctermbg=none cterm=bold
+    hi StatusLineNC ctermfg=White ctermbg=none cterm=none
 
-hi Constant  ctermfg=DarkMagenta    ctermbg=none
-hi Type      ctermfg=DarkCyan   ctermbg=none
-hi Statement ctermfg=DarkYellow  ctermbg=none
+    hi Constant  ctermfg=DarkMagenta ctermbg=none
+    hi Type      ctermfg=DarkCyan    ctermbg=none
+    hi Statement ctermfg=DarkYellow  ctermbg=none
+else
+    hi Normal      ctermfg=0        ctermbg=15
+    hi ColorColumn ctermfg=7        ctermbg=none     cterm=reverse
+    hi Comment     ctermfg=Blue     ctermbg=none
+    hi Error       ctermfg=White    ctermbg=DarkRed
+    hi MatchParen  ctermbg=Green    ctermfg=Black    cterm=none
+    hi Search      ctermfg=none     ctermbg=none     cterm=reverse
+    hi Visual      ctermfg=White    ctermbg=DarkBlue cterm=none
+    hi PmenuSel    ctermfg=0        ctermbg=Cyan     cterm=none
+
+    hi StatusLine   ctermfg=8 ctermbg=none cterm=none
+    hi StatusLineNC ctermfg=7 ctermbg=none cterm=none
+
+    hi Constant  ctermfg=DarkBlue ctermbg=none       cterm=none
+    hi Type      ctermfg=none        ctermbg=DarkCyan   cterm=none
+    hi Statement ctermfg=none        ctermbg=DarkYellow cterm=none
+endif
 
 "" default blue of linux terminal is difficult to read over black
 "if &t_Co < 16 | hi Constant  ctermfg=Magenta ctermbg=none | endif
@@ -57,12 +75,11 @@ hi! link Special      Type
 hi! link String       Type
 hi! link Todo         Special
 
-hi! link htmlEndTag   Comment
-hi! link htmlArg      htmlTag
-
-hi! link diffRemoved  Comment
-hi! link diffChanged  Statement
 hi! link diffAdded    Type
+hi! link diffChanged  Statement
+hi! link diffRemoved  Comment
+
+hi! link shQuote      shString
 
 let &cpo = s:cpo_save
 if exists('*linksave#restore')

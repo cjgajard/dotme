@@ -4,7 +4,6 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-set background=dark
 hi clear
 if exists("syntax_on")
     syntax reset
@@ -18,15 +17,26 @@ hi MatchParen  ctermfg=Green    ctermbg=none     cterm=bold
 hi Search      ctermfg=none     ctermbg=none     cterm=reverse
 hi Visual      ctermfg=White    ctermbg=DarkBlue cterm=none
 hi ColorColumn ctermfg=8        ctermbg=none     cterm=reverse
+hi PmenuSel    ctermfg=0        ctermbg=Cyan     cterm=none
 
 "StatusLine and StatusLineNC cannot be transparent for 'fillchars' to work.
 hi StatusLine   ctermfg=White ctermbg=none cterm=bold
 hi StatusLineNC ctermfg=White ctermbg=none cterm=none
 
-hi Constant  ctermfg=3           ctermbg=none
 hi Statement ctermfg=DarkMagenta ctermbg=none cterm=bold
 hi String    ctermfg=DarkCyan    ctermbg=none
 hi Type      ctermfg=DarkGreen   ctermbg=none
+
+if &background == 'light'
+    hi Normal       ctermbg=White      ctermfg=Black
+    hi Type         ctermfg=DarkGreen  ctermbg=none
+    hi String       ctermbg=Cyan       ctermfg=none
+    hi Constant     ctermbg=Yellow     ctermfg=none
+    hi MatchParen   ctermbg=DarkGreen  ctermfg=White cterm=bold
+
+    hi StatusLine   ctermfg=DarkBlue   ctermbg=none  cterm=none
+    hi StatusLineNC ctermfg=Blue       ctermbg=none  cterm=none
+endif
 
 hi! link Delimiter    Normal
 hi! link LineNr       Comment
