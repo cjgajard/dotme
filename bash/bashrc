@@ -6,7 +6,7 @@ esac
 # SETUP
 # -----
 library=(user ps git sunwait)
-plugin=(user ls)
+plugin=(user ls mancolor)
 smart_plugin=true
 theme="monal"
 . $HOME/cjgajard/configfiles/bash/loader.sh
