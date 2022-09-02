@@ -1,5 +1,5 @@
 syn match cType /\<[a-z_][0-9a-z_]*_t\>/
-syn match cOperator /!/
+syn match cOperator /!\ze[^=]/
 
 syn match cValue /\<\(\l\+_\)\?\(\u\a*\|\u[A-Z_]*\)\>/
 hi def link cValue Constant
@@ -12,7 +12,7 @@ hi def link cTypeName cType
 syn clear cStructure
 syn keyword cStructure struct union enum nextgroup=cTypeName skipwhite
 
-syn match cFunctionDef /\<\h\w*\>\ze (/
+syn match cFunctionDef /\<\h\w*\>\ze\s\+(/
 hi def link cFunctionDef Function
 
 syn match cThis /\<this\>/
