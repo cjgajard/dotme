@@ -44,3 +44,7 @@ chprofile() {
   fi
   xdotool key --clearmodifiers Shift+F10 r $1
 }
+
+lcd() {
+  cd $1 && ls -F
+}
