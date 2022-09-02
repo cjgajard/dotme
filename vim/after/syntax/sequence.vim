@@ -6,11 +6,10 @@ syn match sequenceColor /#\w\+/ contained nextgroup=sequenceIdentifier skipwhite
 syn match sequenceSpecial /\(\\n\)/
 syn keyword sequenceToggle on off contained
 
-syn keyword sequenceKeyword title end
 syn keyword sequenceKeyword participant actor boundary control database entity participantgroup nextgroup=sequenceColor,sequenceIdentifier skipwhite
 syn keyword sequenceKeyword activate deactivate create destroy destroyafter destroysilent nextgroup=sequenceIdentifier skipwhite
 syn keyword sequenceKeyword autoactivation nextgroup=sequenceToggle skipwhite
-syn keyword sequenceKeyword alt opt else
+syn keyword sequenceKeyword title par alt opt else end
 
 syn match sequenceColon /:/ contained
 syn match sequenceIdentifier /\u[^-(<:]*/ contained nextgroup=sequenceColon
