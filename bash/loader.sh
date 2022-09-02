@@ -28,6 +28,10 @@ configfolder_smart_plugins() {
     echo 'typescript'
   fi
 
+  if [[ -f 'bun.lockb' ]]; then
+    echo 'bun'
+  fi
+
   if [[ -f 'yarn.lock' ]]; then
     echo 'yarn'
   fi
