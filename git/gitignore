@@ -1,10 +1,8 @@
 .*.sw[a-p]
 .byebug_history
-.eslintcache
 .nvmrc
 .sw[a-p]
 /.env-*
 TAGS
-certs/
 tags
-tmp/
+tmp
