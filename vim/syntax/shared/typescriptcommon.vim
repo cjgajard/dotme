@@ -1,0 +1,34 @@
+hi def link typescriptExport Statement
+hi def link typescriptImport Statement
+
+" Disable syntax highlight to known properties
+hi def link typescriptProp NONE
+hi def link typescriptBOMHistoryProp NONE
+hi def link typescriptBOMLocationProp NONE
+hi def link typescriptBOMNavigatorProp NONE
+hi def link typescriptBOMNetworkProp NONE
+hi def link typescriptBOMWindowProp Structure
+hi def link typescriptCryptoProp NONE
+hi def link typescriptDOMDocProp NONE
+hi def link typescriptDOMEventProp NONE
+hi def link typescriptDOMFormProp NONE
+hi def link typescriptDOMNodeProp NONE
+hi def link typescriptDOMStorageProp NONE
+hi def link typescriptES6MapProp NONE
+hi def link typescriptES6SetProp NONE
+hi def link typescriptEncodingProp NONE
+hi def link typescriptFileReaderProp NONE
+hi def link typescriptMathStaticProp NONE
+hi def link typescriptNumberStaticProp NONE
+hi def link typescriptPaymentAddressProp NONE
+hi def link typescriptPaymentProp NONE
+hi def link typescriptPaymentResponseProp NONE
+hi def link typescriptPaymentShippingOptionProp NONE
+hi def link typescriptRegExpProp NONE
+hi def link typescriptRegExpStaticProp NONE
+hi def link typescriptRequestProp NONE
+hi def link typescriptResponseProp NONE
+hi def link typescriptServiceWorkerProp NONE
+hi def link typescriptSymbolStaticProp NONE
+hi def link typescriptURLUtilsProp NONE
+hi def link typescriptXHRProp NONE
