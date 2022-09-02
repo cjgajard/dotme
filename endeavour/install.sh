@@ -46,7 +46,17 @@ echo '```'
 cd $CONFIGFOLDER
 
 # Install fonts
-echo Copy fonts and log-in again
+echo Copy fonts
 echo '```'
 echo cp -r /run/media/carlos/KINGSTON/vendor/fonts/ ~/.fonts
 echo '```'
+
+# Install gnome-shell
+cd ~/Public/
+git clone https://aur.archlinux.org/gnome-browser-connector.git
+cd gnome-browser-connector/
+makepkg -si
+cd
+
+# End
+echo Log-in again
