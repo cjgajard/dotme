@@ -9,7 +9,7 @@ if command -v dconf >/dev/null && [[ -n "$PROFILE_ID" ]]; then
     dconf write $DIR/background-transparency-percent "8"
     dconf write $DIR/bold-color-same-as-fg "true"
     dconf write $DIR/bold-is-bright "false"
-    dconf write $DIR/cursor-background-color "'rgb(223,74,22)'"
+    dconf write $DIR/cursor-background-color "'rgb(00,209,255)'"
     dconf write $DIR/cursor-blink-mode "'off'"
     dconf write $DIR/cursor-colors-set "true"
     dconf write $DIR/cursor-foreground-color "'rgb(255,255,255)'"
