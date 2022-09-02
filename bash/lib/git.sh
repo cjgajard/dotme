@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 git_prompt_info() {
   local ref
-  ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
-    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
-  echo -e "$THEME_GIT_INFO_PREFIX${ref:11}$THEME_GIT_INFO_SUFFIX"
+  ref=$(command git symbolic-ref HEAD 2>/dev/null | sed 's|refs/heads/||')
+  if [[ -z "$ref" ]]; then
+    ref=$(command git rev-parse --short HEAD 2>/dev/null) || return 0
+  fi
+  echo -e "${THEME_GIT_INFO_PREFIX}${ref}${THEME_GIT_INFO_SUFFIX}"
 }
 
 git_prompt_status() {
