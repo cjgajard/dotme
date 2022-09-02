@@ -1,21 +1,28 @@
 "plugins
+"functionality
 Plug 'FredKSchott/CoVim'
 Plug 'cjgajard/toggleset.vim', { 'on': 'MapToggleSet' }
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'kergoth/vim-hilinks'
 Plug 'tpope/vim-surround'
+Plug 'ap/vim-css-color'
+Plug 'kergoth/vim-hilinks'
+"syntax
 Plug 'hashivim/vim-terraform'
-
-Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-"
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'ollykel/v-vim'
+"colors
 Plug 'eemed/sitruuna.vim'
 Plug 'TroyFletcher/vim-colors-synthwave'
 Plug 'cjgajard/patagonia-vim'
 Plug 'crusoexia/vim-dracula'
-
+"nerd
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+"local
+Plug '~/cjgajard/judi/contrib/judi-vim'
 
 "settings
 set term=screen-256color
