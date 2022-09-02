@@ -1,1 +1,1 @@
-au BufNewFile,BufRead .env-dev,.env-qa,.env-prod set filetype=sh
+au BufNewFile,BufRead .env-*,env-* set filetype=sh
