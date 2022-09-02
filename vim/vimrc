@@ -1,12 +1,8 @@
-"vim-plug
 call plug#begin(has('win32') ? '~/vimfiles/download' : '~/.vim/download')
 Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'cjgajard/patagonia-vim'
 call plug#end()
 
 "preload
@@ -90,6 +86,7 @@ nnoremap <Leader>th :vertical terminal<CR><C-w>H
 "netrw
 let g:netrw_list_hide = '^\.\.\?[\/]$,'.netrw_gitignore#Hide()
 let g:netrw_hide = 1
+let g:netrw_banner = 0
 "let g:netrw_sort_sequence = '[\/]$,\.\(h\|c\)$,*'
 let g:netrw_sort_sequence = '[\/]$,*'
 nnoremap <Leader>ee :Explore .<CR>
@@ -108,18 +105,17 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 nmap <Leader>ad <Plug>(ale_detail)
 nmap <Leader>af <Plug>(ale_fix)
+nmap <Leader>ag <Plug>(ale_go_to_definition)
+nmap <Leader>aG <Plug>(ale_go_to_type_definition)
 nmap <Leader>aj <Plug>(ale_next)
 nmap <Leader>ak <Plug>(ale_previous)
 nmap <Leader>al <Plug>(ale_lint)
 nmap <Leader>an <Plug>(ale_next_wrap)
 nmap <Leader>ap <Plug>(ale_previous_wrap)
-nmap <Leader>ag <Plug>(ale_go_to_definition)
-nmap <Leader>aG <Plug>(ale_go_to_type_definition)
-nmap <Leader>aG <Plug>(ale_lint_on_insert_leave)
-nnoremap <Leader>ae :ALEEnable<CR>
-nnoremap <Leader>aE :ALEDisable<CR>
-nnoremap <Leader>ai :ALEInfo<CR>
 nnoremap <Leader>ah :ALEHover<CR>
+nnoremap <Leader>ai :ALEInfo<CR>
+nnoremap <Leader>ar :ALEReset<CR>
+nnoremap <Leader>at :ALEToggle<CR>
 
 "fatih/vim-go
 let g:go_addtags_transform = 'camelcase'
@@ -127,12 +123,19 @@ let g:go_echo_go_info = 0
 let g:go_fmt_fail_silently = 1
 let g:go_imports_autosave = 0
 let g:go_template_autocreate = 0
+call setenv("GOFLAGS", "-tags=integration")
 set completeopt=menu
 nnoremap <Leader>gi :GoImports<CR>
 nnoremap <Leader>gt :GoAddTags<CR>
 
+"extra
+command! Kitty e ~/.config/kitty/kitty.conf
+command! Mkdir call mkdir(expand("%:h"), "p")
+nnoremap <Leader>jp :JSONPp<Return>
+nnoremap <Leader>ju :JSONUnescape<Return>
+
 "environment
 filetype off
-"let &background = IsNight() ? 'dark' : 'light'
+set background=dark
 colorscheme trescolores
 filetype plugin indent on
