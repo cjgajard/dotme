@@ -71,6 +71,7 @@ augroup vimrc_reload
   au!
   au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
     \ | if has('gui_running') && !empty($MYGVIMRC) | so $MYGVIMRC | endif
+  au BufWritePost */colors/*.vim so $MYVIMRC
 augroup END
 
 augroup fo_clean
