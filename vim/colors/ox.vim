@@ -13,22 +13,49 @@ if exists("syntax_on")
 endif
 let g:colors_name="ox"
 
-hi Normal       ctermfg=15 ctermbg=0    cterm=none
-hi Comment      ctermfg=8  ctermbg=none cterm=none
-hi Error        ctermfg=15 ctermbg=8    cterm=none
-hi Search       ctermfg=15 ctermbg=0    cterm=reverse
-hi Visual       ctermfg=15 ctermbg=4    cterm=none
-hi StatusLine   ctermfg=36 ctermbg=234  cterm=bold
-hi StatusLineNC ctermfg=36 ctermbg=234  cterm=none
+"TODO remove comment
+if get(g:, 'ox_use_xterm256', 0)
+  let s:x0 = 16
+  let s:x1 = 231
+  let s:x2 = 244
+  let s:x3 = 36
+  let s:x4 = 234
+  let s:x5 = 81
+  let s:x6 = 69
+  let s:x7 = 207
+  let s:x8 = 98
+  let s:x9 = 42
+  let s:xa = 19
+else
+  let s:x0 = 0
+  let s:x1 = 15
+  let s:x2 = 7
+  let s:x3 = 6
+  let s:x4 = 8
+  let s:x5 = 14
+  let s:x6 = 5
+  let s:x7 = 13
+  let s:x8 = 12
+  let s:x9 = 10
+  let s:xa = 4
+endif
 
-hi TabLineSel ctermfg=231 ctermbg=none cterm=bold
-hi TabLine    ctermfg=15  ctermbg=234  cterm=none
+exe 'hi Normal       ctermfg='.s:x1.' ctermbg=none     cterm=none'
+exe 'hi Comment      ctermfg='.s:x2.' ctermbg=none     cterm=none'
+exe 'hi Error        ctermfg='.s:x1.' ctermbg='.s:x2.' cterm=none'
+exe 'hi Search       ctermfg='.s:x1.' ctermbg='.s:x0.' cterm=reverse'
+exe 'hi Visual       ctermfg='.s:x1.' ctermbg='.s:xa.' cterm=none'
+exe 'hi StatusLine   ctermfg='.s:x3.' ctermbg='.s:x4.' cterm=bold'
+exe 'hi StatusLineNC ctermfg='.s:x3.' ctermbg='.s:x4.' cterm=none'
 
-hi Constant    ctermfg=81  ctermbg=none cterm=none
-hi Identifier  ctermfg=69  ctermbg=none cterm=none
-hi Macro       ctermfg=207 ctermbg=none cterm=none
-hi Statement   ctermfg=98  ctermbg=none cterm=none
-hi String      ctermfg=42  ctermbg=none cterm=none
+exe 'hi TabLineSel   ctermfg='.s:x1.' ctermbg=none     cterm=bold'
+exe 'hi TabLine      ctermfg='.s:x1.' ctermbg='.s:x4.' cterm=none'
+
+exe 'hi Constant     ctermfg='.s:x5.' ctermbg=none     cterm=none'
+exe 'hi Identifier   ctermfg='.s:x6.' ctermbg=none     cterm=none'
+exe 'hi Macro        ctermfg='.s:x7.' ctermbg=none     cterm=none'
+exe 'hi Statement    ctermfg='.s:x8.' ctermbg=none     cterm=none'
+exe 'hi String       ctermfg='.s:x9.' ctermbg=none     cterm=none'
 
 hi! link VertSplit   StatuslineNC
 hi! link TabLineFill StatusLineNC
