@@ -60,5 +60,6 @@ command! -range GitBlame exec '!'.s:gitBlameCmd(<line1>, <line2>)
 noremap <Leader>b :GitBlameCmd<CR>
 
 "extra
+command! Kitty e ~/.config/kitty/kitty.conf
 nmap <F6> <Plug>(hilite_cur_echo)
 nmap <F7> <Plug>(hilite_cur_hi)

@@ -130,7 +130,6 @@ nnoremap <Leader>gi :GoImports<CR>
 nnoremap <Leader>gt :GoAddTags<CR>
 
 "extra
-command! Kitty e ~/.config/kitty/kitty.conf
 command! Mkdir call mkdir(expand("%:h"), "p")
 nnoremap <Leader>jp :JSONPp<Return>
 nnoremap <Leader>ju :JSONUnescape<Return>
