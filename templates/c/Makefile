@@ -1,7 +1,7 @@
-CFLAGS = -ansi -g -Werror -Wall -Wpedantic
-LIBS = #-lm
-OUT = $(shell basename $(CURDIR))
-OBJ = main.o
+CFLAGS = -ansi -g -Werror -Wall -Wpedantic #$(shell pkg-config --cflags sdl2)
+LIBS = #-lm $(shell pkg-config --libs sdl2)
+OUT = a.out
+OBJ = $(shell basename $(CURDIR)).o
 
 .PHONY: clean Makeobjects
 
