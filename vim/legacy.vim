@@ -58,3 +58,7 @@ endfunction
 command! -range GitBlameCmd echom s:gitBlameCmd(<line1>, <line2>)
 command! -range GitBlame exec '!'.s:gitBlameCmd(<line1>, <line2>)
 noremap <Leader>b :GitBlameCmd<CR>
+
+"extra
+nmap <F6> <Plug>(hilite_cur_echo)
+nmap <F7> <Plug>(hilite_cur_hi)
