@@ -137,5 +137,5 @@ nnoremap <Leader>ju :JSONUnescape<Return>
 "environment
 filetype off
 set background=dark
-colorscheme trescolores
+colorscheme default
 filetype plugin indent on
