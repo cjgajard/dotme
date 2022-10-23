@@ -5,6 +5,7 @@ syn match cValue /\<\(\l\+_\)\?\(\u\a*\|\u[A-Z_]*\)\>/
 hi def link cValue Constant
 
 syn match cTypeName /\<\h\w*\>/ contained
+syn cluster cMultiGroup add=cTypeName
 syn cluster cParenGroup add=cTypeName
 syn cluster cPreProcGroup add=cTypeName
 hi def link cTypeName cType
