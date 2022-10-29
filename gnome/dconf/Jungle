@@ -1,0 +1,21 @@
+[/]
+audible-bell=false
+background-color='rgb(11,39,22)'
+background-transparency-percent=8
+bold-color-same-as-fg=true
+bold-is-bright=false
+cursor-background-color='rgb(9,255,0)'
+cursor-blink-mode='off'
+cursor-colors-set=true
+cursor-foreground-color='rgb(0,0,0)'
+cursor-shape='block'
+foreground-color='rgb(219,255,232)'
+highlight-background-color='rgb(0,0,0)'
+highlight-colors-set=false
+highlight-foreground-color='rgb(255,255,255)'
+palette=['rgb(11,23,7)', 'rgb(242,137,32)', 'rgb(159,232,66)', 'rgb(214,199,57)', 'rgb(85,83,224)', 'rgb(57,214,214)', 'rgb(38,162,88)', 'rgb(112,119,112)', 'rgb(255,159,255)', 'rgb(251,187,124)', 'rgb(195,231,149)', 'rgb(244,235,154)', 'rgb(166,165,242)', 'rgb(152,230,230)', 'rgb(157,227,185)', 'rgb(255,255,255)']
+scrollbar-policy='never'
+use-system-font=true
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=false

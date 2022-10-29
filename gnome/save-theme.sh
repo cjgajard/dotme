@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+echo deprecated in favour of ./theme.sh >&2
+exit 1
+
 PROFILE_ID=${PROFILE_ID:-$1}
 
 if ! command -v dconf >/dev/null; then
