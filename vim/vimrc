@@ -17,6 +17,7 @@ set cursorline cursorlineopt=number
 set fillchars=stl:=,stlnc:-,vert:\|,fold:-
 set hlsearch noincsearch
 set list listchars=tab:·\ ,trail:~
+if version >= 900 | set listchars+=leadmultispace:·\ \ \  | endif
 set nonumber norelativenumber numberwidth=2
 set showcmd
 set splitbelow splitright
@@ -29,8 +30,11 @@ let c_syntax_for_h = 1
 
 "remap-builtins
 nnoremap Q <nop>
+nnoremap gQ <nop>
 nnoremap q: <nop>
 nnoremap Ñ :
+nnoremap <Space> <Leader>
+nnoremap n nzz
 "nnoremap ; :
 "nnoremap : ;
 
@@ -130,12 +134,13 @@ nnoremap <Leader>gi :GoImports<CR>
 nnoremap <Leader>gt :GoAddTags<CR>
 
 "extra
-command! Mkdir call mkdir(expand("%:h"), "p")
+command! -bar Mkdir call mkdir(expand("%:h"), "p")
 nnoremap <Leader>jp :JSONPp<Return>
 nnoremap <Leader>ju :JSONUnescape<Return>
 
 "environment
 filetype off
+set t_Co=16
 set background=dark
 colorscheme default
 filetype plugin indent on
