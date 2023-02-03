@@ -5,9 +5,8 @@ esac
 
 # SETUP
 # -----
-library=(user ps git sunwait)
-plugin=(user ls mancolor)
-smart_plugin=true
+lib=(user git)
+plugin=(user smart ls mancolor)
 theme="monal"
 . $(dirname `readlink -f ${BASH_SOURCE}`)/loader.sh
 

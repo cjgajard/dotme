@@ -1,76 +1,33 @@
 #!/usr/bin/env bash
-export CONFIGFOLDER="$(cd `dirname ${BASH_SOURCE}`/..; pwd -P)"
 
-configfolder_lib() {
+me_load() {
+  local type=$1
+  shift
   for i in "$@"; do
-    . "$CONFIGFOLDER/bash/lib/$i.sh"
+    local f="$(cd `dirname ${BASH_SOURCE}`; pwd -P)/$type/$i.sh"
+    if [[ "$DEBUG" -eq 1 ]]; then echo $f; fi
+    . "$f"
   done
 }
 
-configfolder_plugin() {
-  for i in "$@"; do
-    . "$CONFIGFOLDER/bash/plugin/$i.sh"
-  done
+me_lib() {
+  me_load lib "$@"
 }
 
-configfolder_smart_plugins() {
-  if [[ -f 'Gemfile' ]]; then
-    echo 'rails'
-    echo 'rbenv'
-  fi
-
-  if [[ -f '.nvmrc' || -f 'package.json' ]]; then
-    echo 'nvm'
-    echo 'node'
-  fi
-
-  if [[ -f 'tsconfig.json' ]]; then
-    echo 'typescript'
-  fi
-
-  if [[ -f 'bun.lockb' ]]; then
-    echo 'bun'
-  fi
-
-  if [[ -f 'yarn.lock' ]]; then
-    echo 'yarn'
-  fi
-
-  if [[ -f 'AndroidManifest.xml' ]]; then
-    echo 'android-tools'
-  fi
-
-  if [[ -f 'manage.py' ]]; then
-    echo 'django'
-  fi
-
-  if [[ -f 'go.mod' ]]; then
-    echo 'go'
-  fi
-
-  if [[ `pwd` =~ "$HOME/ripley" ]]; then
-    echo 'ripley'
-  fi
+me_plugin() {
+  me_load plugin "$@"
 }
-
-# ?
-# [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # load libraries
-configfolder_lib ${library[@]}
-
-# automatically detect plugins
-if [ "$smart_plugin" = true ]; then
-  plugin+=($(configfolder_smart_plugins))
-fi
+me_lib ${lib[@]}
 
 # load plugins
-configfolder_plugin ${plugin[@]}
+me_plugin ${plugin[@]}
 
 # load theme
 if [ -n "$theme" ]; then
-  . "$CONFIGFOLDER/bash/theme/$theme.sh"
+  . "$(cd `dirname ${BASH_SOURCE}`; pwd -P)/theme/$theme.sh"
 fi
 
 # load completions
-. "$CONFIGFOLDER/bash/completion.sh"
+. "$(cd `dirname ${BASH_SOURCE}`; pwd -P)/completion.sh"

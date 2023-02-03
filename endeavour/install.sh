@@ -37,13 +37,13 @@ chmod +x ~/.local/bin/sunwait
 
 # Install gnome themes
 echo Create 3 profiles
-cd $CONFIGFOLDER/gnome
+cd $(cd `dirname ${BASH_SOURCE}`/..; pwd -P)/gnome
 echo '```'
 echo bash cobalt.theme [profile-id]
 echo bash even.theme   [profile-id]
 echo bash night.theme  [profile-id]
 echo '```'
-cd $CONFIGFOLDER
+cd $(cd `dirname ${BASH_SOURCE}`/..; pwd -P)
 
 # Install fonts
 echo Copy fonts

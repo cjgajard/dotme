@@ -1,7 +1,7 @@
-. `dirname ${BASH_SOURCE}`/../bash/lib/configfolder.sh
+. `dirname ${BASH_SOURCE}`/../bash/lib/me.sh
 
-configfolder_git() {
-  configfolder_install git/gitignore ~/.gitignore
+me_installgit() {
+  me_install git/gitignore ~/.gitignore
   git config --global core.excludesfile ~/.gitignore
   git config --global core.editor vim
   git config --global --add --bool push.autoSetupRemote true
@@ -38,6 +38,6 @@ configfolder_git() {
 }
 
 if [ $0 == "$BASH_SOURCE" ]; then
-  configfolder_ask "Install git?" && configfolder_git
+  me_ask "Install git?" && me_installgit
   exit 0
 fi

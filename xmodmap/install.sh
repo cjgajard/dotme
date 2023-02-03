@@ -1,6 +1,6 @@
-. `dirname ${BASH_SOURCE}`/../bash/lib/configfolder.sh
+. `dirname ${BASH_SOURCE}`/../bash/lib/me.sh
 
-configfolder_xmodmap() {
+me_installxmodmap() {
   set -e
 
   cmd=$HOME/.Xmodmap
@@ -24,6 +24,6 @@ configfolder_xmodmap() {
 }
 
 if [ $0 == "$BASH_SOURCE" ]; then
-  configfolder_ask "Install xmodmap config?" && configfolder_xmodmap
+  me_ask "Install xmodmap config?" && me_installxmodmap
   exit 0
 fi

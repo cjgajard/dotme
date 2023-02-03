@@ -1,7 +1,8 @@
-_configfolder_load() {
-  local f="${1#configfolder_}"
-  COMPREPLY+=($(cd $CONFIGFOLDER/bash/$f &>/dev/null;
+_me_load() {
+  local type="${1#me_}"
+  local bash="$(cd `dirname ${BASH_SOURCE}`; pwd -P)"
+  COMPREPLY+=($(cd $bash/$type &>/dev/null;
     compgen -G "$2*.sh" | xargs -r basename -s .sh))
 }
-complete -F _configfolder_load configfolder_plugin
-complete -F _configfolder_load configfolder_lib
+complete -F _me_load me_plugin
+complete -F _me_load me_lib

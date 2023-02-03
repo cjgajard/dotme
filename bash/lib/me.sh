@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-if [ ! $CONFIGFOLDER ]; then
-  export CONFIGFOLDER="$(cd `dirname ${BASH_SOURCE}`/../..; pwd -P)"
-fi
-
-configfolder_ask() {
+me_ask() {
   read -p "$1 [y|N] " -n 1 -r
   echo
   if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -13,9 +9,9 @@ configfolder_ask() {
   return 0
 }
 
-configfolder_install() {
-  local usage="usage: configfolder_install SOURCE_FILE DESTINATION_FILE"
-  local src="${CONFIGFOLDER}/$1"
+me_install() {
+  local usage="usage: me_install SOURCE_FILE DESTINATION_FILE"
+  local src="$(cd `dirname ${BASH_SOURCE}`/../../; pwd -P)/$1"
   local dd=`dirname $2`
   [[ "${src}" == "" || "$2" == "" ]] && echo $usage && return 1
   [[ ! -e ${src} ]] && echo "file \`${src}\` does not exist" && return 1

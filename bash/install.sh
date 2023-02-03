@@ -1,11 +1,11 @@
-. `dirname ${BASH_SOURCE}`/../bash/lib/configfolder.sh
+. `dirname ${BASH_SOURCE}`/lib/me.sh
 
-configfolder_bash() {
-  configfolder_install bash/bashrc $HOME/.bashrc
-  configfolder_install bash/profile $HOME/.profile
+me_installbash() {
+  me_install bash/bashrc $HOME/.bashrc
+  me_install bash/profile $HOME/.profile
 }
 
 if [ $0 == "$BASH_SOURCE" ]; then
-  configfolder_ask "Install bash?" && configfolder_bash
+  me_ask "Install bash?" && me_bash
   exit 0
 fi

@@ -1,10 +1,10 @@
-. `dirname ${BASH_SOURCE}`/../bash/lib/configfolder.sh
+. `dirname ${BASH_SOURCE}`/../bash/lib/me.sh
 
-configfolder_tmux() {
-  configfolder_install tmux/tmux.conf $HOME/.tmux.conf
+me_installtmux() {
+  me_install tmux/tmux.conf $HOME/.tmux.conf
 }
 
 if [ $0 == "$BASH_SOURCE" ]; then
-  configfolder_ask "Install tmux?" && configfolder_tmux
+  me_ask "Install tmux?" && me_installtmux
   exit 0
 fi
