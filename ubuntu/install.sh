@@ -21,7 +21,7 @@ mkdir -p ~/.local/bin
 #
 sudo apt install -y vim
 sudo update-alternatives --config editor
-git clone git@github.com:cjgajard/vim-colorschemes.git ~/.vim
+git clone git@github.com:cjgajard/dotvim.git ~/.vim
 mkdir -p "$HOME/.vim/autoload"
 wget -qO "$HOME/.vim/autoload/plug.vim" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qall
@@ -29,7 +29,7 @@ vim +PlugInstall +qall
 #
 # Me
 #
-git clone git@github.com:cjgajard/configfolder.git ~/.me
+git clone git@github.com:cjgajard/dotme.git ~/.me
 cd ~/.me
 ./install.sh
 
