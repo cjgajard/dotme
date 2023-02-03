@@ -12,6 +12,13 @@ if command -v go &>/dev/null; then
   unset $gocompletepath
 fi
 
-go_ctags() {
-  find . -name '*.go' -exec ctags {} +
+gotest() {
+  local pkg=$1
+  if [[ -z "${pkg}" ]]; then
+    return 1
+  fi
+  shift
+  mkdir -p tmp
+  echo $PWD/tmp/out.html
+  go test $pkg -coverprofile=tmp/c.out $* && go tool cover -html=tmp/c.out -o tmp/out.html
 }
