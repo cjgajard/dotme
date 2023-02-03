@@ -7,20 +7,23 @@ configfolder_git() {
   git config --global --add --bool push.autoSetupRemote true
   git config --global init.defaultBranch master
   git config --global user.name 'Carlos Gajardo'
+  git config --global commit.status true
+  git config --global commit.verbose true
 
   git config --global alias.ap  'add --patch'
   git config --global alias.b   'branch'
-  git config --global alias.c   'commit -v'
+  git config --global alias.c   'commit'
   git config --global alias.co  'checkout'
   git config --global alias.ds  'diff --staged'
+  git config --global alias.f   'fetch'
   git config --global alias.g   'grep --line-number'
   git config --global alias.h   'help'
+  git config --global alias.last 'log --graph --oneline --abbrev=8 --max-count=1'
   git config --global alias.lo  'log --graph --oneline --abbrev=8'
   git config --global alias.lol 'log --graph --oneline --abbrev=8 --all'
   git config --global alias.m   'merge --no-ff'
   git config --global alias.mff 'merge --ff-only'
   git config --global alias.psf 'push --force-with-lease'
-  git config --global alias.plr 'pull --rebase'
   git config --global alias.rba 'rebase --abort'
   git config --global alias.rbc 'rebase --continue'
   git config --global alias.rbi 'rebase --interactive'
