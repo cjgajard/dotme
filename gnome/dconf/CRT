@@ -1,0 +1,11 @@
+[/]
+audible-bell=false
+background-color='rgb(0,0,0)'
+background-transparency-percent=8
+bold-is-bright=false
+cursor-blink-mode='off'
+foreground-color='rgb(255,127,0)'
+palette=['rgb(63,31,0)', 'rgb(255,127,0)', 'rgb(255,127,0)', 'rgb(255,127,0)', 'rgb(255,127,0)', 'rgb(255,127,0)', 'rgb(255,127,0)', 'rgb(255,127,0)', 'rgb(170,63,0)', 'rgb(255,170,0)', 'rgb(255,170,0)', 'rgb(255,170,0)', 'rgb(255,170,0)', 'rgb(255,170,0)', 'rgb(255,170,0)', 'rgb(255,170,0)']
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=false
