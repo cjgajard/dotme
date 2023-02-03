@@ -11,13 +11,27 @@ echo Agrega esta llave ssh a tu cuenta de github.
 echo -n Press ENTER to continue...; read
 
 #
-# Configfiles
+# Essential
 #
-sudo apt install -y build-essential git vim tmux
-git clone git@github.com:cjgajard/configfiles.git cjgajard/configfiles
-cd cjgajard/configfiles/
-./install.sh
+sudo apt install -y build-essential git
 mkdir -p ~/.local/bin
+
+#
+# Vim
+#
+sudo apt install -y vim
+sudo update-alternatives --config editor
+git clone git@github.com:cjgajard/vim-colorschemes.git ~/.vim
+mkdir -p "$HOME/.vim/autoload"
+wget -qO "$HOME/.vim/autoload/plug.vim" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall +qall
+
+#
+# Me
+#
+git clone git@github.com:cjgajard/configfolder.git ~/.me
+cd ~/.me
+./install.sh
 
 #
 # Docker
