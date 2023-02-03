@@ -3,3 +3,4 @@ alias tree="tree -a -I '.git|node_modules|.env|__pycache__'"
 alias echopath='echo $PATH | tr : "\n"'
 alias unhistory='set +o history'
 alias py=python3
+alias ZQ=exit
