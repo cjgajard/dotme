@@ -3,13 +3,6 @@ case $- in
   *) return;;
 esac
 
-# SETUP
-# -----
-lib=(user git)
-plugin=(user smart ls mancolor)
-theme="monal"
-. $(dirname `readlink -f ${BASH_SOURCE}`)/loader.sh
-
 # BASH
 # ----
 HISTCONTROL=ignoreboth:erasedups
@@ -17,12 +10,9 @@ HISTSIZE=1000
 shopt -s checkwinsize
 shopt -s histappend
 
-# COMPLETION
-# ----------
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+# SETUP
+# -----
+lib=(user git)
+plugin=(user kak smart ls mancolor)
+theme="monal"
+. $(dirname `readlink -f ${BASH_SOURCE}`)/loader.sh
