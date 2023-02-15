@@ -15,7 +15,7 @@ me_installgit() {
   git config --global alias.c   'commit'
   git config --global alias.co  'checkout'
   git config --global alias.ds  'diff --staged'
-  git config --global alias.f   'fetch'
+  git config --global alias.f   'fetch --no-tags'
   git config --global alias.g   'grep --line-number'
   git config --global alias.h   'help'
   git config --global alias.last 'log --graph --oneline --abbrev=8 --max-count=1'
