@@ -46,7 +46,7 @@ sudo usermod -aG docker $USER
 # sunwait
 #
 cd ~/Public
-git clone https://github.com/risacher/sunwait.git
+git clone --depth=1 https://github.com/risacher/sunwait.git
 cd sunwait
 make
 ln -s $HOME/Public/sunwait/sunwait ~/.local/bin/sunwait
