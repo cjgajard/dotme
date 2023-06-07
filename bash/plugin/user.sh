@@ -1,6 +1,5 @@
-alias prettyjson='python3 -m json.tool'
-alias tree="tree -a -I '.git|node_modules|.env|__pycache__'"
+#!/usr/bin/env bash
 alias echopath='echo $PATH | tr : "\n"'
-alias unhistory='set +o history'
-alias py=python3
-alias ZQ=exit
+alias tree="tree -a -I '.git|node_modules|.env|__pycache__'"
+alias ex='ex -u NONE -C'
+alias vi='vi -u NONE -C'
