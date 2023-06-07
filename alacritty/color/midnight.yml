@@ -1,0 +1,54 @@
+colors:
+  c: &e0 '#0000ff' #blueui
+  c: &e1 '#872f87' #wine
+  c: &e2 '#008787' #teal
+
+  c: &bg '#000027' #navy
+  c: &bg '#0b0837' #navy
+  c: &fg '#74aeed' #sky
+
+  c: &x0 '#000000' #black
+  c: &x1 '#570057' #burdeaux
+  c: &x2 '#572bff' #purple
+  c: &x3 '#607b77' #moss
+  c: &x4 '#2f2f87' #bluedark
+  c: &x5 '#872f87' #wine
+  c: &x6 '#fcf598' #yellow
+  c: &x7 '#0000ff' #blueui
+
+  c: &x8 '#0000ff' #blueui
+  c: &x9 '#c39c57' #yellowdark
+  c: &xa '#826565' #goldendark
+  c: &xb '#ffffff' #white
+  c: &xc '#334892' #skydark
+  c: &xd '#ffd7af' #golden
+  c: &xe '#408474' #
+  c: &xf '#c797d7' #pink
+
+  primary:
+    background: *bg
+    foreground: *fg
+
+  normal:
+    black:   *x0
+    red:     *x1
+    green:   *x2
+    yellow:  *x3
+    blue:    *x4
+    magenta: *x5
+    cyan:    *x6
+    white:   *x7
+
+  bright:
+    black:   *x8
+    red:     *x9
+    green:   *xa
+    yellow:  *xb
+    blue:    *xc
+    magenta: *xd
+    cyan:    *xe
+    white:   *xf
+
+  cursor:
+    text: CellBackground
+    cursor: CellForeground

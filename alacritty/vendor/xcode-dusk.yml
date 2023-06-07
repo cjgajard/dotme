@@ -1,0 +1,27 @@
+# XCode Dusk
+# Original Author: Elsa Gonsiorowski (https://github.com/gonsie)
+
+colors:
+  primary:
+    foreground: "#C77C48"
+    background: "#282B35"
+
+  normal:
+    black:   "#282B35"
+    red:     "#BF3020"
+    green:   "#786DC5"
+    yellow:  "#438288"
+    blue:    "#3F3FFF"
+    magenta: "#B218C9"
+    cyan:    "#00A0BE"
+    white:   "#C77C48"
+
+  bright:
+    black:   "#B21889"
+    red:     "#BF3020"
+    green:   "#786DC5"
+    yellow:  "#438288"
+    blue:    "#3F3FFF"
+    magenta: "#B218C9"
+    cyan:    "#00A0BE"
+    white:   "#939599"

@@ -1,0 +1,6 @@
+window:
+  startup_mode: SimpleFullscreen
+
+key_bindings:
+  - { key: Q, mods: Command, action: None }
+  - { key: Return, mods: Alt, action: ToggleSimpleFullscreen }

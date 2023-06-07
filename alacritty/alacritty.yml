@@ -1,0 +1,23 @@
+import:
+  #- ~/.config/alacritty/module/default.yml
+  - ~/.config/alacritty/module/base.yml
+  #- ~/.config/alacritty/module/carlos.yml
+
+  - ~/.config/alacritty/color/default2.yml
+  #- ~/.config/alacritty/color/night.yml
+  #- ~/.config/alacritty/color/evening.yml
+  #- ~/.config/alacritty/color/force-white-red.yml
+  #- ~/.config/alacritty/color/midnight.yml
+  #- ~/.config/alacritty/color/matrix.yml
+  #- ~/.config/alacritty/color/noon.yml
+
+  #- ~/.config/alacritty/vendor/blueberry-pie.yml
+  #- ~/.config/alacritty/vendor/borland.yml
+  #- ~/.config/alacritty/vendor/builtin-dark.yml
+  #- ~/.config/alacritty/vendor/catch-me-if-you-can.yml
+  #- ~/.config/alacritty/vendor/dracula.yml
+  #- ~/.config/alacritty/vendor/fairy-floss-dark.yml
+  #- ~/.config/alacritty/vendor/novel.yml
+  #- ~/.config/alacritty/vendor/tomorrow-night-burns.yml
+  #- ~/.config/alacritty/vendor/visiblue.yml
+  #- ~/.config/alacritty/vendor/xcode-dusk.yml

@@ -1,0 +1,30 @@
+colors:
+  primary:
+    #background: '#fff0cc'
+    #foreground: '#000f33'
+    background: '#ffedc2'
+    foreground: '#573c49'
+
+  cursor:
+    foreground: '#ffffff'
+    background: '#0000ff'
+
+  normal:
+    black: '#00123d' # complementary of primary.background
+    red: '#e55381'
+    green: '#699752'
+    yellow: '#d97608'
+    blue: '#2a63b9'
+    magenta: '#ea5839'
+    cyan: '#74c2e9'
+    white: '#b3ac9e'
+
+  bright:
+    black: '#636b7e'
+    red: '#e55381'
+    green: '#699752'
+    yellow: '#d97609'
+    blue: '#2a63b8'
+    magenta: '#ea5839'
+    cyan: '#74c2e9'
+    white: '#a8c3b6'

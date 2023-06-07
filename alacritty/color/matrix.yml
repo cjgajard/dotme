@@ -1,0 +1,89 @@
+colors:
+
+  #red
+  #c0: &c0 '#2f0000'
+  #c1: &c1 '#5f0000'
+  #c2: &c2 '#870000'
+  #c3: &c3 '#af0000'
+  #c4: &c4 '#d70000'
+  #c5: &c5 '#ff0000'
+
+  #orange
+  #c0: &c0 '#2f1700'
+  #c1: &c1 '#5f2f00'
+  #c2: &c2 '#874300'
+  #c3: &c3 '#af5700'
+  #c4: &c4 '#d76c00'
+  #c5: &c5 '#ff7f00'
+
+  #yellow
+  #c0: &c0 '#2f2f00'
+  #c1: &c1 '#5f5f00'
+  #c2: &c2 '#878700'
+  #c3: &c3 '#afaf00'
+  #c4: &c4 '#d7d700'
+  #c5: &c5 '#ffff00'
+
+  #green
+  c0: &c0 '#002f00'
+  c1: &c1 '#005f00'
+  c2: &c2 '#008700'
+  c3: &c3 '#00af00'
+  c4: &c4 '#00d700'
+  c5: &c5 '#00ff00'
+
+  #cyan
+  #c0: &c0 '#002f2f'
+  #c1: &c1 '#005f5f'
+  #c2: &c2 '#008787'
+  #c3: &c3 '#00afaf'
+  #c4: &c4 '#00d7d7'
+  #c5: &c5 '#00ffff'
+
+  #magenta
+  #c0: &c0 '#2f002f'
+  #c1: &c1 '#5f005f'
+  #c2: &c2 '#870087'
+  #c3: &c3 '#af00af'
+  #c4: &c4 '#d700d7'
+  #c5: &c5 '#ff00ff'
+
+  #white
+  #c0: &c0 '#2f2f2f'
+  #c1: &c1 '#5f5f5f'
+  #c2: &c2 '#878787'
+  #c3: &c3 '#afafaf'
+  #c4: &c4 '#d7d7d7'
+  #c5: &c5 '#ffffff'
+
+  #black
+  #c0: &c0 '#000000'
+  #c1: &c1 '#5f5f5f'
+  #c2: &c2 '#878787'
+  #c3: &c3 '#000000'
+  #c4: &c4 '#1f1f1f'
+  #c5: &c5 '#000000'
+
+  primary:
+    background: '#000000'
+    foreground: *c5
+
+  normal:
+    black:   *c0
+    red:     *c2
+    green:   *c2
+    yellow:  *c2
+    blue:    *c2
+    magenta: *c2
+    cyan:    *c2
+    white:   *c2
+
+  bright:
+    black:    *c1
+    red:      *c4
+    green:    *c4
+    yellow:   *c4
+    blue:     *c4
+    magenta:  *c4
+    cyan:     *c4
+    white:    *c3

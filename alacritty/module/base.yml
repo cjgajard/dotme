@@ -1,0 +1,40 @@
+window:
+  #
+  dimensions:
+    columns: 80
+    lines: 24
+  #
+  decorations: full
+  #
+  opacity: 1.0
+  #
+  startup_mode: Windowed
+  #
+  title: ''
+  dynamic_title: false
+  #
+  resize_increments: true
+  #
+  option_as_alt: Both
+
+scrolling:
+  history: 0
+
+font:
+  normal:
+    family: Ubuntu Mono
+    style: Regular
+  size: 18.0
+
+selection:
+  save_to_clipboard: false
+
+cursor:
+  style:
+    shape: Block
+    blinking: Off
+
+live_config_reload: true
+
+key_bindings:
+  - { key: Q, mods: Command, action: None }
