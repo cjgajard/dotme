@@ -19,6 +19,16 @@ gotest() {
   fi
   shift
   mkdir -p tmp
-  echo $PWD/tmp/out.html
-  go test $pkg -coverprofile=tmp/c.out $* && go tool cover -html=tmp/c.out -o tmp/out.html
+  echo -n $PWD/tmp/out.html | xclip -sel c
+  if command -v coverdiff > /dev/null; then
+    covercmd="coverdiff tmp/c.out > tmp/out.diff"
+  else
+    covercmd="go tool cover -html=tmp/c.out -o tmp/out.html"
+  fi
+  cmd="test $pkg -coverprofile=tmp/c.out $@"
+  if command -v entr >/dev/null; then
+    find . -name '*_test.go' | entr -c bash -c "go $cmd && $covercmd"
+  else
+    go $cmd
+  fi
 }
