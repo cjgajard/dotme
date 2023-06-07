@@ -38,6 +38,10 @@ me_smart_plugins() {
   if [[ `pwd` =~ "$HOME/ripley" ]]; then
     echo 'ripley'
   fi
+
+  if [[ -f 'Cargo.toml' ]]; then
+    echo 'rust'
+  fi
 }
 
 # load plugins
