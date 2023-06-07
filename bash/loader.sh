@@ -4,9 +4,9 @@ me_load() {
   local type=$1
   shift
   for i in "$@"; do
-    local f="$(cd `dirname ${BASH_SOURCE}`; pwd -P)/$type/$i.sh"
-    if [[ "$DEBUG" -eq 1 ]]; then echo $f; fi
-    . "$f"
+    local f="$(cd `dirname ${BASH_SOURCE}`; pwd -P)/$type/$i"
+    if [[ -d "$f" ]]; then export PATH="$f:$PATH"; return 0; fi
+    [[ -f "$f.sh" ]] && . "$f.sh"
   done
 }
 

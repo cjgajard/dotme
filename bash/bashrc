@@ -14,6 +14,6 @@ shopt -s histverify
 # SETUP
 # -----
 lib=(user git)
-plugin=(user smart ls brew)
+plugin=(user smart med ls)
 theme="monal"
 . $(dirname `readlink -f ${BASH_SOURCE}`)/loader.sh

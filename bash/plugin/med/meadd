@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+if [[ $# -lt 2 ]]; then
+  echo "Usage: `basename $BASH_SOURCE` KEY FILE" >&2
+  exit 1
+fi
+
+if [[ ! -e $2 ]]; then
+  echo "File $2 does not exist" >&2
+  exit 2
+fi
+
+DIR=$(cd `dirname $BASH_SOURCE`; pwd -P)
+declare -A mefiles
+. $DIR/me.var
+
+if [[ ${mefiles[$1]+ispresent} ]]; then
+  echo "Key \`$1' has value \`${mefiles[$1]}'" >&2
+  read -n1 -p 'Do you want to overwrite? (y|N) ' result; echo
+  if [[ ! $result =~ ^(y|Y)$ ]]; then
+    exit 3
+  fi
+fi
+
+if command -v realpath >/dev/null; then
+  TARGET=`realpath $2`
+elif command -v readlink >/dev/null; then
+  TARGET=`readlink -f $2`
+else
+  TARGET=$2
+fi
+
+echo "mefiles[$1]=$TARGET" >>"$DIR/me.var"
+. $DIR/me.var

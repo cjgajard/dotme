@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+declare -A mefiles
+. ${BASH_SOURCE[0]}.var
+
+if [[ $# -lt 1 || $1 == "-f" ]]; then
+  echo ${BASH_SOURCE[0]}.var
+  exit 0
+fi
+
+unset selected
+for key in "${!mefiles[@]}"; do
+  if [[ $key =~ ^$1$ ]]; then
+    echo ${mefiles[$key]}
+    exit 0
+  elif [[ $key =~ ^$1 ]]; then
+    selected=$key
+  fi
+done
+
+if [[ ${selected+ispresent} ]]; then
+  echo ${mefiles[$selected]}
+  exit 0
+fi
+exit 127
