@@ -1,0 +1,11 @@
+if [[ `uname -s` != "Darwin" ]]; then
+  return 1
+fi
+
+if [ -r /usr/local/etc/bash_completion ]
+then . /usr/local/etc/bash_completion
+fi
+
+if [ -r /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ]
+then . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+fi

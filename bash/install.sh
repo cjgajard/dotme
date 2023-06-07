@@ -6,6 +6,6 @@ me_installbash() {
 }
 
 if [ $0 == "$BASH_SOURCE" ]; then
-  me_ask "Install bash?" && me_bash
+  me_ask "Install bash?" && me_installbash
   exit 0
 fi

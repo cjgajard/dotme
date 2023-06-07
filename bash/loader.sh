@@ -30,4 +30,6 @@ if [ -n "$theme" ]; then
 fi
 
 # load completions
-. "$(cd `dirname ${BASH_SOURCE}`; pwd -P)/completion.sh"
+for c in "$(cd `dirname $BASH_SOURCE`; pwd -P)/completions/"* ; do
+  if [ -r "${c}" ]; then . "${c}"; fi
+done
