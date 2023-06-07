@@ -5,10 +5,11 @@ esac
 
 # BASH
 # ----
+HISTFILE=
 HISTCONTROL=ignoreboth:erasedups
-HISTSIZE=1000
 shopt -s checkwinsize
 shopt -s histappend
+shopt -s histverify
 
 # SETUP
 # -----
