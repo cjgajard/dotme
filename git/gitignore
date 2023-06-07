@@ -1,8 +1,8 @@
 .*.sw[a-p]
+.DS_Store
 .byebug_history
 .nvmrc
 .sw[a-p]
-/.env-*
 TAGS
 tags
-tmp
+tmp/
