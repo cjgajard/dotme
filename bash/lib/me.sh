@@ -11,7 +11,7 @@ me_ask() {
 
 me_install() {
   local usage="usage: me_install SOURCE_FILE DESTINATION_FILE"
-  local src="$(cd `dirname ${BASH_SOURCE}`/../../; pwd -P)/$1"
+  local src="$ME_DIR/$1"
   local dd=`dirname $2`
   [[ "${src}" == "" || "$2" == "" ]] && echo $usage && return 1
   [[ ! -e ${src} ]] && echo "file \`${src}\` does not exist" && return 1

@@ -2,8 +2,7 @@
 
 _me_load() {
   local type="${1#me_}"
-  local bash="$(cd `dirname ${BASH_SOURCE}`; pwd -P)"
-  COMPREPLY+=($(cd $bash/$type &>/dev/null;
+  COMPREPLY+=($(cd $ME_DIR/bash/$type &>/dev/null;
     compgen -G "$2*.sh" | xargs -r basename -s .sh))
 }
 

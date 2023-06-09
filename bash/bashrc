@@ -13,7 +13,9 @@ shopt -s histverify
 
 # SETUP
 # -----
-lib=(user git)
+lib=(git)
 plugin=(user smart med ls)
-theme="monal"
-. $(dirname `readlink -f ${BASH_SOURCE}`)/loader.sh
+theme="min"
+
+export ME_DIR=$HOME/.me
+. $ME_DIR/bash/loader.sh
