@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+import sys
+import yaml
+import re
+from argparse import ArgumentParser
+
+
+def hex2rgb(h: str) -> (int,int,int):
+    result = re.findall(r"[0-9a-fA-F]{2}", h)
+    return (int(result[0],16) , int(result[1],16) , int(result[2],16))
+
+
+def rgb2hex(r: int, g: int, b: int) -> str:
+    return '#{:02x}{:02x}{:02x}'.format(r,g,b)
+
+
+def mkfn(fg, bg, pieces=10):
+    a = hex2rgb(fg)
+    b = hex2rgb(bg)
+    def color(index: int) -> str:
+        c = lambda i: index*((a[i]-b[i])//pieces)+b[i]
+        return rgb2hex(c(0),c(1),c(2))
+    return color
+
+
+parser = ArgumentParser()
+parser.add_argument('--background', '-b', default='#000000')
+parser.add_argument('color', nargs='+')
+args = parser.parse_args()
+args = vars(args)
+
+data = {'colors': {'primary': {}, 'normal': {}}}
+getcolor = mkfn(args['color'][0], args['background'])
+
+idx = 0
+if hasattr(args, 'background'):
+    c = hex2rgb(args['background')
+    data['colors']['primary']['background'] = rgb2hex(*c)
+    idx += 1
+
+data['colors']['normal']['black'] = getcolor(idx); idx += 1
+data['colors']['normal']['red'] = getcolor(idx); idx += 1
+data['colors']['normal']['green'] = getcolor(idx); idx += 1
+data['colors']['normal']['yellow'] = getcolor(idx); idx += 1
+data['colors']['normal']['blue'] = getcolor(idx); idx += 1
+data['colors']['normal']['magenta'] = getcolor(idx); idx += 1
+data['colors']['normal']['cyan'] = getcolor(idx); idx += 1
+data['colors']['normal']['white'] = getcolor(idx); idx += 1
+data['colors']['primary']['foreground'] = getcolor(idx); idx += 1
+data['colors']['bright'] = data['colors']['normal']
+
+with open('gradient.yml', 'w') as f:
+    yaml.dump(data, f)

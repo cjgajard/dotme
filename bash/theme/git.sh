@@ -1,4 +1,3 @@
-# Format for git_prompt_status()
 THEME_GIT_PROMPT_ADDED="a"
 THEME_GIT_PROMPT_DELETED="d"
 THEME_GIT_PROMPT_MODIFIED="m"
@@ -15,6 +14,6 @@ THEME_GIT_PROMPT_PREFIX="("
 THEME_GIT_PROMPT_SUFFIX=")"
 
 THEME_GIT_INFO_PREFIX=" "
-#THEME_GIT_INFO_SUFFIX=""
+THEME_GIT_INFO_SUFFIX=""
 
-PS1="\W\$(git_prompt_info)\$(git_prompt_status)\$ "
+PS1="$PS1\$(git_prompt_info)\$(git_prompt_status)"

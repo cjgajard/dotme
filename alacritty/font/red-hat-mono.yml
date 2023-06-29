@@ -1,0 +1,10 @@
+window:
+  padding:
+    x: 12
+    y: 0
+
+font:
+  size: 18.0
+  normal:
+    family: Red Hat Mono
+    style: Regular

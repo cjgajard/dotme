@@ -2,5 +2,5 @@ mefiles[alacritty]=$HOME/.config/alacritty/alacritty.yml
 mefiles[bash]=$HOME/.bashrc
 mefiles[tmux]=$HOME/.tmux.conf
 mefiles[vim]=$HOME/.vim/vimrc
+mefiles[helix]=/Users/carlos/.config/helix
 mefiles[user]=/Users/carlos/.me/alacritty/module/carlos.yml
-mefiles[names]=/Users/carlos/Pictures/names.txt

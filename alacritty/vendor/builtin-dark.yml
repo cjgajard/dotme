@@ -3,10 +3,10 @@ colors:
     background: '#040404'
     foreground: '#bbbbbb'
 
-  cursor:
-    #cursor: '#bbbbbb'
-    cursor: '#ff0000'
-    text: '#ffffff'
+  #cursor:
+  #  cursor: '#bbbbbb'
+  #  cursor: '#ff0000'
+  #  text: '#ffffff'
 
   selection:
     background: '#b5d5ff'

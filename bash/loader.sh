@@ -6,7 +6,7 @@ me_load() {
   for i in "$@"; do
     local f="$ME_DIR/bash/$type/$i"
     if [[ -d "$f" ]]; then
-      export PATH="$PATH:$f"
+      PATH="$PATH:$f"
     elif [[ -f "$f.sh" ]]; then
       . "$f.sh"
     fi
@@ -28,9 +28,8 @@ me_lib ${lib[@]}
 me_plugin ${plugin[@]}
 
 # load theme
-if [ -n "$theme" ]; then
-  . "$ME_DIR/bash/theme/$theme.sh"
-fi
+me_load theme ${theme[@]}
+PS1="$PS1\$ "
 
 # load completions
 for c in "$ME_DIR/bash/completions/"* ; do

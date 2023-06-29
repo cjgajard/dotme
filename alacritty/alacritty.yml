@@ -1,23 +1,31 @@
 import:
   #- ~/.config/alacritty/module/default.yml
   - ~/.config/alacritty/module/base.yml
-  #- ~/.config/alacritty/module/carlos.yml
+  - ~/.config/alacritty/module/carlos.yml
+  #- ~/.config/alacritty/module/bright-cursor.yml
 
-  - ~/.config/alacritty/color/default2.yml
-  #- ~/.config/alacritty/color/night.yml
-  #- ~/.config/alacritty/color/evening.yml
-  #- ~/.config/alacritty/color/force-white-red.yml
-  #- ~/.config/alacritty/color/midnight.yml
-  #- ~/.config/alacritty/color/matrix.yml
-  #- ~/.config/alacritty/color/noon.yml
+  #- ~/.config/alacritty/font/intelone-mono.yml
+  #- ~/.config/alacritty/font/unifont.yml
+  - ~/.config/alacritty/font/red-hat-mono.yml
+  #- ~/.config/alacritty/font/ubuntu-mono.yml
 
   #- ~/.config/alacritty/vendor/blueberry-pie.yml
-  #- ~/.config/alacritty/vendor/borland.yml
   #- ~/.config/alacritty/vendor/builtin-dark.yml
   #- ~/.config/alacritty/vendor/catch-me-if-you-can.yml
   #- ~/.config/alacritty/vendor/dracula.yml
   #- ~/.config/alacritty/vendor/fairy-floss-dark.yml
-  #- ~/.config/alacritty/vendor/novel.yml
   #- ~/.config/alacritty/vendor/tomorrow-night-burns.yml
   #- ~/.config/alacritty/vendor/visiblue.yml
   #- ~/.config/alacritty/vendor/xcode-dusk.yml
+
+  - ~/.config/alacritty/color/default2.yml
+  #- ~/.config/alacritty/color/matrix.yml
+  #- ~/.config/alacritty/color/evening.yml
+  #- ~/.config/alacritty/color/night.yml
+  #- ~/.config/alacritty/color/midnight.yml
+  #- ~/.config/alacritty/color/morning.yml
+  #- ~/.config/alacritty/color/noon.yml
+  #- ~/.config/alacritty/color/gradient.yml
+  #- ~/.config/alacritty/color/santiago.yml
+  #- ~/.config/alacritty/color/arc.yml
+  - ~/.config/alacritty/color/force-white-red.yml

@@ -1,5 +1,6 @@
 window:
   startup_mode: SimpleFullscreen
+  # opacity: 0.9
 
 key_bindings:
   - { key: Q, mods: Command, action: None }

@@ -16,7 +16,7 @@ THEME_GIT_PROMPT_SUFFIX="$b)"
 THEME_GIT_INFO_PREFIX=" $b"
 THEME_GIT_INFO_SUFFIX=""
 
-PS1="$a\W\$(git_prompt_info)\$(git_prompt_status)$r\$ "
+PS1="$a\W\$(git_prompt_info)\$(git_prompt_status)$r"
 unset r
 unset a
 unset b

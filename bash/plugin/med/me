@@ -1,25 +1,97 @@
 #!/usr/bin/env bash
 
 declare -A mefiles
-. ${BASH_SOURCE[0]}.var
+. "${BASH_SOURCE[0]}.var"
 
-if [[ $# -lt 1 || $1 == "-f" ]]; then
-  echo ${BASH_SOURCE[0]}.var
-  exit 0
-fi
+cmd=${EDITOR:-vi}
+add=false
+delete=false
+install=false
+ispresent=false
+vault=false
 
-unset selected
-for key in "${!mefiles[@]}"; do
-  if [[ $key =~ ^$1$ ]]; then
-    echo ${mefiles[$key]}
-    exit 0
-  elif [[ $key =~ ^$1 ]]; then
-    selected=$key
+usage() {
+  cat <<-END
+usage: `basename $0` [-df KEY] [-a KEY FILE]
+            Opens EDITOR with the file associated with KEY
+    -a      Adds KEY as a shortcut from FILE
+    -d      Deletes KEY from registry
+    -f      Prints path instead of opening in EDITOR
+When called with -f or without options, KEY can be a prefix of the storage key,
+if KEY is empty, the storage file is used instead.
+
+Example:
+    `basename $0` -a vim ~/.vim/vimrc # Associates "vim" with ~/.vim/vimrc
+    `basename $0` v                   # Matches "v" with "vim" and opens ~/.vimrc
+END
+}
+
+for arg in "$@"; do
+  if [[ $arg == -h || $arg == --help ]]; then
+    usage; exit 1
   fi
 done
 
-if [[ ${selected+ispresent} ]]; then
-  echo ${mefiles[$selected]}
-  exit 0
+while getopts "adf" o; do
+  case $o in
+    a) add=true ;;
+    d) delete=true ;;
+    f) cmd=echo ;;
+    i) install=true ;;
+  esac
+done
+shift $((OPTIND-1))
+
+if [[ $install == true ]]; then
+  bash ${BASH_SOURCE[0]} -a user $HOME/.config/alacritty/module/$USER.yml
+  exit $?
 fi
-exit 127
+
+if [[ $delete == true ]]; then
+  if [[ $# -lt 1 ]]; then
+    echo "Usage: $0 KEY" >&2
+    exit 1
+  fi
+  if [[ `uname -s` == Darwin ]]; then
+    sed -i '' "/\[$1\]/d" ${BASH_SOURCE[0]}.var
+  else
+    sed -i    "/\[$1\]/d" ${BASH_SOURCE[0]}.var
+  fi
+  exit $?
+fi
+
+if [[ $add == true ]]; then
+  if [[ ${mefiles[$1]+ispresent} ]]; then
+    echo "Key \`$1' has value \`${mefiles[$1]}'" >&2
+    read -n1 -p 'Do you want to overwrite? (y|N) ' result; echo
+    if [[ ! $result =~ ^(y|Y)$ ]]; then
+      exit 3
+    fi
+  fi
+  if command -v realpath >/dev/null; then
+    target=`realpath $2`
+  elif command -v readlink >/dev/null; then
+    target=`readlink -f $2`
+  else
+    target=$2
+  fi
+  echo "mefiles[$1]=$target" >>"${BASH_SOURCE[0]}.var"
+  . "${BASH_SOURCE[0]}.var"
+  exit $?
+fi
+
+if [[ $# -lt 1 ]]; then
+  target="${BASH_SOURCE[0]}.var"
+else
+  unset selected
+  for key in "${!mefiles[@]}"; do
+    if [[ $key =~ ^$1 ]]; then selected=$key; fi
+    if [[ $key =~ ^$1$ ]]; then break; fi
+  done
+  if [[ ! ${selected+true} ]]; then
+    exit 127
+  fi
+  target="${mefiles[$selected]}"
+fi
+
+$cmd $target

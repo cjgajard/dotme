@@ -1,0 +1,7 @@
+window:
+  padding:
+    x: 12
+font:
+  size: 21.0
+  normal:
+    family: Unifont

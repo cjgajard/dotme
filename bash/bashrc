@@ -10,12 +10,18 @@ HISTCONTROL=ignoreboth:erasedups
 shopt -s checkwinsize
 shopt -s histappend
 shopt -s histverify
+LESSHISTFILE=/dev/null
 
 # SETUP
 # -----
 lib=(git)
-plugin=(user smart med ls)
-theme="min"
+plugin=(user smart ls)
+if shopt -q login_shell; then plugin+=(med); fi
+theme=(min tmux)
 
 export ME_DIR=$HOME/.me
 . $ME_DIR/bash/loader.sh
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export EDITOR=vim

@@ -1,0 +1,14 @@
+colors:
+  bright: &id001
+    black: '#2f57d7'
+    blue: '#89e500'
+    cyan: '#16e500'
+    green: '#00e55b'
+    magenta: '#e5ce00'
+    red: '#0089e5'
+    white: '#e5c3ac'
+    yellow: '#00e5ce'
+  normal: *id001
+  primary:
+    background: '#00074c'
+    foreground: '#ffffff'

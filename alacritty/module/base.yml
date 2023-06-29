@@ -37,4 +37,6 @@ cursor:
 live_config_reload: true
 
 key_bindings:
-  - { key: Q, mods: Command, action: None }
+  - { key: Q, mods: Command, action: ReceiveChar }
+  - { key: F, mods: Command, action: ReceiveChar }
+  - { key: B, mods: Command, action: ReceiveChar }

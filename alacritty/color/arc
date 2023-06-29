@@ -1,0 +1,65 @@
+#!/usr/bin/env python3
+from math import pi as PI
+import yaml
+#from sys import stdout
+
+def hsv2rgb(h: float, s: float, v: float) -> (float, float, float):
+    if (s <= 0):
+        return (v,v,v)
+    while (h < 0):
+        h += 2*PI
+    while (h >= 2*PI):
+        h -= 2*PI
+    h *= 3
+    h /= PI
+    region = int(h)
+    position = h - region
+    p = v * (1 - s)
+    q = v * (1 - s*position)
+    t = v * (1 - s*(1-position))
+    if region == 0:
+        return (v, t, p)
+    elif region == 1:
+        return (q, v, p)
+    elif region == 2:
+        return (p, v, t)
+    elif region == 3:
+        return (p, q, v)
+    elif region == 4:
+        return (t, p, v)
+    elif region == 5:
+        return (v, p, q)
+    else:
+        raise ValueError('unexpected region %d'%region)
+
+
+def rgb2hex(r: float, g: float, b: float) -> str:
+    return '#%02x%02x%02x' % (int(r*0xff),int(g*0xff),int(b*0xff))
+
+
+arc = -PI
+offset = 13 * PI / 10 
+saturation = 1.0
+value = 0.9
+def i2rgb(i, s=saturation, v=value):
+    return hsv2rgb(i*arc/6+offset, s, v)
+
+ansi = False
+if ansi:
+    names=['black','red','green','yellow','blue','magenta','cyan','white']
+else:
+    names=['black','red','yellow','green','cyan','blue','magenta','white']
+
+primary = {}
+primary['background'] = rgb2hex(*i2rgb(0, v=value/3))
+primary['foreground'] = rgb2hex(*i2rgb(7, s=0, v=min(value*2,1)))
+
+normal = {}
+normal[names[0]] = rgb2hex(*i2rgb(0, v=value/1.2))
+normal[names[7]] = rgb2hex(*i2rgb(7, s=saturation/4))
+for i in range(1, 7):
+    normal[names[i]] = rgb2hex(*i2rgb(i))
+
+with open('arc.yml', 'w') as f:
+    #yaml.dump({'colors': {'normal': normal, 'bright': normal}}, stdout)
+    yaml.dump({'colors': {'normal': normal, 'bright': normal, 'primary': primary}}, f)
