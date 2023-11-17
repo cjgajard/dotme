@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carlos Gajardo's portfolio</title>
+    <style>
+html{font-size:62.5%;}
+*{box-sizing: border-box;}
+body{font-size:1.6rem;margin:0;background-color:rgb(28,27,34);color:#0f0;font-family:"IBM VGA 8x16",monospace;min-height:100vh;}
+h1,h2,h3,h4,h5,h6,p{margin:0}
+.container{max-width:600px;margin:0 auto;padding-left:1rem;padding-right:1rem;}
+.head-title{position:relative;padding-top:3rem;margin-bottom:3rem;}
+.head-title h1{font-size:6rem;}
+.clearfix::after{content:"";clear:both;display:table;}
+.project{position:relative;padding:2rem 0;}
+.project-win98{color:#000;font-family:"W95FA",sans-serif;font-size:1.4rem;}
+.project-win98 .project-window-border{border:1px outset #000;padding:0;}
+.project-win98 .project-window{padding:2px;background-color:gray;}
+.project-win98 header{color:#ccc;background-color:#008;padding:0 1rem;background-image:linear-gradient(to right,#666,#999)}
+.project-win98 .project-window:hover header{color:#fff;background-image:linear-gradient(to right,#008,#09c);}
+.project-win98 header h2{line-height:1.6;font-size:1.4rem;}
+.project-win98 section{padding:1rem;}
+.project-win98 section>p:first-child{margin-bottom:1rem;}
+.project-win98 .link{color:#008;}
+.project-win98 .link:hover{color:#00f;}
+.iframe-wrapper{width:calc(100vw - 4rem);border:0;margin:1rem auto;}
+.iframe-loader{margin:1rem auto;display:block;}
+.iframe{width:100%;min-height:80vh;border:0;}
+.photo{float:right;margin-top:-2rem;}
+.ascii-logo{font-size:6px;}
+.upcase{text-transform:uppercase;}
+.link{color:inherit;}
+.link:hover{color:#87ff87;}
+.button-open{font-family:"IBM VGA 8x16",monospace;font-size:1em;background:none;border:2px solid #0f0;color:#0f0;float:right;}
+.button-open:hover{border-color:#57ff57;color:#57ff57;}
+.project-win98 .button-open{font-size:1.4rem;color:#000;border:1px outset #000;line-height:1;background-color:#c0c0c0;margin-top:2px;margin-right:-8px;}
+.project-win98 .button-open:hover{border:1px inset #000;background-color:#999;}
+@font-face{font-family:"IBM VGA 8x16";font-style:normal;font-weight:normal;src:url('vendor/WebPlus_IBM_VGA_8x16.woff');}
+@font-face{font-family:"W95FA";font-style:normal;font-weight:normal;src:url('vendor/w95fa.woff');}
+    </style>
+  </head>
+
+  <body>
+    <header class="head head-title container clearfix">
+      <div class="photo">
+        <pre class="ascii-logo">
+                           (##############*
+                    %############################,
+                ######################################
+             ############################################
+          ##################################################
+        ######################################################
+      ##################   *#############.   ###################
+    (###################    #############    ####################
+   #####################    #############    ######################
+  #######################  ##############%  %######################%
+ %##################################################################
+ ####################################################################
+#####################################################################*
+######################################################################
+########## ###########################################################
+#######   ################################################/ ##########
+######% # /################################################  ########,
+ #########( ##############################################    #######
+ /########## ############################################ ### ######
+  ###########% ########################################( ##########*
+   %###########. ##################################### ###########,
+     ############. ################################( ############
+      ##############  ###########################  #############
+        ###############   ###################   ##############
+          #################                 ###############/
+             ############################################
+                (####################################.
+                     ############################
+                            ,############.</pre>
+      </div>
+      <div>
+        Hello, I'm
+        <h1 class="upcase">Carlos Gajardo.</h1>
+        <span class="subtitle">This is a showcase of silly things I've made in my free&nbsp;time.</span>
+      </div>
+    </header>
+
+    <article class="project project-win98">
+      <div class="project-window-border container">
+      <div class="project-window">
+      <header>
+        <button class="button button-open" onclick="projectToggle(this)" data-key="rosarium" data-src="https://cjgajard.github.io/rosarium/">Open demo</button>
+        <h2>Rosarium</h2>
+      </header>
+      <section class="container">
+        <p>Guidance tool to pray the Holy Rosary.</p>
+        <p><small class="upcase">Repository: <a class="link" target="_blank" href="https://github.com/cjgajard/rosarium">https://github.com/cjgajard/rosarium</a></small></p>
+        <p><small class="upcase">Tags: Typescript, React</small></p>
+      </section>
+      </div>
+      </div>
+    </article>
+
+    <article class="project project-win98">
+      <div class="project-window-border container">
+      <div class="project-window">
+      <header>
+        <button class="button button-open" onclick="projectToggle(this)" data-key="tamagotchi" data-src="https://cjgajard.github.io/tamagotchi/">Open demo</button>
+        <h2>Tamagotchi</h2>
+      </header>
+      <section>
+        <p>Little tamagotchi emulator.</p>
+        <p><small class="upcase">Repository: <a class="link" target="_blank" href="https://github.com/cjgajard/tamagotchi">https://github.com/cjgajard/tamagotchi</a></small></p>
+        <p><small class="upcase">Tags: Javascript, OOP</small></p>
+      </section>
+      </div>
+      </div>
+    </article>
+
+    <article class="project project-win98">
+      <div class="project-window-border container">
+      <div class="project-window">
+      <header><h2>Potoman</h2></header>
+      <section>
+        <p>Command-line interface tool that allow to make HTTP requests using plain text files, providing also access to variables defined in the .env&nbsp;file or exported from the execution environment.</p>
+        <p><small class="upcase">Repository: <a class="link" target="_blank" href="https://github.com/cjgajard/potoman">https://github.com/cjgajard/potoman</a></small></p>
+        <p><small class="upcase">Tags: Golang, CLI</small></p>
+      </section>
+      </div>
+      </div>
+    </article>
+
+    <article class="project project-win98">
+      <div class="project-window-border container">
+      <div class="project-window">
+      <header><h2>Compressed-music</h2></header>
+      <section>
+        <p>Random music generator that uses the idea behing the Huffman coding compression, because in music too &mdash;in order to sound well&mdash; some intervals has to be more prevalent than others.</p>
+        <p><small class="upcase">Repository: <a class="link" target="_blank" href="https://github.com/cjgajard/compressed-music">https://github.com/cjgajard/compressed-music</a></small></p>
+        <p><small class="upcase">Tags: Python, MIDI</small></p>
+      </section>
+      </div>
+      </div>
+    </article>
+
+    <article class="project project-win98">
+      <div class="project-window-border container">
+      <div class="project-window">
+      <header>
+        <h2>Ved</h2>
+      </header>
+      <section>
+        <p>Terminal-based text editor, trying to rescue the good elements of the legendary "line&nbsp;editor" for Unix: `ed`, while also giving instant feedback to the user, and allowing to mend mistakes more easily.</p>
+        <p><small class="upcase">Repository: <a class="link" target="_blank" href="https://github.com/cjgajard/ved">https://github.com/cjgajard/ved</a></small></p>
+        <p><small class="upcase">Tags: C</small></p>
+      </section>
+      </div>
+      </div>
+    </article>
+
+    <script>
+      const loaderPixelCount = 6;
+      const loaderPixelSize = 8;
+      const loaderDistance = 2;
+      const loaderSnakeLength = 8;
+      const loaderSnakeGreenMin = 63;
+      function loaderDraw(canvas) {
+        const snake = function () {
+          const li = [];
+          for (let i=0; i<loaderSnakeLength; i++) {
+            li.forEach(x => x.update());
+            const green = Math.floor((255-loaderSnakeGreenMin)*(loaderSnakeLength-i)/loaderSnakeLength)+loaderSnakeGreenMin;
+            li.push({
+              x: 0, y: 0,
+              color: `rgb(0,${green},0)`,
+              update() {
+                const { x, y } = this;
+                if (y == 0 && x < loaderPixelCount-1) {
+                  this.x += 1;
+                } else if (x==loaderPixelCount-1 && y<loaderPixelCount-1) {
+                  this.y += 1;
+                } else if (y==loaderPixelCount-1 && x>0) {
+                  this.x -= 1;
+                } else {
+                  this.y -= 1;
+                }
+              },
+            });
+          }
+          //li.update = () => li.forEach(() => li[i].update());
+          return li;
+        }();
+        const ctx = canvas.getContext('2d');
+        canvas.dataset.intervalId = setInterval(function() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          snake.forEach(function(pixel) {
+            pixel.update();
+            ctx.fillStyle = pixel.color;
+            ctx.fillRect(
+              (loaderPixelSize+loaderDistance)*pixel.x,
+              (loaderPixelSize+loaderDistance)*pixel.y,
+              loaderPixelSize, loaderPixelSize,
+            );
+          });
+        }, 33.333);
+      }
+
+      function projectToggle(button) {
+        const { key } = button.dataset;
+        if (button.dataset.open === '1') {
+          const frame = document.getElementById('iframe_'+key);
+          frame.remove();
+          delete button.dataset['open'];
+          button.textContent = 'Open demo';
+          return;
+        }
+        if (button.dataset.loading == 1) {
+          return;
+        }
+        button.dataset.loading = 1;
+        const loader = document.createElement('canvas');
+        loader.className = 'iframe-loader';
+        loader.width = loaderPixelCount*loaderPixelSize + (loaderPixelCount-1)*loaderDistance;
+        loader.height = loader.width;
+        loader.close = function() {
+          clearInterval(parseInt(this.dataset["interval_id"]));
+        };
+        /* button header .window .window-border .project */
+        button.parentNode.parentNode.parentNode.parentNode.appendChild(loader);
+        const section = document.createElement('SECTION');
+        section.className = 'iframe-wrapper clearfix';
+        section.id = 'iframe_' + key;
+        section.style.display = 'none';
+        button.parentNode.parentNode.parentNode.parentNode.appendChild(section);
+        loaderDraw(loader);
+        const frame = document.createElement('IFRAME');
+        frame.className = 'iframe';
+        frame.src = button.dataset.src;
+        section.appendChild(frame);
+        frame.onload = function() {
+          setTimeout(function() {
+            loader.close();
+            loader.remove();
+            section.style.display = 'block';
+            button.dataset.open = 1;
+            button.dataset.loading = 0;
+            button.textContent = 'X';
+          }, 1000);
+        }
+      }
+    </script>
+  </body>
+</html>
